@@ -100,19 +100,19 @@ Google Street View must be available in the building.
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click “Set image”
 
-## Under show advanced:
+**Under show advanced**
 
-**Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc.  Insert a comma between each phrase.
+- **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc.  Insert a comma between each phrase.
 
-**Venue Details:** Change building and or floor.
+- **Venue Details:** Change building and or floor.
 
-**Room Identifier:** This can be edited.
+- **Room Identifier:** This can be edited.
 
-**Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown.
+- **Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown.
 
-**Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
+- **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
 
-## Save changes
+**Save changes**
 
 Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes,  press “Save”-button in the top of the location edit form.
 
@@ -127,29 +127,44 @@ To view a list of all locations in a certain venue, select ‘List View”.
 
 When selecting one a more locations using the checkboxes, 2 options will appear: Edit locations or Delete Locations.
 
-**Change type:** Opens a drop down menu to choose new location type
+- **Change type:** Opens a drop down menu to choose new location type
 
-**Location:** Allows you to change the floor of the locations
+- **Location:** Allows you to change the floor of the locations
 
-**Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown
+- **Active (display and searchable):** If required, select a time period during which the location will be visible, leave empty if it should always be shown
 
 Remember to save before clicking on another location or changing the page, otherwise your changes will be lost. To save the changes, click “Save”.
 
-## Venue and buildings
+## Venue
 
-![Venue](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide4.png)
+* Edit the venue name in the available languages
+* Choose a default floor
 
-**Venue:** Edit venue name, choose another language, add aliases
+## Buildings
 
-**Buildings:** Click on the pencil icon to the left of the building name. A new menu will appear, edit building name, choose another language, add aliases, change floor names
+* Click on the pencil icon to the left of the building name. A new menu will appear 
+* Edit building name in the available languages 
+* Edit floor names
+* Select a default floor under "Show advanced"
+The building's default floor is used to manage panning across buildings in the apps. In order to improve  the user experience in the apps, the default floor is used when the building panned to doesn’t have the floor index of the floor selector.
 
-## Routes
+## Routes Access
 
 ![Routes](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide5.png)
 
 The routes tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
 
-To lock a path, click on the path within the map. The path will turn yellow and a small pop up menu appears. You can choose to keep the path open or closed. Also you are able to add wait time to the path. Click Save. If you need to unlock that path, click on the area you locked and then open the path. Click Save.
+To create a parking lot:
+* Click on "+ P" in the top right corner. If it is not enabled, zoom in higher than 17.
+* The mouse cursor will change to a "+". Click on the map where you want to add the parking lot and a popup window will appear.
+* Select a type: Car or Bike.
+* Enter a name and click "Save"
+
+To restrict access to a path:
+* Click on the path and a popup window will appear.
+* Choose between "Open for all" | "Open for specific app user roles" | "Closed for all".
+* When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.
+* Set a delay and click "Save".
 
 ## Location Types
 
@@ -157,21 +172,24 @@ To lock a path, click on the path within the map. The path will turn yellow and 
 
 This is a list of all the location types in the solution. From this list you can edit each location by clicking on the pencil.
 
+**Location type templates**
+Locations inherit templates from their types. These templates allow you to set up custom data fields. Note that these templates only add the properties. To display or otherwise use a property the app needs to be customized. Standard app users will not be able to use the properties.
+
 ## Categories
 
 ![Categories](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide7.png)
 
 Ability to add new categories to the list. Click on New category, add name, click save. Once created, this category can be added to a specific location type. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
 
-## Location type templates
-
-![Location type templates](https://app.mapsindoors.com/mapsindoors/cms/assets/images/guide8.png)
-
-Locations inherit templates from their types. These templates allow you to set up custom data fields. Note that these templates only add the properties. To display or otherwise use a property the app needs to be customized. Standard app users will not be able to use the properties.
-
 ## App configuration
 
-Under App categories - clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
+**App User Roles**
+* Click on "+ Add App User Roles" and a popup window will appear.
+* Enter the role name in all the languages. It's mandatory.
+* Click "Save" and the entered name should appear in the table.
+
+**App Categories**
+Clicking on the arrows to the left of the category name allows you to change the order. This category order will be on the app. You can also choose an icon to be displayed next to the category name.
 
 ## Type visibility
 
