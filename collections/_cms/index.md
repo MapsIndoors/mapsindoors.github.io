@@ -43,8 +43,8 @@ There are a number of key elements:
 1. **Venue:** This is the name of your Venue. It’s possible to have several venues. Also, the arrow above the Venue can be clicked to hide the side panel
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
-..- Change building names, enter aliases
-..- Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+  - Change building names, enter aliases
+  - Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
 1. **General Settings:**
   - **Location types:** List of locations with their icon - ability to edit. Add location types here
   - **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
