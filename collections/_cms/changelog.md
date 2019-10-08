@@ -5,6 +5,20 @@ date: 2019-10-07
 
 # Changelog
 
+## October 2019 - v3.7.3
+
+### New 
+							
+* **Venue:** It is possible to change the venue's default floor and sidebar is set to always be open.
+
+### Updates
+
+* **Location Types Templates:** This menu is accessible via the location types table because a template is created for a specific location.									
+
+### Bug Fixes
+
+* **Locations:** Shrinking locations list when filtering.
+
 ## September 2019 - v3.7.2
 
 ### New 
