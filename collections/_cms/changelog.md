@@ -5,6 +5,12 @@ date: 2019-10-07
 
 # Changelog
 
+## October 2019 - v3.7.4
+
+### Bug Fixes
+
+* **Locations:** Styling of the location icon library has been fixed.
+
 ## October 2019 - v3.7.3
 
 ### New 
