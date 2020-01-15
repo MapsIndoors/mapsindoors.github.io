@@ -4,6 +4,12 @@ date: 2019-10-07
 published: true
 ---
 
+## January 2020 - v3.7.8
+
+### Bug Fixes
+
+* Fixed issue about the floor selector disappearing when switching from locations' list-view to map-view after the detail window has been closed.
+
 ## December 2019
 
 ### New
