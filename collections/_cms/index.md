@@ -49,7 +49,7 @@ There are a number of key elements:
   - **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
   - **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
   - **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
-1. **App settings:** 
+1. **App settings:**
   - **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
   - **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
 1. **Administration:**
@@ -79,29 +79,115 @@ Select the icon on the map for the Location that you wish to edit, or click on L
 
 In the Edit Location Form you can do the following:
 
-**Location Type:** This can be changed by clicking on the drop down menu with Location Types.
+### Location Type
 
-**Name:** Enter a new name if you want to change the name of the Location. You also have the option of adding another language.
+This can be changed by clicking the drop down menu with Location Types.
 
-**Description:** Provide a description of the Location. 
+### Name
+
+Enter a new name for the Location. You can also add another language.
+
+### Description
+
+Provide a description of the Location.
+
 There is an option to add more information for this Location. This can be done by clicking on Location Type templates in the main navigation. From there you can add specific fields to a Location Type, those fields will then appear in the Location form.
 
-**Categories:** Set/change what Category it belongs to.
+### Categories
 
-**Icon Settings:** Change the Icon associated with the Location. An icon can be chosen from the library or an icon can be uploaded. Use square images in .png format, 40x40 pixels, or 20x20 - as lower screen resolutions will use this size.
+Add or remove Categories the Location belongs to.
 
-**Image:** An image can be uploaded.
+### Icon Settings
 
-**Google Street View:** It can be enabled for the web app at a Location by setting a Street View image matching that Location.
+Change the Icon associated with the Location. See "[Managing Icons](#managing-icons)" for more information.
 
-Google Street View must be available in the Building.
+### Image
 
-1. Click "Set Street View image” 
-  - This will open a Google Street View window showing an image closest to this Location. In the case an outside image is shown it can be because Google Street View is not available in your Building - you need to check that with your organisation or examine using Google Maps.
+Take a photo of your Location and upload it here. Photos on Locations makes it easier for your users to find a location in the real world.
+
+### Image with IndoorView
+
+> IndoorView is only supported for web
+{: .mi-careful}
+
+To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
+
+1. Click "Set Street View image”
+  - This will open a Google Street View window showing the image closest to this Location. Please note that the MapsIndoors CMS looks for panorama images within a certain radius from the Location's position, so make sure to have panorama images published in that area.
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
-**Under show advanced**
+
+**MapsIndoors support matrix**
+
+| MapsIndoors | Support for IndoorView | Private hosted panorama images|
+| - | - | - |
+|CMS|Yes|No|
+|Web App|Yes|No|
+|Android App|No|No|
+|iOS App|No|No|
+|Web SDK|Yes, through Google Maps Street View API or Static Street View API|No|
+|Android SDK|No|No|
+|iOS SDK|No|No|
+
+**Developing your own app**
+
+When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
+
+Location Object:
+
+```javascript
+{
+  "id": "586ce41ebc1f571794b9e924",
+   ...
+  "properties": {
+    "name": "Copenhagen",
+     ...
+    "streetViewConfig": {
+      "panoramaId": "CAoSLEFGMVFpcE41dTZnVzNpVnU1WmliRjk0T2tpMENhZ3Fya3ljVFh3TjVzN2lY",
+      "povHeading": 203.1294893976259,
+      "povPitch": -13.068754012666432
+    }
+  }
+}
+```
+
+The parameters above can be used to show a static Street View image through the Street View Static API. Please see [the Street View documentation](https://developers.google.com/maps/documentation/streetview/intro) for more information.
+
+A Street View panorama image can be initialized in a `<div>` the following way:
+
+```javascript
+function initStreetView(streetViewConfig) {
+       const panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('panorama'),
+            {
+                pano: streetViewConfig.panoramaId,
+                pov: {
+                    heading: streetViewConfig.povHeading,
+                    pitch: streetViewConfig.povPitch
+                },
+                zoom: 0,
+                visible: true
+            });
+}
+```
+
+Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
+
+**Privately hosted**
+
+As mentioned above, the IndoorView feature only supports publicly available Google Street View imagery but [in the Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written instructions on how to get up and running with your privately hosted panorama images and the Street View Service for the JavaScript API. At the moment, this is not supported in the Google Maps SDKs for iOS and Android.
+
+When the photographer is done all the panorama file names should include a `panoramaId`, `zoom`, `tileX` and `tileY` property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
+
+```javascript
+function getCustomPanoramaTileUrl(panoId, zoom, tileX, tileY) {
+        return 'https://company/panorama/'
+            + panoId + '-' + zoom + '-' + tileX + '-' + tileY + '.jpg';
+}
+```
+
+### Under "Show advanced"
 
 - **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
 
@@ -158,7 +244,7 @@ Remember to save before clicking on another Location or changing the page, other
 * Edit floor names
 * Select a default floor under "Show advanced". 
 
-   The Building's default floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default floor is used when the Building panned to doesn’t have the floor index of the floor selector.
+   The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
 **Uploading CAD files for a floor**
 
@@ -260,12 +346,12 @@ The headers represented are:
 Time, User, Action, ObjectType, ObjectId and ObjectData
 
 - **Time:** Tells which user did the change (The email representing the user logged in to the system)
-- **Action:** Tells what happened: 
+- **Action:** Tells what happened:
   - If data was added, the 'Action' will be set to 'Created'
   - If data was changed, the 'Action' will be set to 'Changed'
   - If data was deleted, the 'Action' will be set to 'Deleted'
 - **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
-- **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is. 
+- **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
 If you want to see a history of that specific Location this ID can be used to filter by
 - **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 

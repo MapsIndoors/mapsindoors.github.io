@@ -3,7 +3,7 @@ title: Changelog
 published: true
 nav_weight: 1000
 permalink: /android/v3/changelog/
-date: 2019-09-30
+date: 2020-01-14
 ---
 
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
@@ -16,6 +16,74 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+## [3.3.1] - 2020-01-13
+
+### Fixed
+
+- Fix default floor selector crash
+- Fix icons loading failure for icons hosted in firebase storage.
+
+## [3.3.0] - 2019-12-20
+
+### Added
+
+- Support of searchable and activity bits for locations.
+- Default floor on buildings:
+  - `Building.getDefaultFloor()`: Returns a building's default `Floor`, if any has been set from the CMS.
+  - `Building.getDefaultFloorIndex()`: Returns a building's default **floor index**, if any has been set from the CMS. It will return `Floor.NO_FLOOR_INDEX` if the default floor is not available (`Building.getDefaultFloor() == null`).
+  - `Building.getFloorMap()`: Returns a list of floor indices and localized names for the given building.
+
+- Custom fields, exposed in the following classes: `Venue`, `Building`, `MPLocation`, `Category`, `POIType`. If available, they can be retrieved by using `getField( fieldName )`.
+
+- Status data. For detailed info, please refer to the [status bitfield description](https://mapsindoors.github.io/api/v1/#detailed-data-description) in our Integration API documentation.
+  - The following methods are available in `MPLocation`:
+    - `getStatus()`: Returns a status bitfield. For more info, please check the above link.
+    - `isActive()`: If an element **is not** active, it will **not** be given to the apps.
+    - `isSearchable()`: If an element **is not** searchable it might be shown on the map, but **is not** show up **in** searches.
+
+- Better Display Rule icon and label visibility control by using:
+  - `DisplayRule.getIconVisible()`
+  - `DisplayRule.getLabelVisible()`
+  - `LocationDisplayRule.Builder.setShowIcon( show )`
+  - `LocationDisplayRule.Builder.setShowLabel( show )`
+
+- New Floor selector:
+  - Use the new interface (`FloorSelectorInterface`) to create a custom floor selector.
+  - Turn on/off the floor selector (default or custom) using `MapControl.enableFloorSelector( enable )`.
+  - Query the its current status with `MapControl.isFloorSelectorEnabled()`.
+
+- New `displaySearchResults` overloads in `MapControl` :
+  - `displaySearchResults( inputLocations, animateCamera, cameraPadding, readyListener )`.
+  - `displaySearchResults( inputLocations, animateCamera, cameraPadding, showInfoWindow, googleMapCameraUpdate, durationMs, googleMapCancelableCallback, readyListener )`.
+
+- `SolutionInfo.hasLanguage( language )` (usage: `MapsIndoors.getSolutionInfo().hasLanguage( language )`): Check if the given language is available in the current dataset.
+
+- `MPMapsIndoorsLocationSource.updateLocations( updatedLocations )`: Used to signal an update on the given `MPLocation` objects if the case the default Location Data Source is extended.
+
+- New methods in the `Building` class:
+  - `getFloorCount()`: Current building total floor count.
+  - `getFloorMap()`:  A HashMap containing floor index (key), floor name (value) pairs. Note that the floor name is localized.
+
+- New shortcut methods in `MPLocation` to query for its geometry type: `isLocationOfTypePOI()`, `isLocationOfTypeRoom()`, etc.
+
+### Changed
+
+- `MapControl.setFloorSelector( floorSelector )`: It takes now a `FloorSelectorInterface` instead of a `IFloorSelector`.
+
+### Deprecated
+
+- `dbglog.useDebug()`: Use `dbglog.enableDeveloperMode( enable )` or `dbglog.enableDeveloperMode( enable, customTagPrefix )`.
+
+- `dbglog.isDebugMode()`: Use `dbglog.isDeveloperMode()`.
+
+### Removed
+
+- `MapControl.setFloorSelectorType( FloorSelectorType )`: The new interface only provides Building data for the current visible in the Map View (or the closest to the camera target).
+
+### Fixed
+
+- General bug fixing.
+- Stabilizing many behaviours of the SDK.
 
 ## [3.1.1] - 2019-05-27
 
@@ -34,7 +102,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
   - `MapControl.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
   - `MapControl.getMapStyle()`:  Gets the current map style set with `MapControl.setMapStyle( MapStyle )`
   - `MapControl.setMapStyle( MapStyle )`: Sets the given map style as the current one. It can be invoked before or after `MapControl.init()`
-- Hability to change a Display Rule visibility at runtime. Related methods:
+- Ability to change a Display Rule visibility at runtime. Related methods:
   - `MapControl.getDisplayRules()`: Returns the aggregated display rules
   - `MapControl.getDisplayRule( type )`: Returns the display rule with the given name, if any found
   - `LocationDisplayRule.setVisible( show )`: Sets this Location Display Rule to be visible (based on the zoom on/off values) or not (marker icon not shown)

@@ -9,6 +9,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 <!---
 ## [Unreleased]
+### Fixed
 ### Added
 ### Fixed
 ### Changed
@@ -17,8 +18,21 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 > Known Issues:
 1. If you are compiling with Xcode 11 with bitcode ON, you should either switch OFF bitcode or update to version 3.6.0 or later. With bitcode ON, previous versions of the SDK could crash. We are in dialog with Apple regarding the bitcode issue.
-1. [This issue](https://forums.developer.apple.com/thread/123003) makes our SDK crash if built with XCode 10 and below. We implement a workaround in 3.7.0. An immediate workaround for you is to build with XCode 11. 
 {: .mi-careful}
+
+## [3.7.1] 2019-12-05
+### Added
+- Added `MPMapControl` now has new functionality for temporarily changing the `MPDisplayRule` for individual `MPLocations`.  See `-[MPMapControl setDisplayRule:forLocation:]`, `-[MPMapControl resetDisplayRuleForLocation:]` and similar methods.
+### Changed
+- Multiple improvements to the search engine has been implemented.
+
+## [3.6.2] 2019-11-18
+### Fixed
+- Fixed a memory leak happening when switching solution / api-key.
+- Fixed `MPMapControl` is now more resilient against `GMSMapView.delegate` being changed.
+- [This issue](https://forums.developer.apple.com/thread/123003) made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version. 
+- Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.
+- Fixed Improved switching between different Solutions / API keys.
 
 ## [3.6.1] 2019-11-05
 ### Fixed
@@ -30,7 +44,6 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ## [3.6.0] 2019-10-10
 ### Fixed
-- Important: If you are compiling with Xcode 11 with bitcode ON, you should either switch OFF bitcode or update to this version. With bitcode ON, previous versions of the SDK could crash.
 - `MPDirectionsQuery.init(originPoint:MPPoint, destPoint:MPPoint)` could produce origins and destinations on level 0, resulting in incorrect route results.
 ### Changed
 - Compiled with Xcode 11 for iOS 13
@@ -136,3 +149,4 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Removed
 - Removed a number of deprecated methods that was introduced in V1
+
