@@ -4,6 +4,20 @@ date: 2019-10-07
 published: true
 ---
 
+## January 2020 - v3.8.0
+
+### What’s New:
+
+* **CAD file upload:** Ability to upload a CAD file (.dwg, .dxf) per floor in the CMS. You can find a guide in the documentation https://mapsindoors.github.io/cms/#buildings.
+* **Icon Manager:** Added the option to “skip” uploading icons larger than 128x64px.
+  * When deleting a used icon from the Icon Manager, it is also removed from the map.
+  
+### Bug Fixes:
+
+* **Icon Manager:** shows a more descriptive error message when an image fails.
+* **Locations:** Google Street View network now available inside The White House demo solution.
+* **Route Access:** Fixed issue where eternal doors showed up as elevator doors.
+
 ## January 2020 - v3.7.8
 
 ### Bug Fixes
