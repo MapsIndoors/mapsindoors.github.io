@@ -16,7 +16,7 @@ published: true
 
 * **Icon Manager:** Shows a more descriptive error message when an image fails.
 * **Locations:** Google Street View network now available inside The White House demo solution.
-* **Route Access:** Fixed issue where eternal doors showed up as elevator doors.
+* **Route Access:** Fixed issue where external doors showed up as elevator doors.
 
 ## January 2020 - v3.7.8
 
