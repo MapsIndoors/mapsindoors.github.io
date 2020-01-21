@@ -8,7 +8,7 @@ published: true
 
 ### What’s New:
 
-* **CAD file upload:** Ability to upload a CAD file (.dwg, .dxf) per floor in the CMS. You can find a guide in the documentation https://mapsindoors.github.io/cms/#buildings.
+* **CAD file upload:** Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find [a guide in the documentation](https://mapsindoors.github.io/cms/#buildings).
 * **Icon Manager:** Added the option to “skip” uploading icons larger than 128x64px.
   * When deleting a used icon from the Icon Manager, it is also removed from the map.
   
