@@ -4,6 +4,18 @@ date: 2019-10-07
 published: true
 ---
 
+## Jan 28th 2020 - v3.8.3
+
+### New
+
+* Display of the solution’s default language first and non default language alphabetically.
+
+### Bug Fixes
+
+* **Type visibility:** Sort location types alphabetically.
+* **User:** Newly created user had no roles and was treated as a legacy user by the CMS. 
+* **Route Access:** When 2 edges on different floors had the same coordinates, it was only possible to create a route element on one of them.
+
 ## January 2020 - v3.7.8
 
 ### Bug Fixes
