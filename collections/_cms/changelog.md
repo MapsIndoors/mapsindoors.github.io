@@ -14,7 +14,7 @@ published: true
 
 * **Type visibility:** Sort location types alphabetically.
 * **User:** Newly created user had no roles and was treated as a legacy user by the CMS. 
-* **Route Access:** When 2 edges on different floors had the same coordinates, it was only possible to create a route element on one of them.
+* **Route Access:** When two edges on different floors had the same coordinates, it was only possible to create a route element on one of them.
 
 ## January 2020 - v3.7.8
 
