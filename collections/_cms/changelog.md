@@ -8,7 +8,7 @@ published: true
 
 ### New
 
-* Display of the solution’s default language first and non default language alphabetically.
+* Display the Solution’s default language first, and then all non-default languages alphabetically.
 
 ### Bug Fixes
 
