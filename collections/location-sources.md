@@ -8,17 +8,21 @@ permalink: /location-sources-in-mapsindoors/
 Location Sources is a new feature introduced in version 3 of MapsIndoors SDK for Android and iOS. Basically we are making it possible to register your own custom location data source, adhering to a very simple interface.
 
 ## The Concepts
+
 The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
 
 ![Location Data Sources, Observers and their relation](assets/source_observer.png)
 
 ### Location Source
+
 Maintains an array of locations and notifies its Location Observers about location and status updates.
 
 ### Location Observer
+
 Can observe a Location Source for status changes and location updates.
 
 ## Creating your own Location Source
+
 See a [demo and tutorial of this feature for iOS](/ios/v3/locations/creating-own-location-sources). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:
 
 1. Implement a `LocationSource` that pulls data from your own or a 3rd party database, API or backend and convert this data into MapsIndoors `Location`'s
@@ -49,4 +53,5 @@ MapsIndoors.register([
 ```
 
 ## IOS Demo and Tutorial for Location Sources
+
 A full demo example and tutorial is available [here](/ios/v3/locations/creating-own-location-sources).

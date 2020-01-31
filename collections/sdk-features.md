@@ -31,6 +31,7 @@ The MapsIndoors SDK is a collection of software libraries, guides and documentat
 - Supports all modern phones, tablets and desktop PCs
 
 Supports the following desktop browsers:
+
 - Current version of Microsoft Edge (Windows)
 - Internet Explorer 11 (Windows)
 - Current and previous version of Firefox (Windows, macOS, Linux)
@@ -98,4 +99,4 @@ MapsIndoors SDK follows an internal release process. We generally publish releas
 
 ## Pre-releases
 
-MapsPeople may publicly distribute releases that are not intended for production use and publish information about this. In this case the release will be tagged with a pre-release tag like alpha, beta, rc1, alpha3 or like-wise. 
+MapsPeople may publicly distribute releases that are not intended for production use and publish information about this. In this case the release will be tagged with a pre-release tag like alpha, beta, rc1, alpha3 or like-wise.

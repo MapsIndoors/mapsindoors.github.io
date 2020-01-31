@@ -12,7 +12,7 @@ This is an example of displaying some details of a MapsIndoors location
 Start by creating a `UIViewController` class that conforms to the `GMSMapViewDelegate` protocol
 
 ```swift
-class LocationDetailsController: UIViewController, GMSMapViewDelegate { 
+class LocationDetailsController: UIViewController, GMSMapViewDelegate {
 ```
 
 Add a `GMSMapView` and a `MPMapControl` to the class

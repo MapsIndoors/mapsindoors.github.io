@@ -60,11 +60,12 @@ func renderRouteInstructions(_ route:MPRoute, for segment:MPRouteSegmentPath) {
 ```
 
 ## Helper methods
+
 We will need some helper methods. First create a method that can get us the previous step for later comparison.
 
 ```swift
 fileprivate func getPreviousStep(_ stepIndex: Int, _ legIndex: Int, _ route: MPRoute) -> MPRouteStep? {
-    
+
     var previousStep: MPRouteStep?
     if stepIndex-1 < 0 {
         if segment.legIndex-1 >= 0 {
@@ -85,15 +86,15 @@ fileprivate func getOutsideInsideInstructions(_ previousStep: MPRouteStep, _ cur
     var instructions:String?
     if let previousContext = previousStep.routeContext {
         if previousContext != currentStep.routeContext {
-            
+
             let ctx = RouteContext.init(rawValue: currentStep.routeContext ?? "")
-            
+
             if ctx == .insideBuilding {
                 instructions = "Walk inside"
             } else if ctx == .outsideOnVenue {
                 instructions = "Walk outside"
             }
-            
+
         }
     }
     return instructions
@@ -106,10 +107,10 @@ Create a method `getElevationInstructions` that can get us instructions for taki
 fileprivate func getElevationInstructions(_ currentStep: MPRouteStep) -> String? {
     var instructions:String?
     if currentStep.start_location?.zLevel?.intValue != currentStep.end_location?.zLevel?.intValue {
-        
+
         let floor = currentStep.end_location?.floor_name ?? ""
         let wayType = WayType.init(rawValue: currentStep.highway ?? "") ?? .footway
-        
+
         switch (wayType) {
             case .elevator, .escalator, .stairs, .travellator:
                 instructions = "Take the \(wayType.rawValue) to floor \(floor)"
@@ -148,6 +149,7 @@ Obviously it is up to your application to present some instructions to the end u
 ```swift
 func updateViews() {
 ```
+
 Initialise an array of textual instructions and check for existence of a current leg.
 
 ```swift
@@ -201,9 +203,9 @@ extension String {
 }
 ```
 
-[See the sample in RouteSegmentView.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/RouteSegmentView.swift)
+[See the sample in RouteSegmentView.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/RouteSegmentView.swift)
 
-## Create the controller that displays generated textual instructions segment by segment.
+## Create the controller that displays generated textual instructions segment by segment
 
 We use a collection view to do this but you can of course use whatever view that fits your use case best.
 
@@ -216,6 +218,7 @@ protocol RouteSegmentsControllerDelegate {
 ```
 
 ## The Route Segments Controller
+
 Create a controller class called `RouteSegmentsController` that inherits from `UIViewController`.
 
 ```swift
@@ -223,6 +226,7 @@ class RouteSegmentsController : UIViewController {
 ```
 
 Add some properties to the controller
+
 * `startingScrollingOffset` We will do a side-ways scroll in the collection, so we will add a private point property to keep track of that
 * `tableView` the actual table view property.
 * `delegate` the delegate property.
@@ -338,9 +342,9 @@ extension RouteSegmentsController : UITableViewDelegate {
     }
 ```
 
-[See the sample in RouteSegmentsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/RouteSegmentsController.swift)
+[See the sample in RouteSegmentsController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/RouteSegmentsController.swift)
 
-## Create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions.
+## Create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions
 
 Start by creating a controller class `AdvancedDirectionsController` that inherits from `UIViewController`
 
@@ -418,21 +422,21 @@ Create a `setupConstraints` method that sets up all the layout constraints. In y
 
 ```swift
 fileprivate func setupConstraints() {
-    
+
     map.translatesAutoresizingMaskIntoConstraints = false
     map.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
     map.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-    
+
     searchButton.translatesAutoresizingMaskIntoConstraints = false
     searchButton.heightAnchor.constraint(equalToConstant: 68).isActive = true
     searchButton.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
     searchButton.topAnchor.constraint(equalTo: map.bottomAnchor).isActive = true
-    
+
     routeVC.view.translatesAutoresizingMaskIntoConstraints = false
     routeVC.view.widthAnchor.constraint(equalTo:view.widthAnchor).isActive = true
     routeVC.view.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
     routeVC.view.topAnchor.constraint(equalTo:searchButton.bottomAnchor).isActive = true
-    
+
     heightConstraintForRouteView = routeVC.view.heightAnchor.constraint(equalToConstant:0)
     heightConstraintForRouteView.isActive = true
 }
@@ -469,7 +473,7 @@ fileprivate func setupRenderer() {
     self.renderer.fitBounds = true
     self.renderer.solidColor = .clear
     self.renderer.map = self.map
-    
+
     self.stepWiseRenderer = MPDirectionsRenderer.init()
     self.stepWiseRenderer.fitBounds = false
     self.stepWiseRenderer.map = self.map
@@ -563,4 +567,4 @@ extension AdvancedDirectionsController : MySearchControllerDelegate {
 }
 ```
 
-[See the sample in AdvancedDirectionsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/AdvancedDirectionsController.swift)
+[See the sample in AdvancedDirectionsController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced> Directions/AdvancedDirectionsController.swift)

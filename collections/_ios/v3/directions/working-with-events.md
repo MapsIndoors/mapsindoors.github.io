@@ -23,6 +23,6 @@ Then implementing the methods below :
 
 ```swift
 func onMapDataReady(){
-    
+
 }
 ```

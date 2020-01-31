@@ -36,7 +36,7 @@ If you haven’t already, install CocoaPods:
 * Create a file named Podfile in your project directory. This file defines your project's dependencies.
 * Edit the Podfile and add your dependencies. Here is an example:
 
-```
+```swift
 source 'https://github.com/CocoaPods/Specs.git'
 target 'YOUR_APPLICATION_TARGET_NAME_HERE' do
   pod 'MapsIndoors' '{% raw %}{{%product-version%}}{% endraw %}'
@@ -52,15 +52,17 @@ end
 Add your credentials to your `AppDelegate.swift` as follows:
 
 Add the following import statements:
-```
+
+```swift
 import GoogleMaps
 import MapsIndoors
 ```
+
 Add the following to your `application(_:didFinishLaunchingWithOptions:)` method:
 
-```
+```swift
 GMSServices.provideAPIKey(      "YOUR_GOOGLE_API_KEY")
-MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY", 
+MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY",
             googleAPIKey:       "YOUR_GOOGLE_API_KEY")
 ```
 
@@ -73,7 +75,7 @@ Replace:
 
 Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations. Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
 
-```
+```swift
 // Place the map above the demo-building
 let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
 // Initialise the Google map
@@ -90,16 +92,17 @@ If needed, it is possible to bundle MapsIndoors content to make your app work be
 
 In your app targets build phases, add a "Run Script" build phase containing the following command:
 
-```
-${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
+```bash
+{SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
 ```
 
 Replace:
 
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. 
+* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
 * `en` with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely
 
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.
 
 ## Work with MapsIndoors SDK behind a Firewall
+
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

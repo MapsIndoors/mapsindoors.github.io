@@ -123,7 +123,7 @@ In your */res/values* folder, create a file named `mapsindoors_api.xml` with the
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
+ <string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
 </resources>
 ```
 
@@ -141,4 +141,5 @@ preBuild.dependsOn fetchData
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.
 
 ## Work with MapsIndoors SDK behind a Firewall
+
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

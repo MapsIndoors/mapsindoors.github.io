@@ -80,7 +80,7 @@ func numberOfSections(in tableView: UITableView) -> Int {
 }
 ```
 
-Implement the `numberOfRowsInSection` method, return the length of your locations array. 
+Implement the `numberOfRowsInSection` method, return the length of your locations array.
 
 ```swift
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

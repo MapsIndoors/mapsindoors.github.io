@@ -18,7 +18,7 @@ ${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDO
 
 Replace:
 
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. 
+* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
 * `en` with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely
 
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.

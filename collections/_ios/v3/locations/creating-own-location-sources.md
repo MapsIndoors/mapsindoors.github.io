@@ -55,9 +55,9 @@ Create a method called `createPeople` that takes a type string. Iterate numberOf
 ```swift
 func createPeople(_ type: String) {
     for locId in 0 ..< numberOfPeople {
-        
+
         let locationUpdate = MPLocationUpdate.init(id: locId, from: self)
-        
+
         locationUpdate.type = type
         locationUpdate.addPropertyValue("John Doe #\(locId)", forKey: MPLocationFieldName)
         locationUpdate.floor = 1
@@ -66,7 +66,7 @@ func createPeople(_ type: String) {
         locationDirs.append(Double.random(in: 0 ..< 360))
         locationUpdate.position = p.getCoordinate()
         locationUpdates.append(locationUpdate)
-        
+
     }
 }
 ```
@@ -113,11 +113,11 @@ Create an initialiser that takes a type string. Call `createPeople` and `startMo
 
 ```swift
 convenience init(type:String) {
-    
+
     self.init()
-    
+
     createPeople(type)
-    
+
     startMockingPositions()
 }
 ```
@@ -164,9 +164,9 @@ func sourceId() -> Int32 {
 }
 ```
 
-[See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location Sources/PeopleLocationSource.swift)
+[See the sample in PeopleLocationSource.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/PeopleLocationSource.swift)
 
-## Create another location source that mocks the availability of meeting rooms or work desks.
+## Create another location source that mocks the availability of meeting rooms or work desks
 
 This location source rely on MapsIndoors data, so we will consume the locations of `MPMapsIndoorsLocationSource` and relay them as this source's own locations. Thus we need to observe the `MPMapsIndoorsLocationSource` and act as a LocationSource at the same time.
 
@@ -177,6 +177,7 @@ class RoomAvailabilitySource : NSObject, MPLocationSource, MPLocationsObserver {
 ```
 
 Add some member variables to `RoomAvailabilitySource`.
+
 * `observers`: The observer objects that we will notify about changes
 * `locationUpdates`: A dictionary of reusable `MPLocationUpdate` models
 * `miMapsIndoorsSource`: The MapsIndoors source to observe
@@ -204,7 +205,7 @@ func updateIconForLocation(location:MPLocation) -> MPLocationUpdate? {
         locationUpdates[location.locationId!] = MPLocationUpdate.init(location: location)
     }
     let locUpdate = locationUpdates[location.locationId!]
-    
+
     if (Int.random(in: 0...1) == 0) {
         locUpdate?.icon = UIImage(named: "closed")!
     }
@@ -216,15 +217,15 @@ Create a method `updateLocations` that runs through a list of locations add crea
 
 ```swift
 func updateLocations(locations:[MPLocation]) -> [MPLocation] {
-    
+
     var updatedLocations = [MPLocation]()
-    
+
     for location in locations {
         if let locUpdate = updateIconForLocation(location: location) {
             updatedLocations.append(locUpdate.location())
         }
     }
-    
+
     return updatedLocations
 }
 ```
@@ -302,47 +303,58 @@ func onStatusChange(_ status: MPLocationSourceStatus, source: MPLocationSource) 
 }
 ```
 
-[See the sample in RoomAvailabilitySource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location Sources/RoomAvailabilitySource.swift)
+[See the sample in RoomAvailabilitySource.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/RoomAvailabilitySource.swift)
 
-## Create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map.
+## Create a view controller displaying a map that shows the mocked people locations and the mocked room availability on top of a MapsIndoors map
 
 Create a class `LocationSourcesController` that inherits from `UIViewController`.
-```
+
+```swift
 class LocationSourcesController: UIViewController {
 ```
+
 Add a `GMSMapView` and a `MPMapControl` to the class
-```
+
+```swift
 var map: GMSMapView? = nil
 var mapControl: MPMapControl? = nil
 
 override func viewDidLoad() {
-    
+
     super.viewDidLoad()
 ```
+
 Inside `viewDidLoad`, register the sources `PeopleLocationSource` and `RoomAvailabilitySource`
-```
+
+```swift
 MapsIndoors.register([
     PeopleLocationSource.init(type: "People"),
     RoomAvailabilitySource.init()
 ])
 ```
+
 Inside `viewDidLoad`, setup the map so that it shows the demo venue and initialise mapControl
-```
+
+```swift
 self.map = GMSMapView.init(frame: CGRect.zero)
 self.view = self.map
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
 self.mapControl = MPMapControl.init(map: self.map!)
 ```
+
 Inside `viewDidLoad`, setup a display setting that refers to the type of locations that your people location source operates with.
-```
+
+```swift
 let dr = MPLocationDisplayRule.init(name: "People", andIcon: UIImage.init(named: "user.png"), andZoomLevelOn: 17)!
 self.mapControl?.add(dr)
 ```
+
 Optionally, when you leave this controller. Remove the custom Location Source by adding back the `MPMapsIndoorsLocationSource` as the only one.
-```
+
+```swift
 override func viewDidDisappear(_ animated: Bool) {
     MapsIndoors.register([MPMapsIndoorsLocationSource()])
 }
 ```
 
-[See the sample in LocationSourcesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location Sources/LocationSourcesController.swift)
+[See the sample in LocationSourcesController.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location> Sources/LocationSourcesController.swift)

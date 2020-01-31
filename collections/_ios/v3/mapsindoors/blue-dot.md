@@ -54,11 +54,11 @@ private func updatePosition() {
         latestPositionResult?.headingAvailable = true
         heading = (heading + 10).truncatingRemainder(dividingBy: 360)
         latestPositionResult?.setHeadingDegrees(heading)
-        
+
         if let delegate = self.delegate, let latestPositionResult = self.latestPositionResult {
             delegate.onPositionUpdate(latestPositionResult)
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.updatePosition()
         }
@@ -117,7 +117,7 @@ func isRunning() -> Bool {
 }
 ```
 
-[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/MyPositionProvider.swift)
+[See the sample in MyPositionProvider.swift](<https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show> My Location/MyPositionProvider.swift)
 
 ## Create a view controller displaying a map that shows the user's "mocked" location
 
@@ -134,7 +134,7 @@ var map: GMSMapView? = nil
 var mapControl: MPMapControl? = nil
 
 override func viewDidLoad() {
-    
+
     super.viewDidLoad()
 ```
 

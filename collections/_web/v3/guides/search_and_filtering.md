@@ -8,11 +8,13 @@ date: 2019-11-25
 ---
 
 ## Search and filtering
+
 <script async src="https://jsfiddle.net/mapspeople/k2jynm47/embed/html,result/"></script>
 
 ### Search
-The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for POIs. 
-It will return a Promise that gets resolved when the query has executed. 
+
+The `mapsindoors.LocationsService` offers the `getLocations` function. This function can be used for searching for POIs.
+It will return a Promise that gets resolved when the query has executed.
 
 See [LocationsService.getLocations](https://app.mapsindoors.com/mapsindoors/js/sdk/latest/docs/LocationsService.html#getLocations) for more information.
 

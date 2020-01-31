@@ -46,7 +46,7 @@ const googleMap = new google.maps.Map(document.getElementById('map'), {
 ```
 
 First we need a DOM element for the map. `document.getElementById('googleMap')`
-Next we will configure the map by setting the center and a zoom level. The `maxZoom` parameter is set to disable the map from zooming further in that level 21.  
+Next we will configure the map by setting the center and a zoom level. The `maxZoom` parameter is set to disable the map from zooming further in that level 21.
 
 ## Adding MapsIndoors
 
@@ -64,7 +64,7 @@ Now we create a new instance of the MapsIndoors class and assign the Google Map 
 const floorSelector = document.createElement('div');
 new mapsindoors.FloorSelector(floorSelector, mapsIndoors);
 googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);
-``` 
+```
 
 A FloorSelector is created by calling the `new mapsindoors.FloorSelector(floorSelector, mapsIndoors);` passing in a DOM element and an instance of MapsIndoors.
 This `googleMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(floorSelector);` adds the floor selector to the maps upper right corner as a map control.

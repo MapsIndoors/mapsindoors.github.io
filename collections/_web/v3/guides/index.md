@@ -38,7 +38,7 @@ mapsindoors.SolutionService.getSolution().then(function(solution) {
 });
 ```
 
-Two of these types could be of name “Parking” and “Office”, which indicates that these types are used for parking lots and offices respectively. In most cases, you might want to display parking icons on zoom-levels above office icons. Based on this intention you could set these rules:
+Two of these types could be of name "Parking” and "Office”, which indicates that these types are used for parking lots and offices respectively. In most cases, you might want to display parking icons on zoom-levels above office icons. Based on this intention you could set these rules:
 
 ```javascript
 mapsIndoors.setDisplayRule("parking", { from:16 }); // Using default type icon
@@ -74,9 +74,9 @@ As demonstrated above, a polygon's outer ring/path as well as holes are arranged
 
 ### Setting the floor
 
-Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the “nearest” floor will be activated. E.g. providing `setFloor(4)` on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2). 
+Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the "nearest” floor will be activated. E.g. providing `setFloor(4)` on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2).
 
-Although floors may have names (“G” for 0, “M1” for 1, “M2” for 2 etc.) you need to set the floor using the index-value.
+Although floors may have names ("G” for 0, "M1” for 1, "M2” for 2 etc.) you need to set the floor using the index-value.
 
 ```javascript
 myMapsIndoors.setFloor(4)
@@ -101,9 +101,10 @@ var directionsRenderer = new mapsindoors.DirectionsRenderer(
 }
 );
 ```
+
 ### Setting the Options of the Directions Renderer
 
-Customizing style of route polylines is done using the `setOptions` method.  
+Customizing style of route polylines is done using the `setOptions` method.
 
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer();
@@ -215,11 +216,11 @@ locations.getLocations().then(function(data) {
 
 ## Map Styles
 
-A MapsIndoors map may have multiple styles/layouts. This is how a mapStyle object is structured. 
+A MapsIndoors map may have multiple styles/layouts. This is how a mapStyle object is structured.
 
 ```javascript
 let mapStyle = {
-    folder: 'styleFolder', 
+    folder: 'styleFolder',
     displayName: 'styleDisplayName' // Optional when created
 }
 ```

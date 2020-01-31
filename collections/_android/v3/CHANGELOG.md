@@ -3,7 +3,7 @@ title: Changelog
 published: true
 nav_weight: 1000
 permalink: /android/v3/changelog/
-date: 2020-01-14
+date: 2020-01-29
 ---
 
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
@@ -16,6 +16,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+
+## [3.3.2] - 2020-01-29
+
+### Fixed
+
+- Fix "Software rendering doesn't support hardware bitmaps" crash.
+
 ## [3.3.1] - 2020-01-13
 
 ### Fixed
@@ -129,7 +136,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 - Better handling of broken custom/advanced icon links.
 
-## [2.0.3] - 2018-06-??
+## [2.0.3] - 2018-06-
 
 ### Added
 

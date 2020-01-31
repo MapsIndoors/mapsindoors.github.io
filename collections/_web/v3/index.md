@@ -79,16 +79,19 @@ google.maps.event.addDomListener(window, 'load', init);
 A [showcase app is available on GitHub](https://github.com/MapsIndoors/MapsIndoorsWeb), free to use and adapt to your needs.
 
 ### Try the Showcase Web App right away
+
 Before you begin, make sure your development environment includes Node.js, npm package manager and [Angular CLI globally](https://angular.io/cli#installing-angular-cli).
 
 Using a terminal/shell in the project folder, run the following commands:
 
 * Run `npm install` to install all dependencies.
 
-* Run `npm start` for a dev server and then enter a Solution ID in the URL, e.g. http://localhost:4200/demo. The app will automatically reload if you change any of the source files.
+* Run `npm start` for a dev server and then enter a Solution ID in the URL, e.g. <http://localhost:4200/demo.> The app will automatically reload if you change any of the source files.
 
 ### Live Demo
+
 Check out a running version [here](https://demo.mapsindoors.com/demo).
 
 ## Work with MapsIndoors SDK behind a Firewall
+
 If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

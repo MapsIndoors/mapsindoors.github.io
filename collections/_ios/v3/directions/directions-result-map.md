@@ -74,7 +74,7 @@ func floorDidChange(_ floor: NSNumber) {
 }
 ```
 
-[See the sample in ShowRouteOnMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show Route/ShowRouteOnMapController.swift)
+[See the sample in ShowRouteOnMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show%20Route/ShowRouteOnMapController.swift)
 
 ## Create the controller that requests the route, and list the route in a table
 
@@ -143,14 +143,14 @@ Override `tableView:cellForRowAt` to return leg index and step index if applicab
 ```swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell.init()
-    
+
     if indexPath.row > 0 {
         cell.textLabel?.text = "Show leg \(indexPath.section), step \(indexPath.row - 1)"
     } else {
         cell.textLabel?.text = "Show leg \(indexPath.section), all steps"
     }
     cell.accessibilityIdentifier = cell.textLabel?.text
-    
+
     return cell
 }
 ```

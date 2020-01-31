@@ -4,8 +4,6 @@ published: true
 date: 2019-09-30
 ---
 
-# Changelog
-
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!--
@@ -39,9 +37,10 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 - Made `LocationDisplayRule.setZoomLevelOn()` and `LocationDisplayRule.setZoomLevelOff()` package private.
 
 - Proguard rules:
-```
-    -keep interface com.mapsindoors.mapssdk.** { *; }
-    -keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \<fields>; }
+
+```java
+-keep interface com.mapsindoors.mapssdk.** { *; }
+-keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \<fields>; }
 ```
 
 ### Deprecated

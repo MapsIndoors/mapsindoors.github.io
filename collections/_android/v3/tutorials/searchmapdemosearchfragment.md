@@ -17,6 +17,7 @@ public class SearchFragment extends Fragment {
 ```
 
 Setup member variables for `SearchFragment`:
+
 * The selection listener
 * A List View to show the search result
 * Some view components

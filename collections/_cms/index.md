@@ -43,25 +43,35 @@ There are a number of key elements:
 1. **Venue:** This is the name of your Venue. It’s possible to have several Venues. Also, the arrow above the Venue can be clicked to hide the side panel
 1. **CMS Guide:** High level guide on various areas to make changes
 1. **Venue and Buildings & Routes:**
-  - Change Building names, enter aliases
-  - Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+
+* Change Building names, enter aliases
+* Routes will display on the map, along with the entry point to indoor navigation. There is also the ability to close part of the route network
+
 1. **General Settings:**
-  - **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
-  - **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
-  - **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
+
+* **Location Types:** List of Locations with their icon - ability to edit. Add Location Types here
+* **Categories:** List of categories - ability to edit. Add new categories here. These will populate in an iOS or Android app
+* **Location Type templates:** Ability to add information to a specific Location Type, for example, business hours, email, phone number
+
 1. **App settings:**
-  - **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
-  - **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+
+* **App configuration:** App title, MapsIndoors API key, list of categories - editing of the order can be done here
+* **Type visibility:** Set the zoom level of when Location icon will appear. Can also "hide” icon via the eye icon
+
 1. **Administration:**
-  - **Users:** Add, edit users for the CMS
+
+* **Users:** Add, edit users for the CMS
+
 1. **Current User**
 1. **List:** A list of Locations in the currently selected Venue, can edit from this list
 1. **Zoom In/Zoom Out**
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Filter:**
-  - **Type:** dropdown to select a specific Location Type to only see on the map
-  - **Category:** dropdown to select a specific Category to only see on the map
-  - **Search:** search for Locations
+
+* **Type:** dropdown to select a specific Location Type to only see on the map
+* **Category:** dropdown to select a specific Category to only see on the map
+* **Search:** search for Locations
+
 1. **Floor selector:** The floor selector shows the floors available, click on the desired floor to switch floor
 1. **POI:** click on this icon to add a POI anywhere on the map
 
@@ -113,12 +123,13 @@ Take a photo of your Location and upload it here. Photos on Locations makes it e
 To get started using the IndoorView feature for your Locations, please make sure that the _Google Street View panorama images_ are publicly available for your building by looking at [Google Maps](https://www.google.com/maps). If no imagery is available, please [contact a certified Street View Photographer](https://www.google.com/streetview/contacts-tools/).
 
 1. Click "Set Street View image”
-  - This will open a Google Street View window showing the image closest to this Location. Please note that the MapsIndoors CMS looks for panorama images within a certain radius from the Location's position, so make sure to have panorama images published in that area.
+
+   * This will open a Google Street View window showing the image closest to this Location. Please note that the MapsIndoors CMS looks for panorama images within a certain radius from the Location's position, so make sure to have panorama images published in that area.
+
 1. Navigate Street View and find an image and viewing angle that is suitable
 1. Click "Set image”
 
-
-**MapsIndoors support matrix**
+#### MapsIndoors support matrix
 
 | MapsIndoors | Support for IndoorView | Private hosted panorama images|
 | - | - | - |
@@ -130,7 +141,9 @@ To get started using the IndoorView feature for your Locations, please make sure
 |Android SDK|No|No|
 |iOS SDK|No|No|
 
-**Developing your own app**
+IndoorView only supports **publicly** available Google Street View imagery. If you would like to know more about **privately** hosted panorama images, please see [Googles Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView).
+
+##### Developing your own app
 
 When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a `streetViewConfig` property. Please see below for an example.
 
@@ -174,32 +187,19 @@ function initStreetView(streetViewConfig) {
 
 Please see the official [Google Street View Service documentation](https://developers.google.com/maps/documentation/javascript/streetview) for more information.
 
-**Privately hosted**
-
-As mentioned above, the IndoorView feature only supports publicly available Google Street View imagery but [in the Custom Street View documentation](https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView) you will find some well-written instructions on how to get up and running with your privately hosted panorama images and the Street View Service for the JavaScript API. At the moment, this is not supported in the Google Maps SDKs for iOS and Android.
-
-When the photographer is done all the panorama file names should include a `panoramaId`, `zoom`, `tileX` and `tileY` property, and the panorama can be called from the server like below. Please see the [sample link](https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple) for much more information on this.
-
-```javascript
-function getCustomPanoramaTileUrl(panoId, zoom, tileX, tileY) {
-        return 'https://company/panorama/'
-            + panoId + '-' + zoom + '-' + tileX + '-' + tileY + '.jpg';
-}
-```
-
 ### Under "Show advanced"
 
-- **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
+* **Alias:** Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.
 
-- **Venue Details:** Change Building and or floor.
+* **Venue Details:** Change Building and or floor.
 
-- **Room Identifier:** This can be edited.
+* **Room Identifier:** This can be edited.
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown.
+* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
-- **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
+* **Location History:** Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.
 
-**Save changes**
+* **Save changes**
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press "Save”-button in the top of the Location edit form.
 
@@ -214,11 +214,11 @@ To view a list of all Locations in a certain Venue, select ‘List View”.
 
 When selecting one a more Locations using the checkboxes, 2 options will appear: Edit Locations or Delete Locations.
 
-- **Change type:** Opens a drop down menu to choose new Location Type
+* **Change type:** Opens a drop down menu to choose new Location Type
 
-- **Location:** Allows you to change the floor of the Locations
+* **Location:** Allows you to change the floor of the Locations
 
-- **Active (display and searchable):** If required, select a time period during which the Location will be visible, leave empty if it should always be shown
+* **"Active to and from":** If required, select a time period during which the Location will be active. "Active" in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed
 
 Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click "Save”.
 
@@ -229,7 +229,7 @@ Remember to save before clicking on another Location or changing the page, other
 
 ## Buildings
 
-**Adding a building**
+### Adding a building
 
 * Click on the "Add building" button at the top-right of the page and a popup window should appear.
 * Type a building name, search for the building address by typing in the search field or panning the map.
@@ -237,16 +237,16 @@ Remember to save before clicking on another Location or changing the page, other
 * Click "Add" and the popup window should close.
 * The building should now appear in the list.
 
-**Editing a building**
+### Editing a building
 
-* Click on the pencil icon to the left of the Building name. A new menu will appear 
-* Edit Building name in the available languages 
+* Click on the pencil icon to the left of the Building name. A new menu will appear
+* Edit Building name in the available languages
 * Edit floor names
-* Select a default floor under "Show advanced". 
+* Select a default floor under "Show advanced".
 
    The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
-**Uploading CAD files for a floor**
+### Uploading CAD files for a floor
 
 * Click on the pencil icon to the left of the Building name and a sidebar should appear.
 * Click on "Add floor" or "Update floor" and a popup window should appear.
@@ -264,12 +264,14 @@ Remember to save before clicking on another Location or changing the page, other
 The routes tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.
 
 To create a parking lot:
+
 * Click on "+ P" in the top right corner. If it is not enabled, zoom in higher than 17.
 * The mouse cursor will change to a "+". Click on the map where you want to add the parking lot and a popup window will appear.
 * Select a type: Car or Bike.
 * Enter a name and click "Save"
 
 To restrict access to a path:
+
 * Click on the path and a popup window will appear.
 * Choose between "Open for all", "Open for specific app user roles", "Closed for all".
 * When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.
@@ -281,13 +283,13 @@ To restrict access to a path:
 
 This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.
 
-**View Settings**
+### View Settings
 
 The *View settings* can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.
 
 ![View Settings]({{ site.url }}/assets/cms/location-types/view-settings.png)
 
-**Location Type templates**
+#### Location Type templates
 
 You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.
 
@@ -301,12 +303,13 @@ Ability to add new categories to the list. Click on New Category, add name, clic
 
 ## App configuration
 
-**App User Roles**
+### App User Roles
+
 * Click on "+ Add App User Roles" and a popup window will appear.
 * Enter the role name in all the languages. It's mandatory.
 * Click "Save" and the entered name should appear in the table.
 
-**App Categories**
+### App Categories
 
 Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.
 
@@ -345,15 +348,15 @@ The log will be in CSV format, which can be opened by a spreadsheet program eg. 
 The headers represented are:
 Time, User, Action, ObjectType, ObjectId and ObjectData
 
-- **Time:** Tells which user did the change (The email representing the user logged in to the system)
-- **Action:** Tells what happened:
-  - If data was added, the 'Action' will be set to 'Created'
-  - If data was changed, the 'Action' will be set to 'Changed'
-  - If data was deleted, the 'Action' will be set to 'Deleted'
-- **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
-- **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
+* **Time:** Tells which user did the change (The email representing the user logged in to the system)
+* **Action:** Tells what happened:
+  * If data was added, the 'Action' will be set to 'Created'
+  * If data was changed, the 'Action' will be set to 'Changed'
+  * If data was deleted, the 'Action' will be set to 'Deleted'
+* **ObjectType:** Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )
+* **ObjectId:** Is a unique ID that represents the given data - Building, Location or whatever it is.
 If you want to see a history of that specific Location this ID can be used to filter by
-- **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
+* **ObjectData:** Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.
 
 Examples of use cases could be:
 
@@ -397,27 +400,27 @@ SVGs should be uploaded with a `width` and `height` that you want the SVG to be 
 
 We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it's rejected. All child elements can be nested as supported by the SVG format.
 
-- `<svg>` element
-- `viewbox` attribute
-- `<path>` child element
-- `<rect>` child element
-- `<title>` child element
-- `<desc>` child element
-- `<circle>` child element
-- `<defs>` child element
-- `<ellipse>` child element
-- `<line>` child element
-- `<pattern>` child element
-- `<polygon>` child element
-- `<polyline>` child element
-- `<text>` child element
-- `<stop>` child element
-- `<use>` child element
-- `<linearGradient>` child element
-- `<radialGradient>` child element
-- `<symbol>` child element
-- `<style>` child element
-- `<tspan>` child element
+* `<svg>` element
+* `viewbox` attribute
+* `<path>` child element
+* `<rect>` child element
+* `<title>` child element
+* `<desc>` child element
+* `<circle>` child element
+* `<defs>` child element
+* `<ellipse>` child element
+* `<line>` child element
+* `<pattern>` child element
+* `<polygon>` child element
+* `<polyline>` child element
+* `<text>` child element
+* `<stop>` child element
+* `<use>` child element
+* `<linearGradient>` child element
+* `<radialGradient>` child element
+* `<symbol>` child element
+* `<style>` child element
+* `<tspan>` child element
 
 When you try to upload an SVG containing one or more of these elements and/or attributes, the upload is cancelled and you will see which files contain the unsupported elements.
 

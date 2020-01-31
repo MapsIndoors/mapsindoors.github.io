@@ -15,7 +15,7 @@ let polygon = polygons.first
 let path = polygon.path
 let holes = polygon.holes
 for coordinate in path {
-    let lat = coordinate[1] 
+    let lat = coordinate[1]
     let lng = coordinate[0]
 }
 ```

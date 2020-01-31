@@ -50,7 +50,7 @@ Then we need to add some variables:
 * `status`: holds the status of the location data source.
 * `random`: Used to generate some random values in the data creation and editing.
 * `mDataUpdateTimer`: Timer that we will need to plan some recurrent updates.
-* `iconCurrentIndex`: An index for icons so we can update the locations with 
+* `iconCurrentIndex`: An index for icons so we can update the locations with
 the same icon each time.
 
 ```java
