@@ -1,8 +1,84 @@
 ---
 title: Changelog
-date: 2019-03-10
+date: 2019-04-21
 published: true
 ---
+
+## Apr 21st 2020 - v3.20.0
+
+### What’s new
+
+* Added Deployment CMS features.
+
+## Apr 15th 2020 - v3.19.6
+
+### Bugfix
+
+* **Menu:** Navigating the menu would reset the venue to the first selected venue.
+* **Location Types:** When creating a new type, the zoom-to level was not set to 22 if the solution supported it. 
+
+## Apr 14th 2020 - v3.19.4
+
+### Bugfix
+
+* **Route Access:** Opening/locking an edge did not update it until a page refresh.
+* CMS would not load in MS Edge browser.
+* CMS login issues in Internet Explorer 11.
+
+## Apr 1st 2020 - v3.19.1
+
+### Bugfix
+
+* **Locations Table:** Locations were not deselected after saving bulk changes.
+* **Locations Table:** Last character on buttons wasn’t aligned correctly.
+
+## Mar 26th 2020 - v3.19.0
+
+### What's new
+
+* **Locations Table:** Bulk editing and removal of categories and aliases.
+* **Locations Table:** Validation of alias input to ensure that no duplicate aliases are added
+
+### Bugfix
+
+* **Location:** An error occurred when adding aliases to a new location.
+
+## Mar 24th 2020 - v3.18.4
+
+### Bugfix
+
+* **Venue:** Floornames should not be editable.
+
+## Mar 20th 2020 - v3.18.2
+
+### Bugfix
+
+* Fetch the app-config after the user has logged in to avoid error.
+
+## Mar 17th 2020 - v3.18.0
+
+### What's new
+
+* **Users:** Implement user roles guards and improve user roles in general.
+
+## Mar 13th 2020 - v3.17.6
+
+### Bugfix
+
+* **Locations:** Issue when bulk editing outdoor locations.
+* **Locations:** Issue when types are undefined.
+
+## Mar 12th 2020 - v3.17.4
+
+### Bugfix
+
+* **Location Types:** Issue with uploaded icons display size
+
+## Mar 10th 2020 - v3.17.0
+
+### What's new
+
+* Remote error logging
 
 ## Mar 4th 2020 - v3.16.0
 
