@@ -41,7 +41,7 @@ published: true
 
 ### Bugfix
 
-* **Location:** An error occurred when adding aliases to a new location.
+* **Location:** An error occurred when adding Aliases to a new Location.
 
 ## Mar 24th 2020 - v3.18.4
 
