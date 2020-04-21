@@ -36,7 +36,7 @@ published: true
 
 ### What's new
 
-* **Locations Table:** Bulk editing and removal of categories and aliases.
+* **Locations Table:** Bulk editing and removal of Categories and Aliases.
 * **Locations Table:** Validation of alias input to ensure that no duplicate aliases are added
 
 ### Bugfix
