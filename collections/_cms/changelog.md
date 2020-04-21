@@ -72,7 +72,7 @@ published: true
 
 ### Bugfix
 
-* **Location Types:** Issue with uploaded icons display size
+* **Location Types:** Issue with uploaded icons' display sizes
 
 ## Mar 10th 2020 - v3.17.0
 
