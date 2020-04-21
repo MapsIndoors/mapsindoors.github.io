@@ -53,7 +53,7 @@ published: true
 
 ### Bugfix
 
-* Fetch the app-config after the user has logged in to avoid error.
+* Fetch the app config after the user has logged in to avoid error.
 
 ## Mar 17th 2020 - v3.18.0
 
