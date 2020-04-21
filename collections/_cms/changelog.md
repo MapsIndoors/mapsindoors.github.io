@@ -66,7 +66,7 @@ published: true
 ### Bugfix
 
 * **Locations:** Issue when bulk editing outdoor Locations.
-* **Locations:** Issue when types are undefined.
+* **Locations:** Issue when Location Types are undefined.
 
 ## Mar 12th 2020 - v3.17.4
 
