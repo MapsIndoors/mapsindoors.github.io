@@ -15,7 +15,7 @@ published: true
 ### Bugfix
 
 * **Menu:** Navigating the menu would reset the venue to the first selected venue.
-* **Location Types:** When creating a new type, the zoom-to level was not set to 22 if the solution supported it. 
+* **Location Types:** When creating a new type, the zoom-to level was not set to 22 if the solution supported it.
 
 ## Apr 14th 2020 - v3.19.4
 
