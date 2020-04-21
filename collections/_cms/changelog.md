@@ -47,7 +47,7 @@ published: true
 
 ### Bugfix
 
-* **Venue:** Floornames should not be editable.
+* **Venue:** Floor names should not be editable.
 
 ## Mar 20th 2020 - v3.18.2
 
