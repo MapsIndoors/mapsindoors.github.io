@@ -59,7 +59,7 @@ published: true
 
 ### What's new
 
-* **Users:** Implement user roles guards and improve user roles in general.
+* **Users:** Implement user roles guards, and improve user roles in general.
 
 ## Mar 13th 2020 - v3.17.6
 
