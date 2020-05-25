@@ -43,7 +43,7 @@ published: true
 ### What’s new
 
 * **Areas:** Areas can be managed under the new Areas menu.
-* **Locations' Table:** Multiple locations can be set as searchable with bulk editing.
+* **Locations' Table:** Multiple Locations can be set as "Searchable" with bulk editing.
 
 ## Apr 23rd 2020 - v3.21.0
 
