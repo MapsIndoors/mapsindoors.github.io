@@ -49,7 +49,7 @@ published: true
 
 ### What’s new
 
-* On start up, the CMS determines the fastest Manager API to call for all subsequent request.
+* On start up, the CMS determines the fastest Manager API to call for all subsequent requests.
 
 ## Apr 21st 2020 - v3.20.0
 
