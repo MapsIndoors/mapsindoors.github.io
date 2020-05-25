@@ -28,7 +28,7 @@ published: true
 
 ### What’s new
 
-* New google cloud's client ID and API Keys
+* New Google Cloud client ID and API Keys
 
 ## Apr 30th 2020 - v3.23.3
 
