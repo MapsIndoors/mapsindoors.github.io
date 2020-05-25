@@ -22,7 +22,7 @@ published: true
 
 ### Bugfix
 
-* **Reset Password:** Fixes a bug where an email was not sent if the email address contained allowed special characters.
+* **Reset Password:** Fixes a bug where an email was not sent if the email address contained special characters.
 
 ## May 6th 2020 - v3.24.0
 
