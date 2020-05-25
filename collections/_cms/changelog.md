@@ -16,7 +16,7 @@ published: true
 
 ### Bugfix
 
-* **Auto Route:** Fixes a bug where doors where displayed on the wrong floor.
+* **Auto Route:** Fixes a bug where Doors were displayed on the wrong Floor.
 
 ## May 12th 2020 - v3.24.1
 
