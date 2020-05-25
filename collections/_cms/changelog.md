@@ -9,7 +9,7 @@ published: true
 ### What’s new
 
 * **API Keys:** Previously, API keys were only available as part of the "Security module". All customers now have access to this. All Solutions get an API key (if they did not have one before), that is the same as the Solution ID (also called Dataset ID). This ensures backward compatibility.
-* **Single Sign-On:** This was also part of the security module and is now its own module. It is only available per activation on a solution.
+* **Single Sign-On:** This was also part of the "Security module" and is now its own module. It needs to be activated on a per-Solution basis.
 * **Security:** This module is now obsolete.
 
 ## May 13th 2020 - v3.24.2
