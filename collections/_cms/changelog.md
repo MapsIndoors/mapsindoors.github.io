@@ -36,7 +36,7 @@ published: true
 
 * **Customers:** Fixes the check for module activation.
 * **Areas:** Fixes a bug where the Venue's default Floor was not found.
-* **Areas:** The module can be activated at the customer's level.
+* **Areas:** The Areas module can be activated on a per-Customer basis.
 
 ## Apr 29th 2020 - v3.23.0
 
