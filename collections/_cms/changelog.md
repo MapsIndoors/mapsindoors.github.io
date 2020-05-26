@@ -1,8 +1,14 @@
 ---
 title: Changelog
-date: 2019-04-21
+date: 2019-05-26
 published: true
 ---
+
+## May 26th 2020 - v3.26.0
+
+### What’s new
+
+* **API Keys:** Adds the option to disable an API key.
 
 ## May 19th 2020 - v3.25.0
 
