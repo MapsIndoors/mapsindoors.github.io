@@ -1,8 +1,18 @@
 ---
 title: Changelog
-date: 2019-05-26
+date: 2019-06-10
 published: true
 ---
+
+## June 10th 2020 - v3.27.11
+
+### What’s new
+
+* **Location Types:** Adds a column showing how many Locations are linked to a Location Type.
+
+### Bugfix
+
+* **Dashboard:** Reloads data when switching Solution/Customer.
 
 ## May 26th 2020 - v3.26.0
 
