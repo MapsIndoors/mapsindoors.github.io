@@ -4,6 +4,31 @@ date: 2019-06-10
 published: true
 ---
 
+## June 18th 2020 - v3.28.0
+
+### What’s new
+
+* Improvements to the authentication module.
+
+### Bugfix
+
+* **Locations:** Fixes a styling issue on the bulk editing view.
+* **Route Access:** Removes Route segment highlight when a Route Layer Item is selected.
+* **Login:** Unauthenticated users are now redirected to the login page when attempting to access the Locations’ URL directly
+
+## June 16th 2020 - v3.27.16
+
+### What’s new
+
+* **Locations:** It is required to select a Location Type in order to create a new Location. The Location Type selection field has been moved so that it comes right under the Name field, which is also required.
+* **Venue:** The Venue ID can be found under the Venue menu.
+
+### Bugfix
+
+* **Dashboard:** Reloads data when switching Solution/Customer.
+* **Location Types:** Fixes a page crash when editing a Location Type with no icon url.
+* **Location Types:** Show the Locations in use for the entire Solution.
+
 ## June 10th 2020 - v3.27.11
 
 ### What’s new
