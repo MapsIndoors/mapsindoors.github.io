@@ -13,7 +13,7 @@ date: 2019-09-30
 
 ## Loading the Maps JavaScript API
 
-The Google Maps API are loaded using a script tag like so:
+The Google Maps API are loaded using a script tag like so: HEST
 
 ```html
 <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=YOUR_GOOGLE_API_KEY"></script>
