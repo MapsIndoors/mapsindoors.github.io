@@ -16,6 +16,13 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+## [3.6.0] 2020-10-01
+
+### Added 
+- Support for Live Data added. Information and documentation about this new feature is available at [Live Data Guide](https://mapsindoors.github.io/android/v3/live-data/)
+
+### Fixed
+- Various bugfixes
 
 ## [3.5.2] - 2020-07-15
 
