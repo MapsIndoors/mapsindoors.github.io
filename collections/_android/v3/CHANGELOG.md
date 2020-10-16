@@ -16,6 +16,15 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Fixed        for any bug fixes.
 ### Security     in case of vulnerabilities.
 -->
+## [3.6.1] 2020-10-01
+
+### Added
+
+- Support for rendering polygons through DisplayRules
+
+### Fixed
+
+- Various bugfixes
 
 ## [3.6.0] 2020-10-01
 
