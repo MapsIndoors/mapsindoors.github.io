@@ -37,5 +37,6 @@ The corresponding Display Rule information is sent to the app.  By default the s
 
 For custom apps, the native app SDKs can render the areas via Display Rules.
 
-[iOS link](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_location_display_rule.html)
-[android link](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/LocationDisplayRule.html)
+[iOS display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_location_display_rule.html)
+<br/><br/>
+[android display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/LocationDisplayRule.html)
