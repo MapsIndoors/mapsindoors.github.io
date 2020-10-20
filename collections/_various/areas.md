@@ -45,23 +45,19 @@ For custom apps, the native app SDKs can render the areas via Display Rules.
 
 While these Areas can be created in the CMS, creating many of the same size and color can be a manual process.  For this reason, the integration API is ideal for this use-case.
 
-## Request Parameters
+#### Request Parameters
 
-# endpoint
+Endpoint
 
 Requests to the integration API for creating, updating and retrieving geodata objects (POIs, which includes locations, rooms, and areas) should be sent to:
 
 https://integration.mapsindoors.com/{YOUR_API_KEY}/api/geodata
 
-# Required Headers 
+Header: 'Content-Type': 'application/json' (GET, PUT, POST)
 
-Content-Type: application/json (GET, PUT, POST)
+Header: 'Authorization': 'bearer_token' (GET, PUT, POST)
 
-Authorization: bearer_token (GET, PUT, POST)
-
-Payload: JSON, see schema below
-
-# JSON Schema
+JSON Payload Schema (PUT, POST)
 
 * parentId: If area is outside, use venue ID.  If area is indoors, use the floor id (of the desired building).
 * datasetId: solutionId
@@ -78,7 +74,8 @@ Payload: JSON, see schema below
 * baseTypeProperties: dictionary not required for POST
 * properties: name/description/capacity (metadata that can be found/edited the CMS as well)
 
-## Post Request Example
+#### Post Request Example
+
 ```json
 [{'parentId': '8b79b8d45c9542da9ef469b2',
  'datasetId': '37f096d15adb4d0981416ad3',
