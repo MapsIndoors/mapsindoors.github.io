@@ -23,9 +23,9 @@ Wayfinding to Areas is possible, as it is a *multi-point POI*, like a room.  Thi
 
 ## Support for Areas
 
-### Creating Areas
+### Creating Areas in the CMS
 
-You can create Areas via the MapsIndoors CMS and the Integration API. You can also set the color in the Display Rule for the Area in both places.
+You can create Areas via the MapsIndoors CMS and the Integration API. You can also set the color in the Display Rule for the Area in both places.  
 
 ### Presenting Areas
 
@@ -40,3 +40,74 @@ For custom apps, the native app SDKs can render the areas via Display Rules.
 [iOS display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_location_display_rule.html)
 <br/><br/>
 [android display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/LocationDisplayRule.html)
+
+### Creating Areas with the Integration API
+
+While these Areas can be created in the CMS, creating many of the same size and color can be a manual process.  For this reason, the integration API is ideal for this use-case.
+
+## Request Parameters
+
+# endpoint
+
+Requests to the integration API for creating, updating and retrieving geodata objects (POIs, which includes locations, rooms, and areas) should be sent to:
+
+https://integration.mapsindoors.com/{YOUR_API_KEY}/api/geodata
+
+# Required Headers 
+
+Content-Type: application/json (GET, PUT, POST)
+
+Authorization: bearer_token (GET, PUT, POST)
+
+Payload: JSON, see schema below
+
+# JSON Schema
+
+* parentId: If area is outside, use venue ID.  If area is indoors, use the floor id (of the desired building).
+* datasetId: solutionId
+* baseType: area (other unrelated values are venue building, room, poi)
+* displayTypeId: locationType internal ID
+* displaySetting: this is a dictionary which contains the things that can be modified from the displayRule (SDK)
+* name: used for the label
+* polygon has the following subfields: visible, strokeWidth, strokeColor, strokeOpacity, fillColor, fillOpacity.
+* geometry: [standard GeoJson](https://tools.ietf.org/html/rfc7946#section-3.1)
+* anchor: anchor point with its subfield type = point
+* aliases: additional search functionality will be based on this name.
+* categories: will be written as the internal id of the category, not the name
+* status: availability in search results.  1=no, 3=yes.
+* baseTypeProperties: dictionary not required for POST
+* properties: name/description/capacity (metadata that can be found/edited the CMS as well)
+
+## Post Request Example
+```json
+[{'parentId': '8b79b8d45c9542da9ef469b2',
+ 'datasetId': '37f096d15adb4d0981416ad3',
+ 'baseType': 'area',
+ 'displayTypeId': '6380e9cbd5414d02ab5d4fad',
+ 'displaySetting': {'name': 'default',
+  'polygon': {'visible': True,
+   'strokeWidth': 2.0,
+   'strokeColor': '#1E90FF',
+   'strokeOpacity': 0.8,
+   'fillColor': '#1E90FF',
+   'fillOpacity': 0.35}},
+ 'geometry': {'coordinates': [[[-97.732397, 30.380796],
+    [-97.732397, 30.380806],
+    [-97.732395, 30.380814],
+    [-97.73239, 30.380821],
+    [-97.73238, 30.380826],
+    [-97.732436, 30.380851],
+    [-97.732453, 30.380822],
+    [-97.732397, 30.380796]]],
+  'bbox': [-97.732453, 30.380796, -97.73238, 30.380851],
+  'type': 'Polygon'},
+ 'anchor': {'coordinates': [-97.73240685714286, 30.38081942857143],
+  'type': 'Point'},
+ 'aliases': ['testing area'],
+ 'categories': ['e299d010a35e43d3ba0781d7'],
+ 'status': 3,
+ 'properties': {'name@en': 'Temporary Room',
+  'description@en': 'This room is used for a one-time event.',
+  'capacity@en': '20',
+  'name@da': 'Midlertidigt værelse'}}]
+```
