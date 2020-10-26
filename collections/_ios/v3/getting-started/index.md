@@ -12,9 +12,11 @@ permalink: /ios/v3/getting-started/
 
 ## Basic Examples
 
-For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods, or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
+To start quickly with simple examples of a MapsIndoors omplementations clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/master)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
-You can follow the tutorials on this site to start your app from scratch or to enhance the basic examples.
+If you want to start creating an app from scratch or enhance the basic examples you can follow the tutorials on this site. For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (follow the tutorials below for setting up CocoaPods).
+
+
 
 ## Set up your environment
 
