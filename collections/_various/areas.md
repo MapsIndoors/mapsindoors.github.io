@@ -19,7 +19,7 @@ If you do not have the feature enabled, please reach out to your customer succes
 
 Areas do not have any influence on the routing network for your Solution. Since Areas are not like Rooms, they do not have obstructing walls, and your app's user will get directions through the Areas.
 
-Wayfinding to Areas is possible, as it is a *multi-point POI*, like a room.  This means that the area location can be set as an origin or destination.  Icons for these areas will be displayed based on the type visibility settings in the CMS.
+Wayfinding to Areas is possible, as it is a *multi-point POI*, like a room. This means that the Area can be set as an Origin or Destination. Icons for these Areas will be displayed based on the Type Visibility settings in the CMS.
 
 ## Support for Areas
 
