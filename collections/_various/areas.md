@@ -11,7 +11,7 @@ Areas can be used to indicate a portion of a Floor that is not defined by walls,
 
 ## Displaying Areas in Tiles
 
-If you have the feature enabled for your Solution, the color you choose for an Area will presented as a layer on above the map tiles. Technically, you provide a color in the Display Rule for that Area, and you can do this via both the CMS and the Integration API.
+If you have the feature enabled for your Solution, the color you choose for an Area is presented as a layer on top of the map and its tiles. Technically, you provide a color in the Display Rule for that Area, and you can do this via both the CMS and the Integration API.
 
 If you do not have the feature enabled, please reach out to your customer success manager.
 
