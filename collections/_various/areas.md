@@ -25,7 +25,7 @@ Wayfinding to Areas is possible, as it is a *multi-point POI*, like a room. This
 
 ### Creating Areas
 
-You can create Areas via the MapsIndoors CMS and the Integration API. You can also set the color in the Display Rule for the Area in both places.  
+You can create Areas via the MapsIndoors CMS and the Integration API. You can also set the color for the Area (in the Display Rule) in both places.  
 
 ### Presenting Areas
 
