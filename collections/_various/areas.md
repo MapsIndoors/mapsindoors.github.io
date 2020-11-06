@@ -33,7 +33,7 @@ You can create Areas via the MapsIndoors CMS and the Integration API. You can al
 
 All Area geometry data is currently sent to the applications from the SDKs, so it is possible to render Areas on the map in your custom-developed app.
 
-The corresponding Display Rule information is sent to the app.  By default the standard applications will render the area only when the Area's POI is clicked on.  If you would like to render the area on the map permanently, it should be done via an SDK display rule method.  
+The corresponding Display Rule information is sent to the app. By default the standard applications will render the Area only when the Area is clicked on. If you would like to render the Area on the map permanently, it can be set via an SDK display rule method.
 
 For custom apps, the native app SDKs can render the areas via Display Rules.
 
