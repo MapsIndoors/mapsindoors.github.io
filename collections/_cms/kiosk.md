@@ -18,13 +18,13 @@ Log in to the CMS and create a new Location Type. Give it a name like e.g. "Kios
 
 Create all your physical kiosks as Locations in the CMS with the Location Type you just created.
 
-## Configure the Kiosk
+## Configure the Kiosk App
 
-To enable "Kiosk mode" you need to set a few parameters in the URL. The `?` symbol have to be in front of the first parameter, and all other parameters are separated with an `&` symbol.
+To enable the Kiosk App you need to set a few parameters in the URL. The `?` symbol have to be in front of the first parameter, and all other parameters are separated with an `&` symbol.
 
-This is what the full URL for an app in Kiosk mode will look like:
+This is what the full URL for the Kiosk App will look like:
 
-<a href="https://clients.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20">https://clients.mapsindoors.com/<strong>demo</strong>/<strong>899cf628675f4b0695669529</strong>/<strong>search?origin=5a0d66192e33469c8909203d</strong><strong>&timeout=20</strong></a>
+<a href="https://kiosk.mapsindoors.com/demo/899cf628675f4b0695669529/search?origin=5a0d66192e33469c8909203d&timeout=20">https://kiosk.mapsindoors.com/<strong>demo</strong>/<strong>899cf628675f4b0695669529</strong>/<strong>search?origin=5a0d66192e33469c8909203d</strong><strong>&timeout=20</strong></a>
 
 Deconstruction the URL, this is what it contains:
 
@@ -66,10 +66,10 @@ The "Send as SMS" button only shows when getting a route between two MapsIndoors
 
 The limit for sending an SMS to the same phone number is 3 messages per 10 minutes.
 
-## Keeping "Kiosk mode" active in the browser
+## Keeping the Kiosk App active in the browser
 
 Once you have constructed the URL with the right parameters, paste it into the browser to see if it looks right.
 
-At this point, do not refresh the browser. If you refresh, the browser will not use the URL parameters, and the app is out of Kiosk mode. To reactivate the Kiosk mode, you need to go to the URL with the parameters again.
+At this point, do not refresh the browser. If you refresh, the browser will not use the URL parameters. To reactivate the Kiosk App, you need to go to the URL with the parameters again.
 
-Lastly, the computer the Kiosk app runs on needs to be as locked down as possible to avoid the user visiting unauthorized websites. Get in touch with your project manager at MapsPeople to go over the best practices for this.
+Lastly, the computer the Kiosk App runs on needs to be as locked down as possible to avoid the user visiting unauthorized websites. Get in touch with your project manager at MapsPeople to go over the best practices for this.
