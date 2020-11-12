@@ -2,7 +2,7 @@
 layout: tutorial
 title: Setting your app up for Kiosk mode
 permalink: /kiosk-mode/
-published: true
+published: false
 nav_weight: 1300
 date: 2020-02-10
 ---

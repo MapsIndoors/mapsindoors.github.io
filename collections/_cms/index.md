@@ -50,7 +50,6 @@ There are a number of key elements:
 1. **Solution Name:** This is the name of your Solution. It's possible to have access to several Solutions.
 1. **Venue:** This is the name of your Venue. It’s possible to have several Venues.
 1. **Map**
-
    * **Locations:** Manage rooms and POIs
    * **Categories:** Create, edit, and delete Categories
    * **Location Types:** Create, edit, and delete Location Types
@@ -58,25 +57,18 @@ There are a number of key elements:
    * **Buildings:** Manage Building name, address, and floor names
    * **Venue:** Manage Venue name and default floor
    * **Route Access:** Manage route access and parking lots
-
-1. **App settings:**
-
+1. **App Settings**
    * **App Configuration:** Manage App Title and Alias, App User Roles, and Category visibility
    * **API Keys:** Create, edit, or delete API Keys
-
-1. **Administration:**
-
+1. **Administration**
    * **Users:** Create, edit, or delete CMS Users
    * **Logs:** Filter and download CMS logs
-
 1. **Current User**
 1. **List View:** A list of Locations in the currently selected Venue
-1. **Filter:**
-
+1. **Filter**
    * **Type:** Dropdown to select Locations of a specific Location Type to show on the map or in the List View
    * **Category:** Dropdown to select Locations of a specific Category to show on the map or in the List View
    * **Search:** Search for Locations
-
 1. **Selected Building**
 1. **Zoom Level:** Indicates which zoom level you are viewing
 1. **Floor selector**
@@ -280,9 +272,9 @@ _A note about Venue images:_ You can request MapsPeople to add an image of the V
 * Click on the pencil icon to the left of the Building name. A new menu will appear
 * Edit Building name in the available languages
 * Edit floor names
-* Select a default floor under "Show advanced".
+* Select a default floor under "Show advanced"
 
-   The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
+The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.
 
 ### Uploading CAD files for a floor
 
@@ -350,7 +342,7 @@ View the tutorial video below for more information about Location Types.
 
 ![Categories]({{ site.url }}/assets/cms/categories/categories.png)
 
-Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration).
+Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration in App Settings).
 
 View the tutorial video below for more information about Categories.
 
