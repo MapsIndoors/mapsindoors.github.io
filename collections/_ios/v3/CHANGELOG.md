@@ -16,6 +16,12 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.16.0] Release date TBD
+
+### Added
+
+- Support for receiving position provider configuration data with the solution data, see `MPSolution.positionProviderConfigs`.
+
 ## [3.15.0] 2020-11-11
 
 ### Added
