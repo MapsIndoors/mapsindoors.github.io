@@ -8,7 +8,7 @@ date: 2020-11-25
 permalink: /ios/v3/booking/
 ---
 
-This guide covers the different aspects of _Booking_ in the MapsIndoors iOS SDK. The concept of booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces. 
+This guide covers the different aspects of _Booking_ in the MapsIndoors iOS SDK. The concept of booking in MapsIndoors implies that specific Locations in your MapsIndoors dataset is treated as Bookable resources. Typical bookable resources could be meeting rooms and workspaces.
 
 A MapsIndoors dataset can only have bookable resources if an integration with a booking provider exists. Current examples of booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers and more can be added and integrated to your MapsIndoors project by request.
 
@@ -47,7 +47,7 @@ It is also possible to check a location statically using `MPLocation.isBookable`
 
 ## Bookings
 
-A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event. 
+A Booking is a timeboxed event model referring to the resource being booked and the users participating in the booked event.
 
 ### Listing Bookings for a Location
 
@@ -64,7 +64,6 @@ bookingsQuery.startTime = Date.init().advanced(by: -60*60)
 bookingsQuery.endTime = bookingsQuery.startTime?.advanced(by: 24*60*60)
 
 bookingService.getBookingsUsing(bookingsQuery) { (bookings, error) in
-    
 }
 ```
 
@@ -106,6 +105,5 @@ It is possible to cancel a created Booking using the `MPBookingService.cancel()`
 let bookingService = MPBookingService.sharedInstance()
 
 bookingService.cancel(myBooking) { (booking, error) in
-    
 }
 ```
