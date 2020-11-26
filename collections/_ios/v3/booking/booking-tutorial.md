@@ -12,6 +12,8 @@ In this tutorial we will create a Booking experience using the Booking Service i
 
 Please note that a MapsIndoors dataset can only have bookable resources if an integration with a booking provider exists. Current examples of booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers and more can be added and integrated to your MapsIndoors project by request. It is a prerequisite for this tutorial that the API key used refers to a dataset containing bookable Locations.
 
+## Listing Bookable Locations
+
 We will start by listing bookable Locations. Create a class `BookableLocationsController` inheriting from `UITableViewController`.
 
 ```swift
@@ -83,6 +85,8 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
     navigationController?.pushViewController(bookingsVC, animated: true)
 }
 ```
+
+## Listing Bookings for a Location
 
 Create a new controller, `BookingsController` inheriting again from `UITableViewController`. This controller will list the Bookings for a locations within a timespan, as well as give access to creating new and editing bookings.
 
@@ -190,6 +194,8 @@ Create an Objective-C exposed method `newBooking()` which will be use by our `UI
 }
 ```
 
+## Editing, Performing and Cancelling Bookings
+
 We need a third controller to display, edit and perform an actual Booking.
 
 We will create an enum model to keep track on the different parts of the `MPBooking` model displayed through the view controller.
@@ -205,7 +211,7 @@ enum BookingRow : Int {
 }
 ```
 
-Create `BookingsController` inheriting once again from `UITableViewController`.
+Create `BookingController` inheriting once again from `UITableViewController`.
 
 ```swift
 class BookingController: UITableViewController {
