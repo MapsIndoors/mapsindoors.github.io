@@ -1,0 +1,32 @@
+{
+  "entries": [
+    "components/keyboard/keyboard.js",
+    "components/location-info/location-info.js",
+    "components/dropdown-item/dropdown-item.js",
+    "components/data-table/data-table.js",
+    "components/column/column.js",
+    "components/card/card.js",
+    "components/list-item-category/list-item-category.js",
+    "components/list-item-location/list-item-location.js",
+    "components/list/list.js",
+    "components/metric-card/metric-card.js",
+    "components/spinner/spinner.js",
+    "components/scroll-buttons/scroll-buttons.js",
+    "components/tab-panel/tab-panel.js",
+    "components/notification/notification.js",
+    "components/search/search.js",
+    "components/dropdown/dropdown.js",
+    "components/share-sms/share-sms.js",
+    "components/tabs/tabs.js",
+    "components/tab/tab.js",
+    "components/step-switcher/step-switcher.js",
+    "components/map/map.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.9.0-19",
+    "typescriptVersion": "3.8.2"
+  },
+  "collections": [],
+  "bundles": []
+}

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
+      }
+    </script>
+    <script type="module" src="/assets/components/dist/mi-components/mi-components.esm.js"></script>
+    <script nomodule src="/assets/components/dist/mi-components/mi-components.js"></script>
+    <title>MapsIndoors CMS Changelog - MapsIndoors Documentation</title>
+  </head>
+
+
+<body>
+  <header>
+  <div class="wrap">
+    <section class="flex">
+      <div class="left">
+        <a href="/">
+          <svg width="200" height="39" viewBox="0 0 200 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="mapspeople-logo">
+            <g clip-path="url(#clip0)">
+              <path d="M13.2756 10.5368C14.766 9.49696 16.8804 8.87305 18.4402 8.87305C23.3622 8.87305 25.4073 11.438 25.4073 15.5282V28.6304H20.5199V15.7361C20.5199 14.315 19.7227 13.6564 18.4402 13.6564C16.7764 13.6564 15.7712 14.1417 15.1473 14.419V28.6304H10.26V15.7361C10.26 14.315 9.46274 13.6564 8.18024 13.6564C6.72444 13.6564 5.68457 14.0724 4.88735 14.419V28.6304H0V9.49696H3.43154L3.70884 10.1555C5.06066 9.39298 6.82842 8.90771 8.14558 8.90771C10.8492 8.87305 12.2704 9.56629 13.2756 10.5368Z" fill="#006440"></path>
+              <path d="M40.6926 15.6321C40.6926 14.2803 39.9994 13.6564 38.2316 13.6564C36.3598 13.6564 33.7948 14.1417 31.7844 14.8696V10.0169C33.8988 9.04636 36.5331 8.87305 38.2316 8.87305C44.0202 8.87305 45.5106 11.6807 45.5106 15.8748V28.6304H42.1137L41.8364 28.0412C40.5193 28.7344 38.7515 29.2197 37.4344 29.2197C32.2004 29.2197 30.502 25.9268 30.502 22.3566C30.502 19.029 32.3044 16.1867 37.4344 15.8401L40.6926 15.6321ZM37.5383 20.3115C35.8399 20.4502 35.3893 21.4207 35.3893 22.3912C35.3893 23.2578 35.6319 24.471 37.5037 24.471C38.5435 24.471 39.9647 23.951 40.6926 23.5698V20.1036L37.5383 20.3115Z" fill="#006440"></path>
+              <path d="M51.1616 9.49696H54.5585L54.8011 10.1902C56.1183 9.39298 57.99 8.87305 59.4112 8.87305C65.893 8.87305 67.7301 12.5126 67.7301 19.0637C67.7301 25.6495 65.893 29.2543 59.4112 29.2543C58.3713 29.2543 56.8809 28.9424 55.945 28.5264V38.1971H51.127V9.49696H51.1616ZM55.945 23.7084C56.7422 24.055 58.0247 24.4363 59.3419 24.4363C62.2535 24.4363 62.8081 22.1486 62.8081 19.029C62.8081 15.9094 62.2188 13.6217 59.3419 13.6217C58.0247 13.6217 56.7422 14.003 55.945 14.3497V23.7084Z" fill="#006440"></path>
+              <path d="M79.8957 16.4645C85.3723 16.9844 86.6202 19.0295 86.6202 22.5997C86.6202 25.8233 84.7484 29.2548 78.9252 29.2548C77.1921 29.2548 74.4191 28.6656 72.894 28.0763V23.0503C74.6271 23.7089 76.9495 24.4368 78.9945 24.4368C81.2476 24.4368 81.9061 23.4662 81.9061 22.6344C81.9061 21.8718 81.4555 21.2825 79.4451 21.1092C74.0725 20.5893 72.7207 18.3016 72.7207 15.3207C72.7207 12.3397 74.5231 8.83887 79.9304 8.83887C81.6288 8.83887 83.6739 9.11616 85.823 10.0867V14.9047C83.7779 14.1768 81.8715 13.5876 79.9304 13.5876C77.8853 13.5876 77.4347 14.3501 77.4347 15.2167C77.4001 15.8753 77.816 16.2565 79.8957 16.4645Z" fill="#006440"></path>
+              <path d="M93.3797 27.2097V38.1629H92.2012V9.53206H92.7211L93.2757 11.0225C94.9741 9.91334 97.8511 9.35875 100.069 9.35875C106.517 9.35875 108.111 13.5875 108.111 19.0988C108.111 24.6101 106.517 28.8388 100.069 28.8388C97.8858 28.8042 95.1128 28.2842 93.3797 27.2097ZM93.3797 11.9931V26.1698C95.1128 27.2444 97.3312 27.7643 100.069 27.7643C105.858 27.7643 106.898 23.3622 106.898 19.0641C106.898 14.766 105.858 10.364 100.069 10.364C97.3658 10.364 95.1474 10.9185 93.3797 11.9931ZM127.834 26.8284V27.8683C126.309 28.4575 123.744 28.8388 121.664 28.8388C115.217 28.8388 113.622 24.7834 113.622 19.0988C113.622 13.4142 115.217 9.35875 121.664 9.35875C128.111 9.35875 128.804 13.4835 128.804 19.0988V19.6187H114.801C114.87 23.9168 116.083 27.799 121.629 27.799C124.541 27.7643 126.413 27.279 127.834 26.8284ZM127.66 18.5442C127.66 14.3847 127.244 10.364 121.664 10.364C116.118 10.364 114.905 14.2114 114.835 18.5442H127.66ZM141.976 9.35875C148.77 9.35875 149.983 13.4835 149.983 19.0988C149.983 24.714 148.77 28.8388 141.976 28.8388C135.182 28.8388 133.969 24.714 133.969 19.0988C133.934 13.4835 135.147 9.35875 141.976 9.35875ZM141.976 27.7643C148.076 27.7643 148.77 23.8821 148.77 19.0641C148.77 14.2461 148.076 10.364 141.976 10.364C135.875 10.364 135.147 14.2808 135.147 19.0641C135.147 23.8821 135.841 27.7643 141.976 27.7643ZM156.673 27.2097V38.1629H155.494V9.53206H156.014L156.569 11.0225C158.267 9.91334 161.144 9.35875 163.362 9.35875C169.809 9.35875 171.404 13.5875 171.404 19.0988C171.404 24.6101 169.809 28.8388 163.362 28.8388C161.179 28.8042 158.371 28.2842 156.673 27.2097ZM156.673 11.9931V26.1698C158.406 27.2444 160.624 27.7643 163.362 27.7643C169.151 27.7643 170.191 23.3969 170.191 19.0641C170.191 14.766 169.151 10.364 163.362 10.364C160.624 10.364 158.406 10.9185 156.673 11.9931ZM180.173 28.8042C178.128 28.8042 177.227 27.9029 177.227 26.0312V0H178.406V25.9619C178.406 27.4177 178.787 27.9029 180.208 27.9029V28.8042H180.173ZM198.891 26.8284V27.8683C197.366 28.4575 194.801 28.8388 192.721 28.8388C186.274 28.8388 184.68 24.7834 184.68 19.0988C184.68 13.4142 186.239 9.35875 192.721 9.35875C199.168 9.35875 199.861 13.4835 199.861 19.0988V19.6187H185.858C185.927 23.9168 187.141 27.799 192.686 27.799C195.598 27.7643 197.435 27.279 198.891 26.8284ZM198.683 18.5442C198.683 14.3847 198.267 10.364 192.686 10.364C187.106 10.364 185.927 14.2114 185.858 18.5442H198.683Z" fill="#006440"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="200" height="38.4749" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        <a href="https://mapspeople.com/support">Support</a>
+        <a href="https://github.com/mapsindoors">GitHub</a>
+        <a href="https://blog.mapspeople.com/tag/product">Product Blog</a>
+        <a href="https://cms.mapsindoors.com/">CMS</a>
+      </div>
+    </section>
+  </div>
+</header>
+
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        
+        <main>
+          <nav aria-label="Breadcrumb">
+            
+          </nav>
+          <h1>
+            <a href="/changelogs/cms/changelog/">MapsIndoors CMS Changelog</a>
+          </h1>
+          
+            <p class="time">Last updated: <time>11/27/2020</time>
+            </p>
+          
+          <h2>October 8th 2020 - v3.35.0</h2>
+<h3>What's new</h3>
+<ul>
+<li>Display all Solutions for a User on /users page</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li>Typos and updated links</li>
+</ul>
+<h2>August 14th 2020 - v3.34.0</h2>
+<h3>What's new</h3>
+<ul>
+<li>Added ´title´ to Solution and Venue switcher list items for increased usability</li>
+</ul>
+<h2>August 11th 2020 - v3.32.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li>The sidebar is replaced by a top bar.</li>
+<li>A &quot;What's new&quot; section with the latest updates.</li>
+</ul>
+<h2>July 30th 2020 - v3.31.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Location Types:</strong> Types can be deleted in bulk.</li>
+<li><strong>Locations:</strong> Search for a Location by ID or ExternalID.</li>
+</ul>
+<h2>July 27th 2020 - v3.30.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Booking Provider Feature:</strong> This feature is about setting up credentials to a booking service provider, which will allow app users to book meeting rooms. The Customer should already have a booking service provider in place.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>App Config:</strong> Fixes duplicated Categories under App Configuration page when switching Solutions.</li>
+<li><strong>Locations:</strong> Fixes case sensitivity issue when comparing Locations and the Building’s administrative ID.</li>
+<li><strong>Locations:</strong> Updates a Location’s path  when moving it in or out of a Building.</li>
+</ul>
+<h2>July 16th 2020 - v3.29.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Sync Feature:</strong> Categories, Location Types and Icons can now be synchronised from one solution to another, given that a customer has multiple solutions.</li>
+<li>Icon-images hosted in the CMS have finally been moved to Amazon S3 and all the links have been updated in the backend.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Locations:</strong> a Venue with no Buildings, hence no Floors, would cause the Tiles to not be visible. Floor 0 tiles are now shown in this case.</li>
+</ul>
+<h2>July 1st 2020 - v3.28.7</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Location Type Template:</strong> Adds a check that prevents calling a property-key &quot;name&quot; because one already exists.</li>
+<li><strong>Custom Properties:</strong> Custom properties are not case-sensitive.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Location Types:</strong> Fixes a bug that logged the user out when trying to translate a Type's name using the Google Translate API.</li>
+</ul>
+<h2>June 18th 2020 - v3.28.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li>Improvements to the authentication module.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Locations:</strong> Fixes a styling issue on the bulk editing view.</li>
+<li><strong>Route Access:</strong> Removes Route segment highlight when a Route Layer Item is selected.</li>
+<li><strong>Login:</strong> Unauthenticated users are now redirected to the login page when attempting to access the Locations’ URL directly</li>
+</ul>
+<h2>June 16th 2020 - v3.27.16</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Locations:</strong> It is required to select a Location Type in order to create a new Location. The Location Type selection field has been moved so that it comes right under the Name field, which is also required.</li>
+<li><strong>Venue:</strong> The Venue ID can be found under the Venue menu.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Dashboard:</strong> Reloads data when switching Solution/Customer.</li>
+<li><strong>Location Types:</strong> Fixes a page crash when editing a Location Type with no icon url.</li>
+<li><strong>Location Types:</strong> Show the Locations in use for the entire Solution.</li>
+</ul>
+<h2>June 10th 2020 - v3.27.11</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Location Types:</strong> Adds a column showing how many Locations are linked to a Location Type.</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Dashboard:</strong> Reloads data when switching Solution/Customer.</li>
+</ul>
+<h2>May 26th 2020 - v3.26.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>API Keys:</strong> Adds the option to disable an API key.</li>
+</ul>
+<h2>May 19th 2020 - v3.25.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>API Keys:</strong> Previously, API keys were only available as part of the &quot;Security module&quot;. All customers now have access to this. All Solutions get an API key (if they did not have one before), that is the same as the Solution ID (also called Dataset ID). This ensures backward compatibility.</li>
+<li><strong>Single Sign-On:</strong> This was also part of the &quot;Security module&quot; and is now its own module. It needs to be activated on a per-Solution basis.</li>
+<li><strong>Security:</strong> This module is now obsolete.</li>
+</ul>
+<h2>May 13th 2020 - v3.24.2</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Auto Route:</strong> Fixes a bug where Doors were displayed on the wrong Floor.</li>
+</ul>
+<h2>May 12th 2020 - v3.24.1</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Reset Password:</strong> Fixes a bug where an email was not sent if the email address contained special characters.</li>
+</ul>
+<h2>May 6th 2020 - v3.24.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li>New Google Cloud client ID and API Keys</li>
+</ul>
+<h2>Apr 30th 2020 - v3.23.3</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Customers:</strong> Fixes the check for module activation.</li>
+<li><strong>Areas:</strong> Fixes a bug where the Venue's default Floor was not found.</li>
+<li><strong>Areas:</strong> The Areas module can be activated on a per-Customer basis.</li>
+</ul>
+<h2>Apr 29th 2020 - v3.23.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Areas:</strong> Areas can be managed under the new Areas menu.</li>
+<li><strong>Locations' Table:</strong> Multiple Locations can be set as &quot;Searchable&quot; with bulk editing.</li>
+</ul>
+<h2>Apr 23rd 2020 - v3.21.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li>On start up, the CMS determines the fastest Manager API to call for all subsequent requests.</li>
+</ul>
+<h2>Apr 21st 2020 - v3.20.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li>Added Deployment CMS features.</li>
+</ul>
+<h2>Apr 15th 2020 - v3.19.6</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Menu:</strong> Navigating the menu would reset the Venue to the first selected Venue.</li>
+<li><strong>Location Types:</strong> When creating a new Location Type, the zoom-to level was not set to 22 if the Solution supported it.</li>
+</ul>
+<h2>Apr 14th 2020 - v3.19.4</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Route Access:</strong> Opening/locking an edge did not update it until a page refresh.</li>
+<li>CMS would not load in MS Edge browser.</li>
+<li>CMS login issues in Internet Explorer 11.</li>
+</ul>
+<h2>Apr 1st 2020 - v3.19.1</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Locations Table:</strong> Locations were not deselected after saving bulk changes.</li>
+<li><strong>Locations Table:</strong> Last character on buttons wasn’t aligned correctly.</li>
+</ul>
+<h2>Mar 26th 2020 - v3.19.0</h2>
+<h3>What's new</h3>
+<ul>
+<li><strong>Locations Table:</strong> Bulk editing and removal of Categories and Aliases.</li>
+<li><strong>Locations Table:</strong> Validation of Alias input to ensure that no duplicate Aliases are added</li>
+</ul>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Location:</strong> An error occurred when adding Aliases to a new Location.</li>
+</ul>
+<h2>Mar 24th 2020 - v3.18.4</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Venue:</strong> Floor names should not be editable.</li>
+</ul>
+<h2>Mar 20th 2020 - v3.18.2</h2>
+<h3>Bugfix</h3>
+<ul>
+<li>Fetch the app config after the user has logged in to avoid error.</li>
+</ul>
+<h2>Mar 17th 2020 - v3.18.0</h2>
+<h3>What's new</h3>
+<ul>
+<li><strong>Users:</strong> Implement user roles guards, and improve user roles in general.</li>
+</ul>
+<h2>Mar 13th 2020 - v3.17.6</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Locations:</strong> Issue when bulk editing outdoor Locations.</li>
+<li><strong>Locations:</strong> Issue when Location Types are undefined.</li>
+</ul>
+<h2>Mar 12th 2020 - v3.17.4</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Location Types:</strong> Issue with uploaded icons' display sizes</li>
+</ul>
+<h2>Mar 10th 2020 - v3.17.0</h2>
+<h3>What's new</h3>
+<ul>
+<li>Remote error logging</li>
+</ul>
+<h2>Mar 4th 2020 - v3.16.0</h2>
+<h3>What’s new</h3>
+<ul>
+<li><strong>Analytics Dashboard:</strong> Added &quot;Export to CSV&quot; functionality. Added &quot;metric cards&quot; tooltips.  Rooms and POIs cards have been split up.</li>
+</ul>
+<h2>Mar 2nd 2020 - v3.15.2</h2>
+<h3>Bugfix</h3>
+<ul>
+<li><strong>Locations:</strong> Close detail sidebar automatically after saving changes to a POI.</li>
+<li><strong>Location Types:</strong> Show selected Location Type view settings.</li>
+</ul>
+<h2>Feb 27th 2020 - v3.15.0</h2>
+<h3>What's New</h3>
+<ul>
+<li>The Analytics Dashboard can be activated at a Customer level, which is reflected in all Solutions for that specific Customer.</li>
+<li>Analytics dashboard table.</li>
+<li>Mapsindoors icon for handicapped parking</li>
+<li>The Client CMS has been updated to Angular 8.</li>
+<li>Support for Address field on Buildings.</li>
+<li>Support for Custom Properties on Locations, Buildings and Venues.</li>
+<li>Support for setting Locations, Buildings and Venues as searchable or non-searchable</li>
+<li>Swiched Room IDs with External IDs.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li>Single image upload issue for a POI.</li>
+<li>POI creation issue.</li>
+</ul>
+<h2>Feb 11th 2020 - v3.9.1</h2>
+<h3>What's New</h3>
+<ul>
+<li>Support for login with OAuth for any Customer that uses this standard.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>User:</strong> Users with the Editor role were set as Publisher in the backend. This is now aligned so that it is called Editor everywhere.</li>
+<li><strong>Icon Manager:</strong> Info about file type has been added.</li>
+</ul>
+<h2>Jan 28th 2020 - v3.8.3</h2>
+<h3>New</h3>
+<ul>
+<li>Display the Solution’s default language first, and then all non-default languages alphabetically.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Type visibility:</strong> Sort location types alphabetically.</li>
+<li><strong>User:</strong> Newly created user had no roles and was treated as a legacy user by the CMS.</li>
+<li><strong>Route Access:</strong> When two edges on different floors had the same coordinates, it was only possible to create a route element on one of them.</li>
+</ul>
+<h2>January 2020 - v3.8.0</h2>
+<h3>What’s New</h3>
+<ul>
+<li><strong>CAD file upload:</strong> Ability to create new buildings and floors and upload CAD files (.dwg, .dxf) for the floors in the CMS. You can find <a href="https://mapsindoors.github.io/cms/#buildings">a guide in the documentation</a>.</li>
+<li><strong>Icon Manager:</strong> Added the option to &quot;skip&quot; uploading icons larger than 128x64px.
+<ul>
+<li>When deleting an icon in the Icon Manager that is in use on the map, it is also removed from the map.</li>
+</ul>
+</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Icon Manager:</strong> Shows a more descriptive error message when an image fails.</li>
+<li><strong>Locations:</strong> Google Street View network now available inside The White House demo Solution.</li>
+<li><strong>Route Access:</strong> Fixed issue where external doors showed up as elevator doors.</li>
+</ul>
+<h2>January 2020 - v3.7.8</h2>
+<h3>Bug Fixes</h3>
+<ul>
+<li>Fixed issue about the floor selector disappearing when switching from locations' list-view to map-view after the detail window has been closed.</li>
+</ul>
+<h2>December 2019</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Icon manager:</strong> Unified icon handling for Locations, Location Types and Categories.
+<ul>
+<li>No more Icons, Custom Icons and Advanced Icons. Choose from MapsIndoors Icons and Uploads.</li>
+<li>Preview Location icon on map before saving Location.</li>
+<li>Improved validation of SVG uploads to avoid display errors.</li>
+</ul>
+</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li>Fixed letter casing bug where location floor could be invalidated when editing location.</li>
+</ul>
+<h2>November 2019 - v3.7.6</h2>
+<h3>Updates</h3>
+<ul>
+<li><strong>New menu structure:</strong> The menu structure is rearranged with new category titles.</li>
+<li><strong>Icon and label visibility:</strong> Location icon and label visibility can now be controlled individually and are being reflected in the table.</li>
+</ul>
+<h2>November 2019 - v3.7.5</h2>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Route Access:</strong> Fixed issue about parking spots not being shown.</li>
+</ul>
+<h2>October 2019 - v3.7.4</h2>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Locations:</strong> Styling of the location icon library has been fixed.</li>
+</ul>
+<h2>October 2019 - v3.7.3</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Venue:</strong> It is possible to change the venue's default floor and sidebar is set to always be open.</li>
+</ul>
+<h3>Updates</h3>
+<ul>
+<li><strong>Location Types Templates:</strong> This menu is accessible via the location types table because a template is created for a specific location.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Locations:</strong> Shrinking locations list when filtering.</li>
+</ul>
+<h2>September 2019 - v3.7.2</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Type visibility:</strong> Maximum zoom level can now be set per location type.</li>
+</ul>
+<h3>Updates</h3>
+<ul>
+<li><strong>Venue and buildings:</strong> This menu has been split ip into two menus.</li>
+<li><strong>Route access:</strong> Path locking with three states.</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><strong>Locations:</strong> Clicking a room polygon opens the selected room's info window.</li>
+</ul>
+<h2>August 2019 - v3.7.1</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Venue and buildings:</strong> A building can have a default floor.</li>
+<li><strong>App configuration:</strong> Manages app user roles, which ensure that specific user groups are not routed where they are not allowed or don’t have access to.</li>
+<li><strong>Route access:</strong> Parking lots can be created as entrypoint for cars and bikes, which means that a car or bike will be directed to the parking lot. When locking a path, an app user role can be selected to give some users access.</li>
+</ul>
+<h2>July 2019 - v.3.6.7</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Guide:</strong> User guide for Google StreetView.</li>
+<li><strong>Change Password:</strong> When logged in with a Google account, the change password button will not be available.</li>
+</ul>
+<h2>July 2019 - v.3.6.6</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Security:</strong> A certificate file should now be uploaded for Single Sign-On with SAML Authentication.</li>
+</ul>
+<h2>May 2019 - v.3.6.0</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Locations:</strong> If Google Street View is available for a location/POI, it can be enabled by setting a Street View image matching the POI. The image set will be shown in the web app for the user to access.</li>
+</ul>
+<h2>March 2019</h2>
+<h3>New</h3>
+<ul>
+<li><strong>App configuration:</strong> Fill in an app ID and save. You will now be able to access a standard web app on the link provided. A button will be shown in the sidebar to quickly preview changes made in the CMS.</li>
+<li><strong>Type visibility:</strong> Enable or disable clustering of POIs of the same type.</li>
+<li><strong>Logs:</strong> When editing locations, under advanced, a log of changes has been added. A new log tab is available upon request. (export to .csv)</li>
+<li><strong>Security:</strong> SAML and AAD login integration</li>
+</ul>
+<h2>December 2018</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Routes:</strong> Wait time can be added to paths.</li>
+</ul>
+<h2>November 2018</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Guide and support panel</strong>: A new panel for support, contact and release notes.</li>
+<li><strong>Logos</strong>: Advanced markers to emphasize some locations.</li>
+<li><strong>Edit location:</strong> User curated icon library.</li>
+<li>Set the active tile style if there is more than one.</li>
+<li>Floors can be named for each building.</li>
+<li>Automatically suggest translations when creating new types.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>New coat of paint.</li>
+<li>Export map has been moved to tools and had a facelift.</li>
+</ul>
+<h2>October 2018</h2>
+<h3>New</h3>
+<ul>
+<li><strong>Routes</strong>: Lock or unlock paths in the routing network.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Improved map interaction and styling.</li>
+</ul>
+<hr>
+<h2>[3.5.0] - 20-03-2018</h2>
+<h3>Added</h3>
+<ul>
+<li>Navigate between buildings or reset the venue view in export map.</li>
+<li>Filter locations by floor (list view).</li>
+<li>New Map (Google Maps JS API 3.32).</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Moved location type to the top to better indicate its importance.</li>
+<li>The name of a location is now automatically set to the type. Can still be changed if needed.</li>
+<li>Split display settings and types in two pages.</li>
+<li>Improved analytics.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Floor selector displays name rather than ID.</li>
+<li>Displaying default language name on venues instead of Adm. ID.</li>
+</ul>
+<h2>[3.4.1] - 20-02-2018</h2>
+<h3>Added</h3>
+<h3>Changed</h3>
+<h3>Fixed</h3>
+<ul>
+<li>Creating a new Location with Custom Properties did not work on all Solutions.</li>
+</ul>
+<h2>[3.4.0] - 20-02-2018</h2>
+<h3>Added</h3>
+<ul>
+<li>Select all/deselect all, Locations table.</li>
+<li>Graph bounds and editing.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Refactored locations list.</li>
+<li>Improved ordering of locations.</li>
+<li>Improved database performance greatly improving system responsiveness when loading many locations.</li>
+<li>Ordered types by viewdistance.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>In some situations custom fields on locations would not save correctly.</li>
+<li>Error message when trying to add an existing user.</li>
+</ul>
+<h2>[3.3.1] - 19-01-2018</h2>
+<h3>Added</h3>
+<h3>Changed</h3>
+<h3>Fixed</h3>
+<ul>
+<li>Deleting locations now works.</li>
+</ul>
+<h2>[3.3.0] - 11-12-2017</h2>
+<h3>Added</h3>
+<ul>
+<li>Venue bounds, Network visualiser.</li>
+<li>Edit Venue bounds.</li>
+<li>Remember last Venue (until changing Solution).</li>
+<li>Create new Venue.</li>
+<li>Delete Venue.</li>
+<li>Toggle labels for Locations map.</li>
+<li>Solution Types.</li>
+<li>Solution expiration date.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Moved from Angular Http to Angular HttpClient.</li>
+<li>Buildings moved to separate page.</li>
+</ul>
+<h3>Fixed</h3>
+<h2>[3.2.0] - 29-11-2017</h2>
+<h3>Added</h3>
+<ul>
+<li>Label rotation and type for export map.</li>
+<li>Icon size for export map.</li>
+<li>Master data (venue, buildings) page.</li>
+<li>Tooltip for type and image in edit panel for locations.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Tighter display settings page allowing more types to be shown at the time.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Styling issues related to toolbars.</li>
+</ul>
+<h2>[3.1.1] - 16-11-2017</h2>
+<h3>Added</h3>
+<h3>Changed</h3>
+<h3>Fixed</h3>
+<ul>
+<li>Only use localstorage to check Solution when reloading.</li>
+<li>Collapsing the sidebar updates the map-size, preventing grey areas with no tiles.</li>
+<li>Fixed an error when trying to save a location with no name set for one or more languages.</li>
+</ul>
+<h2>[3.1.0] - 14-11-2017</h2>
+<h3>Added</h3>
+<ul>
+<li>Zoom level indcator.</li>
+<li>Modified and modified by to the location list.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Updated to Angular 5.</li>
+<li>Types has a create/edit panel.</li>
+<li>Types page changed to focus more on display settings.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Bug where categories would not be set on locations.</li>
+<li>Bug where new locations with categories would not be created.</li>
+<li>Login issues when using the email/password form.</li>
+</ul>
+<h2>[3.0.0] - 06-11-2017</h2>
+<h3>Added</h3>
+<ul>
+<li>Customer and partners page.</li>
+<li>App configurations page.</li>
+<li>Network visualiser.</li>
+<li>Categories management. It is now possible to create, edit and delete categories.</li>
+<li>Entering a category name when multiple languages are present in a Solution will try to translate via Google translate API.</li>
+<li>Import graphs.</li>
+<li>Automatic user invitaions.</li>
+<li>Reset password.</li>
+<li>Solutions management.</li>
+<li>New filters for locations.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Locations are now managed on venue level.</li>
+<li>Menu is split into venue mangement, general settings and administration.</li>
+<li>Top level venue select.</li>
+<li>Type settings has a new layout which is easier to use and takes up less space.</li>
+<li>Venue and buildings became the Master data page.</li>
+<li>Locations is now one page with view settings for map and list.</li>
+<li>User management for customers now lives in a Solution limited space.</li>
+<li>User management reworked.</li>
+<li>New bulk edit.</li>
+<li>New export map.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Remember last Solution.</li>
+<li>Custom fields update when changing type of a location.</li>
+<li>Location search now works as intended.</li>
+<li>Hundreds of bugs. Too many to list, the codebase is entirely new.</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>AngularJS.</li>
+<li>Bootstrap 3.0.</li>
+<li>Unused libraries.</li>
+<li>Complexity.</li>
+</ul>
+
+        </main>
+      </section>
+    </div>
+  </div>
+  <footer>
+  <div class="wrap">
+    <div class="flex">
+      <div class="third">
+        <h2><a href="/ios/v3">iOS v3</a></h2>
+        
+        <ul><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+
+      </div>
+      <div class="third">
+
+        <h2><a href="/android/v3">Android v3</a></h2>
+        
+        <ul><li><a href="/android/v3/getting-polygon-from-location/">Getting a Polygon from a Location</a></li>
+<li><a href="/android/v3/search-locations-display-map/">Searching for Locations and Displaying the Results on a Map</a></li>
+<li><a href="/android/v3/live-data/">Live Data</a></li>
+<li><a href="/android/v3/locationdatasourcespeoplelocationdatasource/">Creating your own Location Data Source - Part 1</a></li>
+<li><a href="/android/v3/locationdatasourcesbatterieslocationdatasource/">Creating your own Location Data Source - Part 2</a></li>
+<li><a href="/android/v3/locationdatasourceslocationdatasourcesfragment/">Creating your own Location Data Source - Part 3</a></li>
+<li><a href="/android/v3/locationclusteringlocationclusteringfragment/">Work with location grouping / clustering</a></li>
+<li><a href="/android/v3/locationdetailsdemolocationdetailsfragment/">Show Location Details</a></li>
+<li><a href="/android/v3/searchmapdemosearchfragment/">Create a Search Experience with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/searchmapdemosearchmapfragment/">Create a Search Experience with MapsIndoors - Part 2</a></li>
+<li><a href="/android/v3/showuserlocationdemopositionprovider/">Show the Blue Dot with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/showuserlocationshowuserlocationfragment/">Show the Blue Dot with MapsIndoors - Part 2</a></li></ul>
+      </div>
+      <div class="third">
+        <h2><a href="/web/v4">Web v4</a></h2>
+        
+        <ul><li><a href="/web/v4/upgrade-guide/">v4 Upgrade Guide</a></li>
+<li><a href="/web/v4/simple-map/">Create a simple map with MapsIndoors</a></li>
+<li><a href="/web/v4/display-rules-intro/">Introduction to Display Rules</a></li>
+<li><a href="/web/v4/using-events/">Event handling</a></li>
+<li><a href="/web/v4/search-and-filtering/">Search and filtering</a></li></ul>
+
+        <h2><a href="/web/v3">Web v3</a></h2>
+        
+        <ul><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="flex">
+      <div class="third">
+        <h2>Legacy versions</h2>
+        <h4><a href="/android/v2">Android v2</a></h4>
+        <h4><a href="/ios/v2">iOS v2</a></h4>
+        <h4><a href="/xamarin">Xamarin v3</a></h4>
+
+      </div>
+      <div class="third">
+        <h2><a href="/api">Integration API</a></h2>
+        <h2><a href="/cms">MapsIndoors CMS</a></h2>
+        <h2><a href="/product">Product Overview</a></h2>
+      </div>
+      <div class="third">
+        <h2><a href="/various">Various</a></h2>
+        
+        <ul><li><a href="/various/glossary/">Glossary</a></li>
+<li><a href="/various/areas/">Areas</a></li>
+<li><a href="/various/custom-properties/">Custom Properties</a></li>
+<li><a href="/various/dashboard/">CMS Dashboard</a></li>
+<li><a href="/various/external-id/">External ID</a></li>
+<li><a href="/various/google_analytics/">Google Analytics</a></li>
+<li><a href="/various/indoor-positioning/">Indoor Positioning with MapsIndoors</a></li>
+<li><a href="/various/ip-whitelisting/">Work with MapsIndoors SDK behind a firewall</a></li>
+<li><a href="/various/kiosk/">Kiosk</a></li>
+<li><a href="/various/location-sources/">Location Sources in MapsIndoors</a></li>
+<li><a href="/various/print-map/">Print Map</a></li>
+<li><a href="/various/sdk-features/">SDK Features</a></li></ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

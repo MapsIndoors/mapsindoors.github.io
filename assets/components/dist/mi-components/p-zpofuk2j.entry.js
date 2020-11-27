@@ -1,0 +1,1 @@
+import{r as s,g as t}from"./p-809191ee.js";const r=class{constructor(t){s(this,t),this.selected=!1}get el(){return t(this)}};export{r as mi_dropdown_item};

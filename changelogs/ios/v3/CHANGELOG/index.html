@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
+      }
+    </script>
+    <script type="module" src="/assets/components/dist/mi-components/mi-components.esm.js"></script>
+    <script nomodule src="/assets/components/dist/mi-components/mi-components.js"></script>
+    <title>Changelog - MapsIndoors Documentation</title>
+  </head>
+
+
+<body>
+  <header>
+  <div class="wrap">
+    <section class="flex">
+      <div class="left">
+        <a href="/">
+          <svg width="200" height="39" viewBox="0 0 200 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="mapspeople-logo">
+            <g clip-path="url(#clip0)">
+              <path d="M13.2756 10.5368C14.766 9.49696 16.8804 8.87305 18.4402 8.87305C23.3622 8.87305 25.4073 11.438 25.4073 15.5282V28.6304H20.5199V15.7361C20.5199 14.315 19.7227 13.6564 18.4402 13.6564C16.7764 13.6564 15.7712 14.1417 15.1473 14.419V28.6304H10.26V15.7361C10.26 14.315 9.46274 13.6564 8.18024 13.6564C6.72444 13.6564 5.68457 14.0724 4.88735 14.419V28.6304H0V9.49696H3.43154L3.70884 10.1555C5.06066 9.39298 6.82842 8.90771 8.14558 8.90771C10.8492 8.87305 12.2704 9.56629 13.2756 10.5368Z" fill="#006440"></path>
+              <path d="M40.6926 15.6321C40.6926 14.2803 39.9994 13.6564 38.2316 13.6564C36.3598 13.6564 33.7948 14.1417 31.7844 14.8696V10.0169C33.8988 9.04636 36.5331 8.87305 38.2316 8.87305C44.0202 8.87305 45.5106 11.6807 45.5106 15.8748V28.6304H42.1137L41.8364 28.0412C40.5193 28.7344 38.7515 29.2197 37.4344 29.2197C32.2004 29.2197 30.502 25.9268 30.502 22.3566C30.502 19.029 32.3044 16.1867 37.4344 15.8401L40.6926 15.6321ZM37.5383 20.3115C35.8399 20.4502 35.3893 21.4207 35.3893 22.3912C35.3893 23.2578 35.6319 24.471 37.5037 24.471C38.5435 24.471 39.9647 23.951 40.6926 23.5698V20.1036L37.5383 20.3115Z" fill="#006440"></path>
+              <path d="M51.1616 9.49696H54.5585L54.8011 10.1902C56.1183 9.39298 57.99 8.87305 59.4112 8.87305C65.893 8.87305 67.7301 12.5126 67.7301 19.0637C67.7301 25.6495 65.893 29.2543 59.4112 29.2543C58.3713 29.2543 56.8809 28.9424 55.945 28.5264V38.1971H51.127V9.49696H51.1616ZM55.945 23.7084C56.7422 24.055 58.0247 24.4363 59.3419 24.4363C62.2535 24.4363 62.8081 22.1486 62.8081 19.029C62.8081 15.9094 62.2188 13.6217 59.3419 13.6217C58.0247 13.6217 56.7422 14.003 55.945 14.3497V23.7084Z" fill="#006440"></path>
+              <path d="M79.8957 16.4645C85.3723 16.9844 86.6202 19.0295 86.6202 22.5997C86.6202 25.8233 84.7484 29.2548 78.9252 29.2548C77.1921 29.2548 74.4191 28.6656 72.894 28.0763V23.0503C74.6271 23.7089 76.9495 24.4368 78.9945 24.4368C81.2476 24.4368 81.9061 23.4662 81.9061 22.6344C81.9061 21.8718 81.4555 21.2825 79.4451 21.1092C74.0725 20.5893 72.7207 18.3016 72.7207 15.3207C72.7207 12.3397 74.5231 8.83887 79.9304 8.83887C81.6288 8.83887 83.6739 9.11616 85.823 10.0867V14.9047C83.7779 14.1768 81.8715 13.5876 79.9304 13.5876C77.8853 13.5876 77.4347 14.3501 77.4347 15.2167C77.4001 15.8753 77.816 16.2565 79.8957 16.4645Z" fill="#006440"></path>
+              <path d="M93.3797 27.2097V38.1629H92.2012V9.53206H92.7211L93.2757 11.0225C94.9741 9.91334 97.8511 9.35875 100.069 9.35875C106.517 9.35875 108.111 13.5875 108.111 19.0988C108.111 24.6101 106.517 28.8388 100.069 28.8388C97.8858 28.8042 95.1128 28.2842 93.3797 27.2097ZM93.3797 11.9931V26.1698C95.1128 27.2444 97.3312 27.7643 100.069 27.7643C105.858 27.7643 106.898 23.3622 106.898 19.0641C106.898 14.766 105.858 10.364 100.069 10.364C97.3658 10.364 95.1474 10.9185 93.3797 11.9931ZM127.834 26.8284V27.8683C126.309 28.4575 123.744 28.8388 121.664 28.8388C115.217 28.8388 113.622 24.7834 113.622 19.0988C113.622 13.4142 115.217 9.35875 121.664 9.35875C128.111 9.35875 128.804 13.4835 128.804 19.0988V19.6187H114.801C114.87 23.9168 116.083 27.799 121.629 27.799C124.541 27.7643 126.413 27.279 127.834 26.8284ZM127.66 18.5442C127.66 14.3847 127.244 10.364 121.664 10.364C116.118 10.364 114.905 14.2114 114.835 18.5442H127.66ZM141.976 9.35875C148.77 9.35875 149.983 13.4835 149.983 19.0988C149.983 24.714 148.77 28.8388 141.976 28.8388C135.182 28.8388 133.969 24.714 133.969 19.0988C133.934 13.4835 135.147 9.35875 141.976 9.35875ZM141.976 27.7643C148.076 27.7643 148.77 23.8821 148.77 19.0641C148.77 14.2461 148.076 10.364 141.976 10.364C135.875 10.364 135.147 14.2808 135.147 19.0641C135.147 23.8821 135.841 27.7643 141.976 27.7643ZM156.673 27.2097V38.1629H155.494V9.53206H156.014L156.569 11.0225C158.267 9.91334 161.144 9.35875 163.362 9.35875C169.809 9.35875 171.404 13.5875 171.404 19.0988C171.404 24.6101 169.809 28.8388 163.362 28.8388C161.179 28.8042 158.371 28.2842 156.673 27.2097ZM156.673 11.9931V26.1698C158.406 27.2444 160.624 27.7643 163.362 27.7643C169.151 27.7643 170.191 23.3969 170.191 19.0641C170.191 14.766 169.151 10.364 163.362 10.364C160.624 10.364 158.406 10.9185 156.673 11.9931ZM180.173 28.8042C178.128 28.8042 177.227 27.9029 177.227 26.0312V0H178.406V25.9619C178.406 27.4177 178.787 27.9029 180.208 27.9029V28.8042H180.173ZM198.891 26.8284V27.8683C197.366 28.4575 194.801 28.8388 192.721 28.8388C186.274 28.8388 184.68 24.7834 184.68 19.0988C184.68 13.4142 186.239 9.35875 192.721 9.35875C199.168 9.35875 199.861 13.4835 199.861 19.0988V19.6187H185.858C185.927 23.9168 187.141 27.799 192.686 27.799C195.598 27.7643 197.435 27.279 198.891 26.8284ZM198.683 18.5442C198.683 14.3847 198.267 10.364 192.686 10.364C187.106 10.364 185.927 14.2114 185.858 18.5442H198.683Z" fill="#006440"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="200" height="38.4749" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        <a href="https://mapspeople.com/support">Support</a>
+        <a href="https://github.com/mapsindoors">GitHub</a>
+        <a href="https://blog.mapspeople.com/tag/product">Product Blog</a>
+        <a href="https://cms.mapsindoors.com/">CMS</a>
+      </div>
+    </section>
+  </div>
+</header>
+
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        
+         <nav class="sidebar">
+  
+  
+  
+  
+   <p class="nav__header"><a href="/ios/v3/">iOS v3</p>
+    <a href="https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html">Reference Docs
+      &UpperRightArrow;</a>
+    <hr />
+    
+  
+  
+  
+  
+  <ul class="sidebar-nav"><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+</nav>
+
+        
+        <main>
+          <nav aria-label="Breadcrumb">
+            
+          </nav>
+          <h1>
+            <a href="/changelogs/ios/v3/CHANGELOG/">Changelog</a>
+          </h1>
+          
+            <p class="time">Last updated: <time>11/27/2020</time>
+            </p>
+          
+          <p>Changelog for MapsIndoors for iOS. This document structure is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and the project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<!---
+## [Unreleased]
+### Fixed
+### Added
+### Fixed
+### Changed
+### Removed
+-->
+<h2>[3.13.0] 2020-10-14</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for Rendering of Polygons through Display Rules, see <a href="https://mapsindoors.github.io/ios/v3/map-styling/">updated guide about map styling</a>.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue causing our route to go through walls in some cases. Sure hope we didn't cause any accidents:)</li>
+<li>Fixed a logging issue causing obsolete logs to spam the console.</li>
+<li>Fixed a rare issue causing a Live Data session to freeze in the UI thread.</li>
+<li>Fixed an issue causing some Live Updates to be discarded unintentionally.</li>
+<li>Fixed an issue causing some Live Updates to be emitted unintentionally while they should have been discarded.</li>
+<li>Fixed offline data script so that it handles external ressources better.</li>
+<li>Fixed some general stability issues</li>
+</ul>
+<h2>[3.12.0] 2020-09-30</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for Live Data added. For more information, read about this feature in the <a href="https://mapsindoors.github.io/ios/v3/live-data/">Live Data Guide</a>.</li>
+</ul>
+<h2>[3.11.1] 2020-09-28</h2>
+<h3>Added</h3>
+<ul>
+<li>In <code>MPDatasetCacheManager</code> we have optimized support for changing caching scope from a larger scope to a smaller scope, by deleting obsolete caches.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed that route end marker on <code>MPDirectionsRenderer</code> was obscuring the destination location marker.</li>
+<li>Fixed an issue causing <code>MPDirectionsRenderer</code> not to use the <code>MPDirectionsRenderer.actionPointImages</code> in some cases.</li>
+<li>Fixed a data synchronisation issue that caused the newly synchronised data to not being used before a new session was initiated.</li>
+<li>Fixed a route path optimization issue that caused the optimization to be applied unintentionally in some cases.</li>
+<li>Fixed a search issue that caused the search engine to ignore <code>MPLocation.externalId</code>.</li>
+<li>Fixed a routing issue that caused the <code>MPDirectionsRenderer</code> to show a wrong the next leg marker.</li>
+<li>Fixed an issue causing the Info Window of <code>MPMapControl.selectedLocation</code> to not show up in some cases.</li>
+<li>Fixed an internal issue with the map marker collision handling.</li>
+<li>Some internal refactorings and optimizations.</li>
+</ul>
+<h2>[3.9.9] 2020-08-31</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed issues causing <code>MPMapControl</code> to not properly clean up content on the map when <code>MapsIndoors.provideAPIKey()</code> is called while a <code>MPMapControl</code> instance is already initialized.</li>
+<li>Fixed issue causing <code>MPMapControl.selectedLocation</code> to not properly highlight on the map in some cases.</li>
+<li>Internal search engine optimizations and improvements.</li>
+</ul>
+<h2>[3.9.7] 2020-08-19</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed a race condition occurring in some poor networking conditions causing <code>MPMapControl</code> not to properly show its initial building outline.</li>
+<li>Other internal stability improvements.</li>
+</ul>
+<h2>[3.9.6] 2020-07-06</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed indoor routes with stairs leading to the same Floor would omit the stair steps.</li>
+</ul>
+<h2>[3.9.5] 2020-07-02</h2>
+<h3>Added</h3>
+<ul>
+<li>Added a helper method on <code>MPLocation</code> to retrieve fields using case-insenitive keys: <code>location.getField(forKey: &quot;key&quot;)</code></li>
+</ul>
+<h2>[3.9.4] 2020-06-24</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue that caused search functionality to stop working after receiving a low memory warning.</li>
+<li>Fixed an issue that caused some map location images to show at wrong locations in some cases.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Venue labels now show only for zoom levels 10 to 15 (exclusively)</li>
+</ul>
+<h2>[3.9.3] 2020-06-16</h2>
+<h3>Changed</h3>
+<ul>
+<li>Routes rendered on the map with <code>MPDirectionsRenderer</code> now have rounded curves when directions on the route change.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed a crash in <code>MPDirectionsRenderer</code> that happened when new routes were applied in quick succession.</li>
+<li>Fixed a problem synchronising multiple datasets simultaneously.</li>
+</ul>
+<h2>[3.9.2] 2020-06-02</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Synchronizing new data would not take in current app session.</li>
+</ul>
+<h2>[3.9.1] 2020-05-18</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Too many wayfinding steps were emitted for routes with slight curvature.</li>
+</ul>
+<h2>[3.9.0] 2020-05-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for caching offline data for multiple datasets. See <code>MapsIndoors.dataSetCacheManager</code> and <a href="https://mapsindoors.github.io/ios/v3/offline/">https://mapsindoors.github.io/ios/v3/offline/</a> for more details.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Updated Google Maps dependency to Google Maps 3.8.0</li>
+</ul>
+<h2>[3.8.3] 2020-03-05</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue that would make devices with iOS 10 crash occasionally.</li>
+</ul>
+<h2>[3.8.2] 2020-03-02</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue where the rendered route part would sometimes not be fully visible.</li>
+<li>Fixed a problem with loading maptiles embedded in apps at first launch of app.</li>
+<li>Fixed an directions issue where the reversed directions request (swapping origin and destination) could sometimes not be calculated.</li>
+</ul>
+<h3>Added</h3>
+<ul>
+<li>Added an ExternalId property <code>MPLocation.externalId</code>. This field is used for identifying each location on a matter that is external to MapsIndoors. The ExternalId is maintained in MapsIndoors CMS.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Deprecated <code>MPLocation.roomId</code>. <code>MPLocation.externalId</code> is to be used instead.</li>
+</ul>
+<h2>[3.8.1] 2020-02-04</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Some searches unfortunately ended in a crash related to data inconsistency.</li>
+<li>Directions completion handler was sometimes on the main queue.</li>
+<li>Improved detection of start and end rooms on a route.</li>
+<li>Script for embedding data for offline use would download all referenced URLs but should only download referenced images and maptiles.</li>
+</ul>
+<h2>[3.8.0] 2020-01-24</h2>
+<h3>Changed</h3>
+<ul>
+<li>Improved route generation; improved detection of start and end rooms for indoor route, and improved rendering of route start and endpoints.</li>
+</ul>
+<h2>[3.7.2] 2019-01-09</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Applying  <code>MPMapControl.setDisplayRule(:forLocation:)</code> for one or more locations that was already hidden by default would not change the locations visibility. This is now fixed.</li>
+</ul>
+<h2>[3.7.1] 2019-12-05</h2>
+<h3>Added</h3>
+<ul>
+<li>Added <code>MPMapControl</code> now has new functionality for temporarily changing the <code>MPDisplayRule</code> for individual <code>MPLocations</code>.  See <code>MPMapControl.setDisplayRule(:forLocation:)</code>, <code>MPMapControl.resetDisplayRuleForLocation()</code> and similar methods.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Multiple improvements to the search engine has been implemented.</li>
+</ul>
+<h2>[3.6.2] 2019-11-18</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed a memory leak happening when switching Solution or API key.</li>
+<li>Fixed <code>MPMapControl</code> is now more resilient against <code>GMSMapView.delegate</code> being changed.</li>
+<li><a href="https://forums.developer.apple.com/thread/123003">This issue</a> made our SDK crash if built with XCode 10 and below. We have implemented a workaround in this version.</li>
+<li>Fixed Restored previous behaviour where the map settles on a building and showing the floor selector initially.</li>
+<li>Fixed Improved switching between different Solutions / API keys.</li>
+</ul>
+<h2>[3.6.1] 2019-11-05</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed synchronisation issue, that sometimes caused map graphics to disappear, if the app was shut down in the middle of a synchronisation.</li>
+<li>Fixed directions rendering issue causing the map camera to display random parts of the Google map instead of the step or leg that was intended to be rendered.</li>
+<li>Fixed some inconsistencies in how non-quadratic icons was anchored on the map.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Locations can now be configured as searchable (from the backend), which in effect makes them eligible for map display but not retrievable from a search query through <code>MPLocationService</code>.</li>
+</ul>
+<h2>[3.6.0] 2019-10-10</h2>
+<h3>Fixed</h3>
+<ul>
+<li><code>MPDirectionsQuery.init(originPoint:MPPoint, destPoint:MPPoint)</code> could produce origins and destinations on level 0, resulting in incorrect route results.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Compiled with Xcode 11 for iOS 13</li>
+<li>Internal refactoring to improve memory and threading error resilience.</li>
+</ul>
+<h2>[3.5.0] 2019-09-25</h2>
+<h3>Added</h3>
+<ul>
+<li>Added <code>depth</code> property to <code>MPFilter</code>, used with the <code>parents</code> property, making it possible to e.g. get all buildings and floors within a venue (depth 2) or get only floors within a building (depth 1).</li>
+<li>Added the ability to control the visibility of map icons and map labels independently, through <code>MPLocationDisplayRule.showIcon</code> and  <code>MPLocationDisplayRule.showLabel</code>.</li>
+<li>Added property <code>locationBaseType</code> on <code>MPLocation</code>, making it possible to dstinguish buildings from venues, floors from rooms, areas from POIs etc.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed issue with info window disappearing after location selection when search result is currently rendered.</li>
+<li>Fixed some internal concurrency issues.</li>
+</ul>
+<h2>[3.3.1] 2019-09-15</h2>
+<h3>Changed</h3>
+<ul>
+<li>InfoWindows presented on the map is now made fully visible if needed - this changes the presented map area.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed location data was only synced once per session, regardless of explicit calls to <code>MapsIndoors.synchronizeContent()</code>.</li>
+</ul>
+<h2>[3.3.0] 2019-08-30</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for custom fields on venues, buildings and categories (writable from the MapsIndoors Data API).</li>
+</ul>
+<h2>[3.2.0] 2019-08-20</h2>
+<h3>Changed</h3>
+<ul>
+<li>Updated Google Maps SDK from 3.1.0 to 3.3.0 (see <a href="https://developers.google.com/maps/documentation/ios-sdk/releases">https://developers.google.com/maps/documentation/ios-sdk/releases</a> for details).</li>
+<li>Default Google Maps styling is now applied to the map, so that we hide Google Maps icons that usually compete with, confuse or disturb the appearance of MapsIndoors location icons.</li>
+</ul>
+<h3>Added</h3>
+<ul>
+<li>Support for building default floors.</li>
+<li>Support for profile-based routing.</li>
+<li>Support for travelmode specific venue entrypoints, so e.g. driving routes can go via parking lots (require data configuration).</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue with loading Solution data from the MapsIndoors backend.</li>
+<li>Fixed an issue with searching for location aliases.</li>
+<li>Fixed a memory issue that can happen when multiple map instances are created in one session.</li>
+<li>Fixed a rare race condition during initialization.</li>
+</ul>
+<h2>[3.1.2] 2019-06-27</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed memory issue related to adding observers to <code>MPMapsIndoorsLocationSource</code>  in relation to entering and leaving a MapsIndoors map multiple times in the same session.</li>
+<li>Fixed occasional orphaned/ghost polyline from the <code>MPDirectionsRenderer</code>.</li>
+<li>Fixed wrong floor tiles showing in route step in some cases.</li>
+<li>Fixed an issue with route rendering.</li>
+<li>Fixed info window not appearing for selectedLocation after several API key switches.</li>
+</ul>
+<h2>[3.1.1] 2019-06-21</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed <code>MPMapControl.go(to:MPLocation)</code> so that the map now properly fits locations with polygons.</li>
+<li>Fixed dataset switching sometimes not working due to re-initialisation not properly executed behind the scenes.</li>
+<li>Fixed memory issues related to entering and leaving a MapsIndoors map multiple times in the same session.</li>
+<li>Adding custom <code>MPLocationDisplayRule</code> not affecting size and rank changes due to a race condition.</li>
+<li>Fixed a problem with transitioning from a Google route to a MapsIndoors route.</li>
+</ul>
+<h2>[3.1.0] 2019-06-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Added a <code>MPGeometryHelper</code> class.</li>
+<li>Added a way to get polygons for locations using <code>MPGeometryHelper.polygonsForLocation(location:MPLocation)</code>.</li>
+<li>Updated Google Maps dependency to version 3.1.0.</li>
+<li>Optimizing outdoor/indoor directions. Filters entry points by new travel mode flag in SDK before doing calculations.</li>
+<li>Now possible to set map style (layout) using <code>MPMapControl.mapStyle = MPMapStyle(string:&quot;my-style&quot;)</code>. Only applies for data sets that has multiple defined styles.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed map markers being anchored at the bottom of a square icon, not the center.</li>
+<li>Fixed a race condition in the initial data fetch causing locations search results to be initially empty.</li>
+<li>Fixed error causing locations to show across all Floors when displaying as search result.</li>
+<li>Fixed tapping on Information Window does not center view based on selected location.</li>
+</ul>
+<h2>[3.0.4] 2019-04-29</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Improved search functionality.</li>
+<li>Fixed an issue with directions only returning routes on ground floor.</li>
+<li>Fixed issue with the directions service not resorting to offline even in case of cached route-networks.</li>
+<li>Fixed an issue where would return more than expected results when perfect match(es) was found.</li>
+</ul>
+<h2>[3.0.3] 2019-04-11</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue changing MapsIndoors.positionProvider during the runtime of the app.</li>
+</ul>
+<h2>[3.0.2] 2019-04-08</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue where MPMapControl would not update it's current location.</li>
+</ul>
+<h2>[3.0.1] 2019-04-03</h2>
+<h3>Added</h3>
+<ul>
+<li>MPMapControlDelegate now has a new method for notifying about which building is focused on the map  <code>MPMapControlDelegate.focusedBuildingDidChange()</code></li>
+<li>MPMapControlDelegate now has a new method for notifying position updates  <code>MPMapControlDelegate.onPositionUpdate()</code></li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>MPMapControl.currentPosition has been deprecated; use MapsIndoors.positionProvider.latestPositionResult to know current position.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed an issue related to MPLocations using the default displayrule as well as their own icon.</li>
+<li>Fixed an issue causing MPLocationUpdate/MPLocation to always set floor index to zero on updates.</li>
+</ul>
+<h2>[3.0.0] 2019-03-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Support for external location data sources using <code>MapsIndoors.registerLocationSources()</code></li>
+<li>New location service <code>MPLocationService</code> to replace <code>MPLocationsProvider</code></li>
+<li>Location clustering support using <code>MPMapControl.locationClusteringEnabled</code></li>
+<li>Added building and venues to the search experience</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>MPLocation properties are now read only</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Removed a number of deprecated methods that was introduced in V1</li>
+</ul>
+
+        </main>
+      </section>
+    </div>
+  </div>
+  <footer>
+  <div class="wrap">
+    <div class="flex">
+      <div class="third">
+        <h2><a href="/ios/v3">iOS v3</a></h2>
+        
+        <ul><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+
+      </div>
+      <div class="third">
+
+        <h2><a href="/android/v3">Android v3</a></h2>
+        
+        <ul><li><a href="/android/v3/getting-polygon-from-location/">Getting a Polygon from a Location</a></li>
+<li><a href="/android/v3/search-locations-display-map/">Searching for Locations and Displaying the Results on a Map</a></li>
+<li><a href="/android/v3/live-data/">Live Data</a></li>
+<li><a href="/android/v3/locationdatasourcespeoplelocationdatasource/">Creating your own Location Data Source - Part 1</a></li>
+<li><a href="/android/v3/locationdatasourcesbatterieslocationdatasource/">Creating your own Location Data Source - Part 2</a></li>
+<li><a href="/android/v3/locationdatasourceslocationdatasourcesfragment/">Creating your own Location Data Source - Part 3</a></li>
+<li><a href="/android/v3/locationclusteringlocationclusteringfragment/">Work with location grouping / clustering</a></li>
+<li><a href="/android/v3/locationdetailsdemolocationdetailsfragment/">Show Location Details</a></li>
+<li><a href="/android/v3/searchmapdemosearchfragment/">Create a Search Experience with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/searchmapdemosearchmapfragment/">Create a Search Experience with MapsIndoors - Part 2</a></li>
+<li><a href="/android/v3/showuserlocationdemopositionprovider/">Show the Blue Dot with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/showuserlocationshowuserlocationfragment/">Show the Blue Dot with MapsIndoors - Part 2</a></li></ul>
+      </div>
+      <div class="third">
+        <h2><a href="/web/v4">Web v4</a></h2>
+        
+        <ul><li><a href="/web/v4/upgrade-guide/">v4 Upgrade Guide</a></li>
+<li><a href="/web/v4/simple-map/">Create a simple map with MapsIndoors</a></li>
+<li><a href="/web/v4/display-rules-intro/">Introduction to Display Rules</a></li>
+<li><a href="/web/v4/using-events/">Event handling</a></li>
+<li><a href="/web/v4/search-and-filtering/">Search and filtering</a></li></ul>
+
+        <h2><a href="/web/v3">Web v3</a></h2>
+        
+        <ul><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="flex">
+      <div class="third">
+        <h2>Legacy versions</h2>
+        <h4><a href="/android/v2">Android v2</a></h4>
+        <h4><a href="/ios/v2">iOS v2</a></h4>
+        <h4><a href="/xamarin">Xamarin v3</a></h4>
+
+      </div>
+      <div class="third">
+        <h2><a href="/api">Integration API</a></h2>
+        <h2><a href="/cms">MapsIndoors CMS</a></h2>
+        <h2><a href="/product">Product Overview</a></h2>
+      </div>
+      <div class="third">
+        <h2><a href="/various">Various</a></h2>
+        
+        <ul><li><a href="/various/glossary/">Glossary</a></li>
+<li><a href="/various/areas/">Areas</a></li>
+<li><a href="/various/custom-properties/">Custom Properties</a></li>
+<li><a href="/various/dashboard/">CMS Dashboard</a></li>
+<li><a href="/various/external-id/">External ID</a></li>
+<li><a href="/various/google_analytics/">Google Analytics</a></li>
+<li><a href="/various/indoor-positioning/">Indoor Positioning with MapsIndoors</a></li>
+<li><a href="/various/ip-whitelisting/">Work with MapsIndoors SDK behind a firewall</a></li>
+<li><a href="/various/kiosk/">Kiosk</a></li>
+<li><a href="/various/location-sources/">Location Sources in MapsIndoors</a></li>
+<li><a href="/various/print-map/">Print Map</a></li>
+<li><a href="/various/sdk-features/">SDK Features</a></li></ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

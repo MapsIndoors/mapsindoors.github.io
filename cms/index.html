@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
+      }
+    </script>
+    <script type="module" src="/assets/components/dist/mi-components/mi-components.esm.js"></script>
+    <script nomodule src="/assets/components/dist/mi-components/mi-components.js"></script>
+    <title>MapsIndoors CMS - MapsIndoors Documentation</title>
+  </head>
+
+
+<body>
+  <header>
+  <div class="wrap">
+    <section class="flex">
+      <div class="left">
+        <a href="/">
+          <svg width="200" height="39" viewBox="0 0 200 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="mapspeople-logo">
+            <g clip-path="url(#clip0)">
+              <path d="M13.2756 10.5368C14.766 9.49696 16.8804 8.87305 18.4402 8.87305C23.3622 8.87305 25.4073 11.438 25.4073 15.5282V28.6304H20.5199V15.7361C20.5199 14.315 19.7227 13.6564 18.4402 13.6564C16.7764 13.6564 15.7712 14.1417 15.1473 14.419V28.6304H10.26V15.7361C10.26 14.315 9.46274 13.6564 8.18024 13.6564C6.72444 13.6564 5.68457 14.0724 4.88735 14.419V28.6304H0V9.49696H3.43154L3.70884 10.1555C5.06066 9.39298 6.82842 8.90771 8.14558 8.90771C10.8492 8.87305 12.2704 9.56629 13.2756 10.5368Z" fill="#006440"></path>
+              <path d="M40.6926 15.6321C40.6926 14.2803 39.9994 13.6564 38.2316 13.6564C36.3598 13.6564 33.7948 14.1417 31.7844 14.8696V10.0169C33.8988 9.04636 36.5331 8.87305 38.2316 8.87305C44.0202 8.87305 45.5106 11.6807 45.5106 15.8748V28.6304H42.1137L41.8364 28.0412C40.5193 28.7344 38.7515 29.2197 37.4344 29.2197C32.2004 29.2197 30.502 25.9268 30.502 22.3566C30.502 19.029 32.3044 16.1867 37.4344 15.8401L40.6926 15.6321ZM37.5383 20.3115C35.8399 20.4502 35.3893 21.4207 35.3893 22.3912C35.3893 23.2578 35.6319 24.471 37.5037 24.471C38.5435 24.471 39.9647 23.951 40.6926 23.5698V20.1036L37.5383 20.3115Z" fill="#006440"></path>
+              <path d="M51.1616 9.49696H54.5585L54.8011 10.1902C56.1183 9.39298 57.99 8.87305 59.4112 8.87305C65.893 8.87305 67.7301 12.5126 67.7301 19.0637C67.7301 25.6495 65.893 29.2543 59.4112 29.2543C58.3713 29.2543 56.8809 28.9424 55.945 28.5264V38.1971H51.127V9.49696H51.1616ZM55.945 23.7084C56.7422 24.055 58.0247 24.4363 59.3419 24.4363C62.2535 24.4363 62.8081 22.1486 62.8081 19.029C62.8081 15.9094 62.2188 13.6217 59.3419 13.6217C58.0247 13.6217 56.7422 14.003 55.945 14.3497V23.7084Z" fill="#006440"></path>
+              <path d="M79.8957 16.4645C85.3723 16.9844 86.6202 19.0295 86.6202 22.5997C86.6202 25.8233 84.7484 29.2548 78.9252 29.2548C77.1921 29.2548 74.4191 28.6656 72.894 28.0763V23.0503C74.6271 23.7089 76.9495 24.4368 78.9945 24.4368C81.2476 24.4368 81.9061 23.4662 81.9061 22.6344C81.9061 21.8718 81.4555 21.2825 79.4451 21.1092C74.0725 20.5893 72.7207 18.3016 72.7207 15.3207C72.7207 12.3397 74.5231 8.83887 79.9304 8.83887C81.6288 8.83887 83.6739 9.11616 85.823 10.0867V14.9047C83.7779 14.1768 81.8715 13.5876 79.9304 13.5876C77.8853 13.5876 77.4347 14.3501 77.4347 15.2167C77.4001 15.8753 77.816 16.2565 79.8957 16.4645Z" fill="#006440"></path>
+              <path d="M93.3797 27.2097V38.1629H92.2012V9.53206H92.7211L93.2757 11.0225C94.9741 9.91334 97.8511 9.35875 100.069 9.35875C106.517 9.35875 108.111 13.5875 108.111 19.0988C108.111 24.6101 106.517 28.8388 100.069 28.8388C97.8858 28.8042 95.1128 28.2842 93.3797 27.2097ZM93.3797 11.9931V26.1698C95.1128 27.2444 97.3312 27.7643 100.069 27.7643C105.858 27.7643 106.898 23.3622 106.898 19.0641C106.898 14.766 105.858 10.364 100.069 10.364C97.3658 10.364 95.1474 10.9185 93.3797 11.9931ZM127.834 26.8284V27.8683C126.309 28.4575 123.744 28.8388 121.664 28.8388C115.217 28.8388 113.622 24.7834 113.622 19.0988C113.622 13.4142 115.217 9.35875 121.664 9.35875C128.111 9.35875 128.804 13.4835 128.804 19.0988V19.6187H114.801C114.87 23.9168 116.083 27.799 121.629 27.799C124.541 27.7643 126.413 27.279 127.834 26.8284ZM127.66 18.5442C127.66 14.3847 127.244 10.364 121.664 10.364C116.118 10.364 114.905 14.2114 114.835 18.5442H127.66ZM141.976 9.35875C148.77 9.35875 149.983 13.4835 149.983 19.0988C149.983 24.714 148.77 28.8388 141.976 28.8388C135.182 28.8388 133.969 24.714 133.969 19.0988C133.934 13.4835 135.147 9.35875 141.976 9.35875ZM141.976 27.7643C148.076 27.7643 148.77 23.8821 148.77 19.0641C148.77 14.2461 148.076 10.364 141.976 10.364C135.875 10.364 135.147 14.2808 135.147 19.0641C135.147 23.8821 135.841 27.7643 141.976 27.7643ZM156.673 27.2097V38.1629H155.494V9.53206H156.014L156.569 11.0225C158.267 9.91334 161.144 9.35875 163.362 9.35875C169.809 9.35875 171.404 13.5875 171.404 19.0988C171.404 24.6101 169.809 28.8388 163.362 28.8388C161.179 28.8042 158.371 28.2842 156.673 27.2097ZM156.673 11.9931V26.1698C158.406 27.2444 160.624 27.7643 163.362 27.7643C169.151 27.7643 170.191 23.3969 170.191 19.0641C170.191 14.766 169.151 10.364 163.362 10.364C160.624 10.364 158.406 10.9185 156.673 11.9931ZM180.173 28.8042C178.128 28.8042 177.227 27.9029 177.227 26.0312V0H178.406V25.9619C178.406 27.4177 178.787 27.9029 180.208 27.9029V28.8042H180.173ZM198.891 26.8284V27.8683C197.366 28.4575 194.801 28.8388 192.721 28.8388C186.274 28.8388 184.68 24.7834 184.68 19.0988C184.68 13.4142 186.239 9.35875 192.721 9.35875C199.168 9.35875 199.861 13.4835 199.861 19.0988V19.6187H185.858C185.927 23.9168 187.141 27.799 192.686 27.799C195.598 27.7643 197.435 27.279 198.891 26.8284ZM198.683 18.5442C198.683 14.3847 198.267 10.364 192.686 10.364C187.106 10.364 185.927 14.2114 185.858 18.5442H198.683Z" fill="#006440"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="200" height="38.4749" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        <a href="https://mapspeople.com/support">Support</a>
+        <a href="https://github.com/mapsindoors">GitHub</a>
+        <a href="https://blog.mapspeople.com/tag/product">Product Blog</a>
+        <a href="https://cms.mapsindoors.com/">CMS</a>
+      </div>
+    </section>
+  </div>
+</header>
+
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        
+        <main>
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb"><span class="item"><a href="/">Home</a></span></ol>
+          </nav>
+          <h1>
+            <a href="/cms/">MapsIndoors CMS</a>
+          </h1>
+          
+            <p class="time">Last updated: <time>11/27/2020</time>
+            </p>
+          
+          <h2>Introduction</h2>
+<p>The MapsIndoors Content Management System (CMS) allows you to maintain your data within the MapsIndoors platform.</p>
+<p>Data is structured in a hierarchy where the top level is your Solution which can contain multiple Venues, which in turn can have multiple Buildings and so on. The data-types in hierarchical order:</p>
+<ul>
+<li>Solution</li>
+<li>Venues</li>
+<li>Buildings</li>
+<li>Floors</li>
+<li>Locations (rooms and points of interest)</li>
+</ul>
+<p>View the tutorial video below for more information about terminology and hierarchy.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GwyO-Vav8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Although a point of interest can be placed within a room, it is not required. Points of interest can also be placed &quot;outside” on the ground level which is also the layer where the Google map exists. In this case the POI belongs to the Venue directly.</p>
+<h2>Navigating the CMS</h2>
+<p>The panel on the left lets you navigate the CMS.</p>
+<p>There are 2 different roles in the system:</p>
+<ul>
+<li><strong>Editor</strong> - Editors can create new Locations, make changes to and remove existing Locations</li>
+<li><strong>Admin</strong> - Administrators have editor rights and have access to icon settings and users</li>
+</ul>
+<p>View the tutorial video below for more information about the menu structure and user roles.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HpghIH5IKgk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2>The Map</h2>
+<p>After logging in, the map will appear.</p>
+<p><img src="https://mapsindoors.github.io/assets/cms/map-overview.png" alt="MapsIndoors CMS"></p>
+<p>There are a number of key elements:</p>
+<ol>
+<li><strong>Solution Name:</strong> This is the name of your Solution. It's possible to have access to several Solutions.</li>
+<li><strong>Venue:</strong> This is the name of your Venue. It’s possible to have several Venues.</li>
+<li><strong>Map</strong>
+<ul>
+<li><strong>Locations:</strong> Manage rooms and POIs</li>
+<li><strong>Categories:</strong> Create, edit, and delete Categories</li>
+<li><strong>Location Types:</strong> Create, edit, and delete Location Types</li>
+<li><strong>Type Visibility:</strong> Manage icon and label visibility</li>
+<li><strong>Buildings:</strong> Manage Building name, address, and floor names</li>
+<li><strong>Venue:</strong> Manage Venue name and default floor</li>
+<li><strong>Route Access:</strong> Manage route access and parking lots</li>
+</ul>
+</li>
+<li><strong>App Settings</strong>
+<ul>
+<li><strong>App Configuration:</strong> Manage App Title and Alias, App User Roles, and Category visibility</li>
+<li><strong>API Keys:</strong> Create, edit, or delete API Keys</li>
+</ul>
+</li>
+<li><strong>Administration</strong>
+<ul>
+<li><strong>Users:</strong> Create, edit, or delete CMS Users</li>
+<li><strong>Logs:</strong> Filter and download CMS logs</li>
+</ul>
+</li>
+<li><strong>Current User</strong></li>
+<li><strong>List View:</strong> A list of Locations in the currently selected Venue</li>
+<li><strong>Filter</strong>
+<ul>
+<li><strong>Type:</strong> Dropdown to select Locations of a specific Location Type to show on the map or in the List View</li>
+<li><strong>Category:</strong> Dropdown to select Locations of a specific Category to show on the map or in the List View</li>
+<li><strong>Search:</strong> Search for Locations</li>
+</ul>
+</li>
+<li><strong>Selected Building</strong></li>
+<li><strong>Zoom Level:</strong> Indicates which zoom level you are viewing</li>
+<li><strong>Floor selector</strong></li>
+<li><strong>Zoom In/Zoom Out</strong></li>
+<li><strong>POI:</strong> Click on this icon to add a POI anywhere on the map</li>
+</ol>
+<h2>Locations</h2>
+<p>When Locations is selected, you see the map with all the icons that determine the Location Type.</p>
+<p>To create a new POI, first make it clear if this is an outdoor POI or placed inside a Building. If inside a Building, select the desired Building from the drop down menu. Click on the POI icon in the bottom right corner, then click on the map where it should be added. The placement doesn’t have to be 100% precise, it can be moved afterwards.</p>
+<p><img src="https://mapsindoors.github.io/assets/cms/locations/locations-newpoi.png" alt="New Location"></p>
+<p>After clicking on the box, you will be asked to select a Location Type and Name. The other choices; Description, Categories, Icon are optional.</p>
+<p>Select the icon on the map for the Location that you wish to edit, or click on Locations in the main navigation and then choose &quot;View List”. From there you can choose which Location you would like to edit by clicking on the pencil icon.</p>
+<p>View the tutorial video below for more information about managing POIs.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YjvmpkZ4Rdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>In the Edit Location Form you can do the following:</p>
+<h3>Location Type</h3>
+<p>This can be changed by clicking the drop down menu with Location Types.</p>
+<h3>Name</h3>
+<p>Enter a new name for the Location. You can also add another language.</p>
+<h3>Description</h3>
+<p>Provide a description of the Location.</p>
+<p>There is an option to add more information for this Location. This can be done by clicking on Location Type templates in the main navigation. From there you can add specific fields to a Location Type, those fields will then appear in the Location form.</p>
+<h3>Categories</h3>
+<p>Add or remove Categories the Location belongs to.</p>
+<h3>Icon Settings</h3>
+<p>Change the Icon associated with the Location. See &quot;<a href="#managing-icons">Managing Icons</a>&quot; for more information.</p>
+<h3>Image</h3>
+<p>Take a photo of your Location and upload it here. Photos on Locations makes it easier for your users to find a location in the real world.</p>
+<h3>Image with IndoorView</h3>
+<blockquote>
+<p>IndoorView is only supported for web</p>
+</blockquote>
+<p>To get started using the IndoorView feature for your Locations, please make sure that the <em>Google Street View panorama images</em> are publicly available for your building by looking at <a href="https://www.google.com/maps">Google Maps</a>. If no imagery is available, please <a href="https://www.google.com/streetview/contacts-tools/">contact a certified Street View Photographer</a>.</p>
+<ol>
+<li>
+<p>Click &quot;Set Street View image”</p>
+<ul>
+<li>This will open a Google Street View window showing the image closest to this Location. Please note that the MapsIndoors CMS looks for panorama images within a certain radius from the Location's position, so make sure to have panorama images published in that area.</li>
+</ul>
+</li>
+<li>
+<p>Navigate Street View and find an image and viewing angle that is suitable</p>
+</li>
+<li>
+<p>Click &quot;Set image”</p>
+</li>
+</ol>
+<h4>MapsIndoors support matrix</h4>
+<table>
+<thead>
+<tr>
+<th>MapsIndoors</th>
+<th>Support for IndoorView</th>
+<th>Private hosted panorama images</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMS</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Web App</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Android App</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>iOS App</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Web SDK</td>
+<td>Yes, through Google Maps Street View API or Static Street View API</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Android SDK</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>iOS SDK</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>IndoorView only supports <strong>publicly</strong> available Google Street View imagery. If you would like to know more about <strong>privately</strong> hosted panorama images, please see <a href="https://developers.google.com/maps/documentation/javascript/streetview#CustomStreetView">Googles Custom Street View documentation</a>.</p>
+<h5>Developing your own app</h5>
+<p>When developing your own app, you can still use the MapsIndoors CMS to save the Google Street View image information to a Location. When the Panorama image is set, the Location gets populated with a <code>streetViewConfig</code> property. Please see below for an example.</p>
+<p>Location Object:</p>
+<pre><code class="language-javascript">{
+  &quot;id&quot;: &quot;586ce41ebc1f571794b9e924&quot;,
+   ...
+  &quot;properties&quot;: {
+    &quot;name&quot;: &quot;Copenhagen&quot;,
+     ...
+    &quot;streetViewConfig&quot;: {
+      &quot;panoramaId&quot;: &quot;CAoSLEFGMVFpcE41dTZnVzNpVnU1WmliRjk0T2tpMENhZ3Fya3ljVFh3TjVzN2lY&quot;,
+      &quot;povHeading&quot;: 203.1294893976259,
+      &quot;povPitch&quot;: -13.068754012666432
+    }
+  }
+}
+</code></pre>
+<p>The parameters above can be used to show a static Street View image through the Street View Static API. Please see <a href="https://developers.google.com/maps/documentation/streetview/intro">the Street View documentation</a> for more information.</p>
+<p>A Street View panorama image can be initialized in a <code>&lt;div&gt;</code> the following way:</p>
+<pre><code class="language-javascript">function initStreetView(streetViewConfig) {
+       const panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('panorama'),
+            {
+                pano: streetViewConfig.panoramaId,
+                pov: {
+                    heading: streetViewConfig.povHeading,
+                    pitch: streetViewConfig.povPitch
+                },
+                zoom: 0,
+                visible: true
+            });
+}
+</code></pre>
+<p>Please see the official <a href="https://developers.google.com/maps/documentation/javascript/streetview">Google Street View Service documentation</a> for more information.</p>
+<h3>Under &quot;Show advanced&quot;</h3>
+<ul>
+<li>
+<p><strong>Alias:</strong> Add alternative search phrases, for example a restaurant might have aliases of café, dinner, food, lunch etc. Insert a comma between each phrase.</p>
+</li>
+<li>
+<p><strong>Venue Details:</strong> Change Building and or floor.</p>
+</li>
+<li>
+<p><strong>External ID:</strong> This can be edited. See &quot;<a href="https://mapsindoors.github.io/external-id/">ExternalID</a>&quot; for more information.</p>
+</li>
+<li>
+<p><strong>&quot;Active to and from&quot;:</strong> If required, select a time period during which the Location will be active. &quot;Active&quot; in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed</p>
+</li>
+<li>
+<p><strong>Location History:</strong> Contains a list of all changes made to a Location. Data comes from the MapsIndoors Audit Log functionality.</p>
+</li>
+<li>
+<p><strong>Save changes</strong></p>
+</li>
+</ul>
+<p>Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, press &quot;Save”-button in the top of the Location edit form.</p>
+<p><img src="https://mapsindoors.github.io/assets/cms/locations/locations-listview.png" alt="Locations"></p>
+<p>To view a list of all Locations in a certain Venue, select ‘List View”.</p>
+<ul>
+<li>To sort the data, click on the column title</li>
+<li>To edit a Location, click the pencil</li>
+<li>To edit multiple Locations, tick each one</li>
+<li>To filter, click on the top right options: Type, Category, or Floor. You can also use the search box for a specific Location</li>
+</ul>
+<p>When selecting one a more Locations using the checkboxes, 2 options will appear: Edit Locations or Delete Locations.</p>
+<ul>
+<li>
+<p><strong>Change type:</strong> Opens a drop down menu to choose new Location Type</p>
+</li>
+<li>
+<p><strong>Location:</strong> Allows you to change the floor of the Locations</p>
+</li>
+<li>
+<p><strong>&quot;Active to and from&quot;:</strong> If required, select a time period during which the Location will be active. &quot;Active&quot; in this case means it is visible on the map, and shows up in search results. Leave the date fields empty if the Location should always be displayed</p>
+</li>
+</ul>
+<p>Remember to save before clicking on another Location or changing the page, otherwise your changes will be lost. To save the changes, click &quot;Save”.</p>
+<h2>Export Map</h2>
+<p>Export Map is an add-on feature that can be enabled for a Solution. Once enabled, it allows for PNG export of the MapsIndoors imagery for printing purposes. The export will not include the underlying Google Maps due to terms of use.</p>
+<p>The Export Map service has a limit of 8000 x 8000 pixels. Clicking the Download icon button on the bottom right opens a new tab with the PNG.</p>
+<h3>Usage (scale)</h3>
+<p>Sets the scale of the export imagery.</p>
+<ul>
+<li>Web (1) will export the same pixel size as selected on-screen.</li>
+<li>Retina (2) will export two times the pixels.</li>
+<li>Print (4) will export four times the pixels.</li>
+</ul>
+<h3>Display Settings</h3>
+<p>Allows toggling visible features on the exported map, such as Icons, Location Types, and Labels.</p>
+<p>You can also rotate the map and set the size of the screen selection. The max is 2000 x 2000.</p>
+<h3>Preview</h3>
+<p>Preview is especially helpful when using rotation or larger-than-monitor exports.</p>
+<h2>Venue</h2>
+<ul>
+<li>Edit the Venue name in the available languages</li>
+<li>Choose a default floor</li>
+</ul>
+<p><em>A note about Venue images:</em> You can request MapsPeople to add an image of the Venue. It should be in a 600w x 300h size to make it look its best in our Standard Apps.</p>
+<h2>Buildings</h2>
+<h3>Adding a building</h3>
+<ul>
+<li>Click on the &quot;Add building&quot; button at the top-right of the page and a popup window should appear.</li>
+<li>Type a building name, search for the building address by typing in the search field or panning the map.</li>
+<li>Place the red cross on the map at the center of the building's location.</li>
+<li>Click &quot;Add&quot; and the popup window should close.</li>
+<li>The building should now appear in the list.</li>
+</ul>
+<h3>Editing a building</h3>
+<ul>
+<li>Click on the pencil icon to the left of the Building name. A new menu will appear</li>
+<li>Edit Building name in the available languages</li>
+<li>Edit floor names</li>
+<li>Select a default floor under &quot;Show advanced&quot;</li>
+</ul>
+<p>The Building's default Floor is used to manage panning across Buildings in the apps. In order to improve the user experience in the apps, the default Floor is used when the Building panned to doesn't have the floor index of the floor selector.</p>
+<h3>Uploading CAD files for a floor</h3>
+<ul>
+<li>Click on the pencil icon to the left of the Building name and a sidebar should appear.</li>
+<li>Click on &quot;Add floor&quot; (to add a new Floor to the Building) or &quot;Update floor&quot; (to update an existing Floor in the Building) and a popup window appears.</li>
+<li>Type the floor name.</li>
+<li>Select a CAD file.</li>
+<li>Select any extra files. (optional)</li>
+<li>Add any extra information in the text field.</li>
+<li>Click on &quot;Upload&quot; and a spinner should appear with the upload progress.</li>
+<li>When it is done uploading you should see an added/updated floor name in the list.</li>
+<li>The CAD file, and any extra files, will be automatically sent to a MapsPeople project manager, and a representative will contact you shortly to plan the digitization of the new or updated Floor.</li>
+</ul>
+<h2>Routes Access</h2>
+<p><img src="https://mapsindoors.github.io/assets/cms/route-access/route-access.png" alt="Routes"></p>
+<p>The Route Access tab allows you to manipulate the network that powers the indoor navigation. It is useful for redirecting traffic by locking paths or isolating entire areas where navigation should be turned off entirely.</p>
+<p>To create a parking lot:</p>
+<ul>
+<li>Click on &quot;+ P&quot; in the top right corner. If it is not enabled, zoom in higher than 17.</li>
+<li>The mouse cursor will change to a &quot;+&quot;. Click on the map where you want to add the parking lot and a popup window will appear.</li>
+<li>Select a type: Car or Bike.</li>
+<li>Enter a name and click &quot;Save&quot;</li>
+</ul>
+<p>To restrict access to a path:</p>
+<ul>
+<li>Click on the path and a popup window will appear.</li>
+<li>Choose between &quot;Open for all&quot;, &quot;Open for specific app user roles&quot;, &quot;Closed for all&quot;.</li>
+<li>When Open for specific app user roles is chosen, a list of app user roles will appear and you can select which roles will be given access.</li>
+<li>Set a delay and click &quot;Save&quot;.</li>
+</ul>
+<h2>Location Types</h2>
+<p><img src="https://mapsindoors.github.io/assets/cms/location-types/location-types.png" alt="Location Types"></p>
+<p>This is a list of all the Location Types in the Solution. From this list you can edit each Location by clicking on the pencil.</p>
+<h3>Syncing Types to other Solutions</h3>
+<p>If you have multiple Solutions, you can update Location Types across multiple Solutions to keep them up to date with the latest changes.</p>
+<p>Click the &quot;Sync to other Solutions&quot;-button to select which of your other Solutions you want to sync this Location Type to.</p>
+<p>When you sync a Location Type, if the Location Type exists in the target Solution, you override the Location Type in the target Solution. If the Location Type does not exist in the target Solution, it is added.</p>
+<h3>View Settings</h3>
+<p>The <em>View settings</em> can be set for each Location Type. Use the settings to define how and when the icon and/or label is displayed on the map, and what is shown in the label.</p>
+<p><img src="https://mapsindoors.github.io/assets/cms/location-types/view-settings.png" alt="View Settings"></p>
+<h4>Location Type templates</h4>
+<p>You can add custom data fields to Locations by adding templates to a Location Type defining the data fields. All Locations of a Type will inherit the templates defined for the Type. Add a template to a Location Type by clicking the template button to the right in the table.</p>
+<p>To display or otherwise use the custom data, your app needs to be customized. The properties are not available in the Standard app, only when building one using the SDK.</p>
+<p>View the tutorial video below for more information about Location Types.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WJIZUBsObU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2>Categories</h2>
+<p><img src="https://mapsindoors.github.io/assets/cms/categories/categories.png" alt="Categories"></p>
+<p>Ability to add new categories to the list. Click on New Category, add name, click save. Once created, this Category can be added to a specific Location. The categories can be chosen to be displayed in the app, as well as put in a specific order (this can be done under App Configuration in App Settings).</p>
+<p>View the tutorial video below for more information about Categories.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DskwwAE4lLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Syncing Categories to other Solutions</h3>
+<p>If you have multiple Solutions, you can update Categories across multiple Solutions to keep them up to date with the latest changes.</p>
+<p>Click the &quot;Sync to other Solutions&quot;-button to select which of your other Solutions you want to sync this Category to.</p>
+<p>When you sync a Category, if the Category exists in the target Solution, you override the Category in the target Solution. If the Category does not exist in the target Solution, it is added.</p>
+<p>Categories have icons, and the icon for the Category is synced to the target Solution as well, creating it if it does not exist already.</p>
+<h2>App Settings</h2>
+<h3>API Keys</h3>
+<p>To load your MapsIndoors data in your apps, you need an API key.</p>
+<p>You can create as many API keys as you want, and it's good practise to use one for each place you need to load data from MapsIndoors (each mobile platform, web app etc.).</p>
+<p>You can easily delete an API key if it is unused, or has been compromised in some way.</p>
+<p>Previously, you could use a <code>SolutionID</code> to load your data, but this is no longer supported. Only API keys is supported for loading data from your Solution.</p>
+<h3>App User Roles</h3>
+<ul>
+<li>Click on &quot;+ Add App User Roles&quot; and a popup window will appear.</li>
+<li>Enter the role name in all the languages. It's mandatory.</li>
+<li>Click &quot;Save&quot; and the entered name should appear in the table.</li>
+</ul>
+<h3>App Categories</h3>
+<p>Clicking on the arrows to the left of the Category name allows you to change the order. This Category order will be reflected in the apps. You can also choose an icon to be displayed next to the category name.</p>
+<h2>Type visibility</h2>
+<p>Use these settings to control how Icons are shown on the map</p>
+<p><strong>Zoom Level:</strong> This can be edited by moving the dot on the line. The icon will appear in the chosen zoom level</p>
+<p><strong>Visible:</strong> By clicking the eye, this will remove the icon from appearing in the Solution</p>
+<h2>Users</h2>
+<p>Allows Admins, to control who has access and what roles they have, or create new users.</p>
+<p>A list appears with all users for the Solution. You can also search for an email via the search box in the upper right.</p>
+<p><strong>Editing a user:</strong> Click on the pencil to the left of the email. The user can be deleted, changed role or added to a Solution. Click Save.</p>
+<p><strong>New user:</strong> Click on new user bottom at top. Enter email, choose Editor or Administrator, and assign the appropriate Solution. Click Create.</p>
+<h2>Logs</h2>
+<p>The Audit Log functionality is a configurable feature in MapsIndoors and if not enabled on your Solution it can be on request.</p>
+<p>The Audit Log feature can be used to access the Audit log on MapsIndoor data objects, i.e. you can find or inspect the change history.</p>
+<p>The Log functionality is found in the Logs tab under Administration in the CMS.</p>
+<p><img src="https://mapsindoors.github.io/assets/cms/administration/logs.png" alt="Audit log"></p>
+<p>The Log can be filtered on date, ID, User and Data object types. When pressing download a comma separated file (csv) will be stored on your computer's hard drive.</p>
+<p>The log will be in CSV format, which can be opened by a spreadsheet program eg. Excel. Each log entry represents a modification in the data. In short, each entry tells at what time who did what to which object.</p>
+<p>The headers represented are:
+Time, User, Action, ObjectType, ObjectId and ObjectData</p>
+<ul>
+<li><strong>Time:</strong> Tells which user did the change (The email representing the user logged in to the system)</li>
+<li><strong>Action:</strong> Tells what happened:
+<ul>
+<li>If data was added, the 'Action' will be set to 'Created'</li>
+<li>If data was changed, the 'Action' will be set to 'Changed'</li>
+<li>If data was deleted, the 'Action' will be set to 'Deleted'</li>
+</ul>
+</li>
+<li><strong>ObjectType:</strong> Tells what type of data was modified (eg. ‘building’, ‘location’, ‘user’, ‘graphdata’ ... )</li>
+<li><strong>ObjectId:</strong> Is a unique ID that represents the given data - Building, Location or whatever it is.
+If you want to see a history of that specific Location this ID can be used to filter by</li>
+<li><strong>ObjectData:</strong> Is a JSON formatted representation of the actual data stored in the MapsIndoors system. To see what changed you can compare this data to the previous change.</li>
+</ul>
+<p>Examples of use cases could be:</p>
+<ul>
+<li><strong>How to do I get Network history?</strong> Filter the ObjectType to ‘graphdata’ to see these entries. To find a particular user history, filter ‘User’ to their email as well.</li>
+<li><strong>How to do I get Categories history?</strong> Filter the ObjectType to ‘category’ to see these entries. To find a particular data history, filter ‘User’ to their email as well.</li>
+<li><strong>How to do I get Location Type/type template/visibility history?</strong> Filter the ObjectType to ‘locationtype’ to see these entries. To find a particular data history, filter ‘User’ to their email as well. The type template is covered in the &quot;LocationTypeField” section of the data. The visibility is covered in the &quot;displayrule” section of the data</li>
+<li><strong>How to find user login activity?</strong> When a user logs in, the corresponding user object will be changed too (the ‘last login field will be updated’). Filter the ObjectType to ‘user’ to see login entries. To find a particular user login history, filter ‘User’ to their email as well.</li>
+</ul>
+<p>If you use Excel you can find a video on how to open a CSV file here: <a href="https://www.youtube.com/watch?v=z5Pxil4jVO4">https://www.youtube.com/watch?v=z5Pxil4jVO4</a></p>
+<ul>
+<li><strong>Icons:</strong> Icons are used for various Locations on the map, e.g. POIs, Rooms. Having a unified representation for specific types of Locations makes the system easier for users to engage with.</li>
+<li><strong>Location</strong>: A term used for all Rooms and points of interest (POI).</li>
+<li><strong>POI</strong>: &quot;Point of interest” - is usually an object that isn’t tied to a room. E.g. Vending Machine, Locker, A Statue, ATM etc.</li>
+<li><strong>Type</strong>: All Locations are of a type. Types serve as templates for Locations to provide a basic setup. Many of the properties can later be overridden for specific Locations.</li>
+<li><strong>Venue</strong>: Typically a collection of Buildings that are close geographically.</li>
+<li><strong>Search alias</strong>: An alternative name for a Location allowing users to search for the Location by that name.</li>
+</ul>
+<h2>Managing icons</h2>
+<p>Anywhere in the CMS you can change icons for one or more markers on the map, you use the Icon Manager to do so. Click the &quot;Change&quot;-button to invoke it.</p>
+<p>In the Icon Manager, you can choose between a predefined set of MapsIndoors icons, and a list of your uploaded icons. We support uploads of files in the PNG and SVG formats. Click on an icon in either place, and set it to close the icon manager and preview the icon on the map. Don't worry, it won't be saved until you click &quot;Save&quot; in the details editor.</p>
+<p>Remember to keep your icons at a reasonable size. The Icon Manager will prompt you if an icon is larger than 128x64px, as that would take up a large amount of space on the map. There is a hard limit on the size of 900x600px or 150kb. The icon files should also be optimized and compressed to be as small as possible.</p>
+<p>You can bulk upload SVGs and PNGs at the same time.</p>
+<p>To delete an icon, click the &quot;trash bin&quot; on the icons you want to delete. It is strongly advised to change icons on the Locations, Location Types or Categories before deleting their associated icon file. However, if you delete an icon that is already used by a Location, the Location will revert back to using the icon for its Location Type. If you delete an icon that is used by a Category or Location Type, it will revert to using a generic marker on the map.</p>
+<h3>Uploading PNGs</h3>
+<p>When uploading an icon in the PNG format, make sure you upload it in a 3x size to accommodate for it being scaled down on the map. For example, to display a 20x20px icon on the map, upload it in 60x60px.</p>
+<h3>Uploading SVGs</h3>
+<p>SVG is a vector file format, which lets MapsIndoors convert your icon in a range of sizes to get the best looking icon in every situation.</p>
+<p>SVGs should be uploaded with a <code>width</code> and <code>height</code> that you want the SVG to be displayed on the map in. Make sure you define it in <code>px</code>, not <code>cm</code> or <code>%</code>. E.g., if you want to display a 32x24px icon on the map, upload an SVG with the attributes <code>width='32px'</code> and <code>height='24px'</code>. For consistency, it's good form to make the <code>viewport</code> the same size as the <code>width</code> and <code>height</code>.</p>
+<h3>Supported SVG elements</h3>
+<p>We only accept SVGs that conform to a very strict ruleset. If an uploaded SVG contains anything other than the elements and attributes listed below, it will be rejected. All child elements can be nested as supported by the SVG format.</p>
+<ul>
+<li><code>&lt;svg&gt;</code> element</li>
+<li><code>viewbox</code> attribute</li>
+<li><code>&lt;path&gt;</code> child element</li>
+<li><code>&lt;rect&gt;</code> child element</li>
+<li><code>&lt;title&gt;</code> child element</li>
+<li><code>&lt;desc&gt;</code> child element</li>
+<li><code>&lt;circle&gt;</code> child element</li>
+<li><code>&lt;defs&gt;</code> child element</li>
+<li><code>&lt;ellipse&gt;</code> child element</li>
+<li><code>&lt;line&gt;</code> child element</li>
+<li><code>&lt;pattern&gt;</code> child element</li>
+<li><code>&lt;polygon&gt;</code> child element</li>
+<li><code>&lt;polyline&gt;</code> child element</li>
+<li><code>&lt;text&gt;</code> child element</li>
+<li><code>&lt;stop&gt;</code> child element</li>
+<li><code>&lt;use&gt;</code> child element</li>
+<li><code>&lt;linearGradient&gt;</code> child element</li>
+<li><code>&lt;radialGradient&gt;</code> child element</li>
+<li><code>&lt;symbol&gt;</code> child element</li>
+<li><code>&lt;style&gt;</code> child element</li>
+<li><code>&lt;tspan&gt;</code> child element</li>
+</ul>
+<p>When you try to upload an SVG containing one or more of these elements and/or attributes, the upload is cancelled and you will see which files contain the unsupported elements.</p>
+<p>If your SVGs contain unsupported elements, you must remove them before they can be uploaded. One typical issue is embedded <code>base64</code> data in the SVG, which usually indicates the SVG will display raster image data (PNGs and the like) somewhere in it. That can lead to unintended consequences on the map.</p>
+<h3>SVG help</h3>
+<p>Michelle Barker has written <a href="https://css-irl.info/optimising-svgs-for-the-web/">a terrific guide to optimizing SVGs for the web</a> on her site.</p>
+<p>A great tool to strip unnecesary elements from your SVG-file is <a href="https://jakearchibald.github.io/svgomg/">SVGOMG by Jake Archibald</a>.</p>
+<h3>Syncing Icons to other Solutions</h3>
+<p>If you have multiple Solutions, you can sync Icons across multiple Solutions to make sure you can use the same Icons in all of your Solutions.</p>
+<p>Open the Icon Manager (you can find it on a Location Detail screen when you set the Icon for that Location). Find the Icon you want to sync to one or more Solutions, and click the &quot;Sync&quot;-icon next to the filename of the Icon. Then you can select which other Solutions you want to sync this Icon to.</p>
+<p>When you sync an Icon, if the Icon exists in the target Solution (i.e. an Icon with the exact same filename), you override the Icon in the target Solution. If the Icon does not exist in the target Solution, it is added.</p>
+<h2>Support</h2>
+<p><strong>Something not working?</strong></p>
+<p>If you have found a bug or encountered an issue you can not resolve, please reach out through our <a href="https://www.mapspeople.com/support/">support portal</a>.</p>
+<h2>Feedback</h2>
+<p><strong>Do you have feedback for us?</strong></p>
+<p>Send us an email at <a href="mailto:cms-feedback@mapspeople.com">cms-feedback@mapspeople.com</a></p>
+
+        </main>
+      </section>
+    </div>
+  </div>
+  <footer>
+  <div class="wrap">
+    <div class="flex">
+      <div class="third">
+        <h2><a href="/ios/v3">iOS v3</a></h2>
+        
+        <ul><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+
+      </div>
+      <div class="third">
+
+        <h2><a href="/android/v3">Android v3</a></h2>
+        
+        <ul><li><a href="/android/v3/getting-polygon-from-location/">Getting a Polygon from a Location</a></li>
+<li><a href="/android/v3/search-locations-display-map/">Searching for Locations and Displaying the Results on a Map</a></li>
+<li><a href="/android/v3/live-data/">Live Data</a></li>
+<li><a href="/android/v3/locationdatasourcespeoplelocationdatasource/">Creating your own Location Data Source - Part 1</a></li>
+<li><a href="/android/v3/locationdatasourcesbatterieslocationdatasource/">Creating your own Location Data Source - Part 2</a></li>
+<li><a href="/android/v3/locationdatasourceslocationdatasourcesfragment/">Creating your own Location Data Source - Part 3</a></li>
+<li><a href="/android/v3/locationclusteringlocationclusteringfragment/">Work with location grouping / clustering</a></li>
+<li><a href="/android/v3/locationdetailsdemolocationdetailsfragment/">Show Location Details</a></li>
+<li><a href="/android/v3/searchmapdemosearchfragment/">Create a Search Experience with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/searchmapdemosearchmapfragment/">Create a Search Experience with MapsIndoors - Part 2</a></li>
+<li><a href="/android/v3/showuserlocationdemopositionprovider/">Show the Blue Dot with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/showuserlocationshowuserlocationfragment/">Show the Blue Dot with MapsIndoors - Part 2</a></li></ul>
+      </div>
+      <div class="third">
+        <h2><a href="/web/v4">Web v4</a></h2>
+        
+        <ul><li><a href="/web/v4/upgrade-guide/">v4 Upgrade Guide</a></li>
+<li><a href="/web/v4/simple-map/">Create a simple map with MapsIndoors</a></li>
+<li><a href="/web/v4/display-rules-intro/">Introduction to Display Rules</a></li>
+<li><a href="/web/v4/using-events/">Event handling</a></li>
+<li><a href="/web/v4/search-and-filtering/">Search and filtering</a></li></ul>
+
+        <h2><a href="/web/v3">Web v3</a></h2>
+        
+        <ul><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="flex">
+      <div class="third">
+        <h2>Legacy versions</h2>
+        <h4><a href="/android/v2">Android v2</a></h4>
+        <h4><a href="/ios/v2">iOS v2</a></h4>
+        <h4><a href="/xamarin">Xamarin v3</a></h4>
+
+      </div>
+      <div class="third">
+        <h2><a href="/api">Integration API</a></h2>
+        <h2><a href="/cms">MapsIndoors CMS</a></h2>
+        <h2><a href="/product">Product Overview</a></h2>
+      </div>
+      <div class="third">
+        <h2><a href="/various">Various</a></h2>
+        
+        <ul><li><a href="/various/glossary/">Glossary</a></li>
+<li><a href="/various/areas/">Areas</a></li>
+<li><a href="/various/custom-properties/">Custom Properties</a></li>
+<li><a href="/various/dashboard/">CMS Dashboard</a></li>
+<li><a href="/various/external-id/">External ID</a></li>
+<li><a href="/various/google_analytics/">Google Analytics</a></li>
+<li><a href="/various/indoor-positioning/">Indoor Positioning with MapsIndoors</a></li>
+<li><a href="/various/ip-whitelisting/">Work with MapsIndoors SDK behind a firewall</a></li>
+<li><a href="/various/kiosk/">Kiosk</a></li>
+<li><a href="/various/location-sources/">Location Sources in MapsIndoors</a></li>
+<li><a href="/various/print-map/">Print Map</a></li>
+<li><a href="/various/sdk-features/">SDK Features</a></li></ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

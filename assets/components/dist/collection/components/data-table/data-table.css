@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #8d98aa;
+}
+table thead tr th {
+  position: relative;
+  text-align: left;
+  user-select: none;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #ffffff;
+  padding: 16px;
+  background-color: #59616e;
+}
+table thead tr th:not(.no-sort) {
+  cursor: pointer;
+}
+table thead tr th::before, table thead tr th::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  border: 7px solid transparent;
+}
+table thead tr th::before {
+  border-bottom-color: #8d98aa;
+  margin-top: -15px;
+}
+table thead tr th::after {
+  border-top-color: #8d98aa;
+  margin-top: 3px;
+}
+table thead tr th.desc::after {
+  border-top-color: #f5f7fa;
+}
+table thead tr th.asc::before {
+  border-bottom-color: #f5f7fa;
+}
+table thead tr th.no-sort::before, table thead tr th.no-sort::after {
+  border: none;
+}
+table tbody tr:nth-child(even):hover {
+  background-color: #FAFCFF;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #f5f7fa;
+}
+table tbody tr:nth-child(odd):hover {
+  background-color: #ebeff5;
+}
+table td {
+  font-size: 1rem;
+  padding: 16px;
+  border-right: 1px solid #c8d0e0;
+}
+table td:last-child {
+  border-right: none;
+}

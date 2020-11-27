@@ -1,0 +1,24 @@
+mi-search {
+  display: block;
+}
+mi-search input[type=search] {
+  width: 100%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  height: 48px;
+  font-size: 1.25rem;
+  color: #1e2025;
+  padding-right: 12px;
+  padding-left: 32px;
+  position: relative;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS43MSAxMUgxMi41TDE3LjQ5IDE2TDE2IDE3LjQ5TDExIDEyLjVWMTEuNzFMMTAuNzMgMTEuNDNDOS41OSAxMi40MSA4LjExIDEzIDYuNSAxM0MyLjkxIDEzIDAgMTAuMDkgMCA2LjVDMCAyLjkxIDIuOTEgMCA2LjUgMEMxMC4wOSAwIDEzIDIuOTEgMTMgNi41QzEzIDguMTEgMTIuNDEgOS41OSAxMS40MyAxMC43M0wxMS43MSAxMVpNMiA2LjVDMiA4Ljk5IDQuMDEgMTEgNi41IDExQzguOTkgMTEgMTEgOC45OSAxMSA2LjVDMTEgNC4wMSA4Ljk5IDIgNi41IDJDNC4wMSAyIDIgNC4wMSAyIDYuNVoiIGZpbGw9IiM4RDk4QUEiLz4KPC9zdmc+Cg==");
+  background-repeat: no-repeat;
+  background-position: 8px center;
+}
+mi-search input[type=search]:focus {
+  border-color: #3071d9;
+  box-shadow: 0 0 0 2px #cfe0fc;
+  /* blue 20 */
+}

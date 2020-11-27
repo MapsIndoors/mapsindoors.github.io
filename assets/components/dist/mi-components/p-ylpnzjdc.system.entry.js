@@ -1,0 +1,1 @@
+System.register(["./p-5db46098.system.js"],(function(e){"use strict";var t,r;return{setters:[function(e){t=e.r;r=e.g}],execute:function(){var n=e("mi_dropdown_item",function(){function e(e){t(this,e);this.selected=false}Object.defineProperty(e.prototype,"el",{get:function(){return r(this)},enumerable:true,configurable:true});return e}())}}}));

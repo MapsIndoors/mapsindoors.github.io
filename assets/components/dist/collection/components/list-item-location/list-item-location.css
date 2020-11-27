@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:host {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #1e2025;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  transition: 300ms ease;
+  cursor: pointer;
+}
+
+:host(:hover) {
+  background-color: #fcfcfc;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.details {
+  padding-left: 16px;
+  padding-right: 16px;
+  flex: 1;
+}
+.details-title {
+  margin: 0;
+  padding: 0;
+}
+
+.distance {
+  font-weight: 400;
+}

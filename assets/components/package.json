@@ -1,0 +1,52 @@
+{
+    "name": "@mapsindoors/components",
+    "version": "3.0.1",
+    "description": "Web components for MapsIndoors",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "es2015": "dist/esm/index.mjs",
+    "es2017": "dist/esm/index.mjs",
+    "types": "dist/types/components.d.ts",
+    "collection": "dist/collection/collection-manifest.json",
+    "collection:main": "dist/collection/index.js",
+    "unpkg": "dist/mi-components/mi-components.js",
+    "files": [
+        "dist/",
+        "loader/"
+    ],
+    "scripts": {
+        "build": "stencil build --docs",
+        "start": "stencil build --dev --watch --serve",
+        "test": "stencil test --spec --e2e",
+        "test.watch": "stencil test --spec --e2e --watchAll",
+        "generate": "stencil generate",
+        "preversion": "npm run build",
+        "postversion": "git push -u origin --tags && npm publish --access public"
+    },
+    "devDependencies": {
+        "@mapsindoors/css": "0.0.4",
+        "@mapsindoors/midt": "^10.0.7",
+        "@stencil/core": "1.9.0-19",
+        "@stencil/sass": "^1.1.1",
+        "@types/googlemaps": "^3.39.3",
+        "@types/jest": "24.0.25",
+        "@types/puppeteer": "1.20.3",
+        "@typescript-eslint/eslint-plugin": "^2.24.0",
+        "@typescript-eslint/parser": "^2.24.0",
+        "debounce-decorator": "^1.0.6",
+        "eslint": "^6.8.0",
+        "eslint-config-mapsindoors-typescript": "git+https://git@github.com/MapsPeople/eslint-config-mapsindoors-typescript.git",
+        "jest": "^24.9.0",
+        "jest-cli": "24.9.0",
+        "puppeteer": "2.1.0",
+        "simple-keyboard": "^2.29.31"
+    },
+    "license": "MIT",
+    "optionalDependencies": {
+        "fsevents": "^2.1.3"
+    }
+
+,"_resolved": "https://registry.npmjs.org/@mapsindoors/components/-/components-3.0.1.tgz"
+,"_integrity": "sha512-HB4nh0kDSTToiYrhOsk4A7qoLz5OANbFOTPHWB4PbhmacrMmHgnvWC1h6HWKqUa6nSDOYWFGM4SBL+eXl8LfNA=="
+,"_from": "@mapsindoors/components@3.0.1"
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
+      }
+    </script>
+    <script type="module" src="/assets/components/dist/mi-components/mi-components.esm.js"></script>
+    <script nomodule src="/assets/components/dist/mi-components/mi-components.js"></script>
+    <title>How to use the MapsIndoors Web SDK v3 - MapsIndoors Documentation</title>
+  </head>
+
+
+<body>
+  <header>
+  <div class="wrap">
+    <section class="flex">
+      <div class="left">
+        <a href="/">
+          <svg width="200" height="39" viewBox="0 0 200 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="mapspeople-logo">
+            <g clip-path="url(#clip0)">
+              <path d="M13.2756 10.5368C14.766 9.49696 16.8804 8.87305 18.4402 8.87305C23.3622 8.87305 25.4073 11.438 25.4073 15.5282V28.6304H20.5199V15.7361C20.5199 14.315 19.7227 13.6564 18.4402 13.6564C16.7764 13.6564 15.7712 14.1417 15.1473 14.419V28.6304H10.26V15.7361C10.26 14.315 9.46274 13.6564 8.18024 13.6564C6.72444 13.6564 5.68457 14.0724 4.88735 14.419V28.6304H0V9.49696H3.43154L3.70884 10.1555C5.06066 9.39298 6.82842 8.90771 8.14558 8.90771C10.8492 8.87305 12.2704 9.56629 13.2756 10.5368Z" fill="#006440"></path>
+              <path d="M40.6926 15.6321C40.6926 14.2803 39.9994 13.6564 38.2316 13.6564C36.3598 13.6564 33.7948 14.1417 31.7844 14.8696V10.0169C33.8988 9.04636 36.5331 8.87305 38.2316 8.87305C44.0202 8.87305 45.5106 11.6807 45.5106 15.8748V28.6304H42.1137L41.8364 28.0412C40.5193 28.7344 38.7515 29.2197 37.4344 29.2197C32.2004 29.2197 30.502 25.9268 30.502 22.3566C30.502 19.029 32.3044 16.1867 37.4344 15.8401L40.6926 15.6321ZM37.5383 20.3115C35.8399 20.4502 35.3893 21.4207 35.3893 22.3912C35.3893 23.2578 35.6319 24.471 37.5037 24.471C38.5435 24.471 39.9647 23.951 40.6926 23.5698V20.1036L37.5383 20.3115Z" fill="#006440"></path>
+              <path d="M51.1616 9.49696H54.5585L54.8011 10.1902C56.1183 9.39298 57.99 8.87305 59.4112 8.87305C65.893 8.87305 67.7301 12.5126 67.7301 19.0637C67.7301 25.6495 65.893 29.2543 59.4112 29.2543C58.3713 29.2543 56.8809 28.9424 55.945 28.5264V38.1971H51.127V9.49696H51.1616ZM55.945 23.7084C56.7422 24.055 58.0247 24.4363 59.3419 24.4363C62.2535 24.4363 62.8081 22.1486 62.8081 19.029C62.8081 15.9094 62.2188 13.6217 59.3419 13.6217C58.0247 13.6217 56.7422 14.003 55.945 14.3497V23.7084Z" fill="#006440"></path>
+              <path d="M79.8957 16.4645C85.3723 16.9844 86.6202 19.0295 86.6202 22.5997C86.6202 25.8233 84.7484 29.2548 78.9252 29.2548C77.1921 29.2548 74.4191 28.6656 72.894 28.0763V23.0503C74.6271 23.7089 76.9495 24.4368 78.9945 24.4368C81.2476 24.4368 81.9061 23.4662 81.9061 22.6344C81.9061 21.8718 81.4555 21.2825 79.4451 21.1092C74.0725 20.5893 72.7207 18.3016 72.7207 15.3207C72.7207 12.3397 74.5231 8.83887 79.9304 8.83887C81.6288 8.83887 83.6739 9.11616 85.823 10.0867V14.9047C83.7779 14.1768 81.8715 13.5876 79.9304 13.5876C77.8853 13.5876 77.4347 14.3501 77.4347 15.2167C77.4001 15.8753 77.816 16.2565 79.8957 16.4645Z" fill="#006440"></path>
+              <path d="M93.3797 27.2097V38.1629H92.2012V9.53206H92.7211L93.2757 11.0225C94.9741 9.91334 97.8511 9.35875 100.069 9.35875C106.517 9.35875 108.111 13.5875 108.111 19.0988C108.111 24.6101 106.517 28.8388 100.069 28.8388C97.8858 28.8042 95.1128 28.2842 93.3797 27.2097ZM93.3797 11.9931V26.1698C95.1128 27.2444 97.3312 27.7643 100.069 27.7643C105.858 27.7643 106.898 23.3622 106.898 19.0641C106.898 14.766 105.858 10.364 100.069 10.364C97.3658 10.364 95.1474 10.9185 93.3797 11.9931ZM127.834 26.8284V27.8683C126.309 28.4575 123.744 28.8388 121.664 28.8388C115.217 28.8388 113.622 24.7834 113.622 19.0988C113.622 13.4142 115.217 9.35875 121.664 9.35875C128.111 9.35875 128.804 13.4835 128.804 19.0988V19.6187H114.801C114.87 23.9168 116.083 27.799 121.629 27.799C124.541 27.7643 126.413 27.279 127.834 26.8284ZM127.66 18.5442C127.66 14.3847 127.244 10.364 121.664 10.364C116.118 10.364 114.905 14.2114 114.835 18.5442H127.66ZM141.976 9.35875C148.77 9.35875 149.983 13.4835 149.983 19.0988C149.983 24.714 148.77 28.8388 141.976 28.8388C135.182 28.8388 133.969 24.714 133.969 19.0988C133.934 13.4835 135.147 9.35875 141.976 9.35875ZM141.976 27.7643C148.076 27.7643 148.77 23.8821 148.77 19.0641C148.77 14.2461 148.076 10.364 141.976 10.364C135.875 10.364 135.147 14.2808 135.147 19.0641C135.147 23.8821 135.841 27.7643 141.976 27.7643ZM156.673 27.2097V38.1629H155.494V9.53206H156.014L156.569 11.0225C158.267 9.91334 161.144 9.35875 163.362 9.35875C169.809 9.35875 171.404 13.5875 171.404 19.0988C171.404 24.6101 169.809 28.8388 163.362 28.8388C161.179 28.8042 158.371 28.2842 156.673 27.2097ZM156.673 11.9931V26.1698C158.406 27.2444 160.624 27.7643 163.362 27.7643C169.151 27.7643 170.191 23.3969 170.191 19.0641C170.191 14.766 169.151 10.364 163.362 10.364C160.624 10.364 158.406 10.9185 156.673 11.9931ZM180.173 28.8042C178.128 28.8042 177.227 27.9029 177.227 26.0312V0H178.406V25.9619C178.406 27.4177 178.787 27.9029 180.208 27.9029V28.8042H180.173ZM198.891 26.8284V27.8683C197.366 28.4575 194.801 28.8388 192.721 28.8388C186.274 28.8388 184.68 24.7834 184.68 19.0988C184.68 13.4142 186.239 9.35875 192.721 9.35875C199.168 9.35875 199.861 13.4835 199.861 19.0988V19.6187H185.858C185.927 23.9168 187.141 27.799 192.686 27.799C195.598 27.7643 197.435 27.279 198.891 26.8284ZM198.683 18.5442C198.683 14.3847 198.267 10.364 192.686 10.364C187.106 10.364 185.927 14.2114 185.858 18.5442H198.683Z" fill="#006440"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="200" height="38.4749" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        <a href="https://mapspeople.com/support">Support</a>
+        <a href="https://github.com/mapsindoors">GitHub</a>
+        <a href="https://blog.mapspeople.com/tag/product">Product Blog</a>
+        <a href="https://cms.mapsindoors.com/">CMS</a>
+      </div>
+    </section>
+  </div>
+</header>
+
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        
+         <nav class="sidebar">
+  
+    <p class="nav__header"><a href="/web/v3/">Web v3</a></p>
+    <a href="https://app.mapsindoors.com/mapsindoors/js/sdk/3.12.1/docs/index.html">Reference Docs
+      &UpperRightArrow;</a>
+    <hr />
+    
+  
+  
+  
+  
+  
+  
+  
+  <ul class="sidebar-nav"><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li class="active"><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+</nav>
+
+        
+        <main>
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb"><span class="item"><a href="/">Home</a></span>
+<span class="item"><a href="/web/v3/">Web v3</a></span></ol>
+          </nav>
+          <h1>
+            <a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a>
+          </h1>
+          
+            <p class="time">Last updated: <time>11/27/2020</time>
+            </p>
+          
+          <h2>Using the Display rules</h2>
+<p>Display rules use the following structure:</p>
+<pre><code class="language-javascript">{
+   from: zoom_level,             // Optional - defaults to 0
+   to: zoom_level,               // Optional - defaults to 21
+   icon: google.maps.icon|&quot;url&quot;  // Optional - defaults to current location icon url (dynamically set)
+   visible: boolean              // Optional - defaults to true
+};
+</code></pre>
+<p>To add your own custom icons for locations (point-of-interest, rooms, etc.), setup display rule(s) and make it known to your MapsIndoors object.</p>
+<pre><code class="language-javascript">var googleMap = new google.maps.Map(...);
+var mapsIndoors = new mapsindoors.MapsIndoors({map: googleMap});
+
+mapsIndoors.setDisplayRule(&quot;info&quot;, {from:16, icon:&quot;http://myiconhost.com/info.png&quot; });
+</code></pre>
+<p>Display rules are based on POI/Location types. Every location has one type property <code>location.properties.type</code>. A set of types is defined/used in the MapsIndoors CMS. The current list of types can be listed using the LocationsService:</p>
+<pre><code class="language-javascript">mapsindoors.SolutionService.getSolution().then(function(solution) {
+    var types = solution.types;
+});
+</code></pre>
+<p>Two of these types could be of name &quot;Parking” and &quot;Office”, which indicates that these types are used for parking lots and offices respectively. In most cases, you might want to display parking icons on zoom-levels above office icons. Based on this intention you could set these rules:</p>
+<pre><code class="language-javascript">mapsIndoors.setDisplayRule(&quot;parking&quot;, { from:16 }); // Using default type icon
+mapsIndoors.setDisplayRule(&quot;office&quot;, { from:20 });  // Using default type icon
+</code></pre>
+<h3>Getting a polygon from a location</h3>
+<p>Some locations in MapsIndoors can have additional polygon information. These polygons can be used to render a room or area in a special way or make geofences, calculating whether another point or location is contained within the polygon. If a <code>location</code> has polygons, these can be drawn onto the map this way:</p>
+<pre><code class="language-javascript">var polygon = new google.maps.Polygon();
+
+function drawPolygon(location) {
+    if (location.geometry &amp;&amp; location.geometry.type === &quot;Polygon&quot;) {
+        var paths = location.geometry.coordinates.map(function (ring) {
+            return ring.map(function (coordinate) {
+                return { lat: coordinate[1], lng: coordinate[0] };
+            });
+        });
+
+        polygon.setOptions({
+            map: googleMap,
+            paths: paths
+        });
+    }
+}
+</code></pre>
+<p>As demonstrated above, a polygon's outer ring/path as well as holes are arranged as [longitude, latitude] pairs. As not all locations have polygons, the polygon array may be empty. On the contrary, some locations, like entire building floors, might have more than polygon.</p>
+<h2>Map Rendering</h2>
+<h3>Setting the floor</h3>
+<p>Sets the current visible floor. This will make visible the corresponding floorplans and the icons on top of it. If the floor index provided does not correlate to any building floor, then the &quot;nearest” floor will be activated. E.g. providing <code>setFloor(4)</code> on a three story building (with floor-indexes 0, 1, 2) will make the topmost floorplan visible (with floor-index 2).</p>
+<p>Although floors may have names (&quot;G” for 0, &quot;M1” for 1, &quot;M2” for 2 etc.) you need to set the floor using the index-value.</p>
+<pre><code class="language-javascript">myMapsIndoors.setFloor(4)
+</code></pre>
+<h3>Getting the floor</h3>
+<p>Returns current floor index number (integer), e.g. 0 for ground floor, -1 for basement.</p>
+<pre><code class="language-javascript">myMapsIndoors.getFloor()
+</code></pre>
+<h2>Using the Directions Renderer</h2>
+<p>Constructor. Takes directions render options as required parameter.</p>
+<pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer(
+{
+   mapsindoors: mapsIndoors,     // The MapsIndoors instance
+}
+);
+</code></pre>
+<h3>Setting the Options of the Directions Renderer</h3>
+<p>Customizing style of route polylines is done using the <code>setOptions</code> method.</p>
+<pre><code class="language-javascript">var directionsRenderer = new mapsindoors.DirectionsRenderer();
+
+directionsRenderer.setOptions(
+{
+   strokeColor: string                                 // The stroke color. All CSS3 colors are supported except for extended named colors.
+   strokeOpacity: number                               // The stroke opacity between 0.0 and 1.0.
+   strokeWeight: number                                // The stroke width in pixels.
+   visible: boolean                                    // Whether this polyline is visible on the map. Defaults to true.
+   zIndex: number                                      // The rendering index in relation to other polylines
+}
+);
+</code></pre>
+<h3>Getting a Route and Rendering it on a Map</h3>
+<p>Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.</p>
+<pre><code class="language-javascript">
+var directionsService = mapsindoors.DirectionsService;
+var renderer = new mapsindoors.DirectionsRenderer({ mapsindoors: mapsIndoors });
+
+directionsService.getRoute(
+   {
+      origin: {
+         lat: 55.687791059149376,
+         lng: 12.571580452361996,
+         floor: 0
+      },
+      destination: {
+         lat: 55.687476568798,
+         lng: 12.568619293609554,
+         floor: 0
+      },
+      mode: &quot;WALKING&quot;
+      avoidStairs: true
+   }
+).then(function (result) {
+   renderer.setRoute(result.routes[0]);
+});
+</code></pre>
+<h3>Clearing a Route Rendering</h3>
+<p>Clear the current route rendering.</p>
+<pre><code class="language-javascript">directionsRenderer.setRoute(null);
+</code></pre>
+<h2>Using the Directions Service</h2>
+<p>Constructor. Instantiates a service that can be used for making route requests.</p>
+<pre><code class="language-javascript">getRoute( request:DirectionsRequest )
+</code></pre>
+<p>Request routing from a point to another. The request object aligns to the <a href="https://developers.google.com/maps/documentation/javascript/3.exp/reference#DirectionsRequest">Google Maps V3 API DirectionsRequest object specification</a>, but with floor properties on origin and destination. Furthermore, avoidStairs boolean can be set to request routes for both disabled users and users without disabilities.</p>
+<pre><code class="language-javascript">var directionsService = mapsindoors.DirectionsService
+
+directionsService.getRoute(
+{
+   origin: {lat:57.5, lng: 12.9, floor: 0},
+   destination: {lat:57.5, lng: 12.9, floor: 0},
+   // MapsIndoors options
+   avoidStairs: true,
+   // Google Directions options
+   travelMode: google.maps.TravelMode,
+   transitOptions: {...},
+   avoidFerries: true,
+   ...
+}
+).then(function(routeResult) {
+   // Result will contain possible routes or none if routing failed.
+});
+</code></pre>
+<h3>Getting Icons from Location Types</h3>
+<p>A set of Location Types is defined for every MapsIndoors Solution. The current list of Types can be retrieved like this:</p>
+<pre><code class="language-javascript">var solutionService = mapsindoors.SolutionService;
+
+solutionService.getTypes().then(function(types) {
+   // returns array of types with format { name:string, displayRule: { icon:'https://icon.url' } }
+   console.log(types[0].displayRule.icon);
+});
+</code></pre>
+<h3>Getting the Location Details</h3>
+<p>Get the full details object of a single location. Pass the MapsIndoors id string present in any location object at <code>location.id</code>.</p>
+<pre><code class="language-javascript">var locations = new mapsindoors.LocationsService();
+// Get all locations
+locations.getLocations().then(function(data) {
+   locations.getLocationDetails(data[0].id).then(function(detailedData) {
+      // Returns a full-detail location object
+   });
+});
+</code></pre>
+<h2>Map Styles</h2>
+<p>A MapsIndoors map may have multiple styles/layouts. This is how a mapStyle object is structured.</p>
+<pre><code class="language-javascript">let mapStyle = {
+    folder: 'styleFolder',
+    displayName: 'styleDisplayName' // Optional when created
+}
+</code></pre>
+<p>When a new instance of MapsIndoors is created, it is created with the Google map as an argument. It is also possible to set the map style in the constructor.</p>
+<pre><code class="language-javascript">let mapsIndoors = new mapsindoors.MapsIndoors({
+    map: googleMap,
+    mapStyle: MapStyle
+});
+</code></pre>
+<p>It is also possible to set or get the map style at a later time, after MapsIndoors has been instantiated.</p>
+<pre><code class="language-javascript">google.maps.event.addListener(mapsIndoors, 'ready', function () {
+    /* Get all avalible styles. */
+    let styles = mapsIndoors.getMapStyles();
+    /* Set the first style in the list as the one to be shown on the map. */
+    mapsIndoors.setMapStyle(styles[0]);
+    /* Get the current map style. */
+    let style = mapsIndoors.getMapStyle();
+});
+</code></pre>
+
+        </main>
+      </section>
+    </div>
+  </div>
+  <footer>
+  <div class="wrap">
+    <div class="flex">
+      <div class="third">
+        <h2><a href="/ios/v3">iOS v3</a></h2>
+        
+        <ul><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+
+      </div>
+      <div class="third">
+
+        <h2><a href="/android/v3">Android v3</a></h2>
+        
+        <ul><li><a href="/android/v3/getting-polygon-from-location/">Getting a Polygon from a Location</a></li>
+<li><a href="/android/v3/search-locations-display-map/">Searching for Locations and Displaying the Results on a Map</a></li>
+<li><a href="/android/v3/live-data/">Live Data</a></li>
+<li><a href="/android/v3/locationdatasourcespeoplelocationdatasource/">Creating your own Location Data Source - Part 1</a></li>
+<li><a href="/android/v3/locationdatasourcesbatterieslocationdatasource/">Creating your own Location Data Source - Part 2</a></li>
+<li><a href="/android/v3/locationdatasourceslocationdatasourcesfragment/">Creating your own Location Data Source - Part 3</a></li>
+<li><a href="/android/v3/locationclusteringlocationclusteringfragment/">Work with location grouping / clustering</a></li>
+<li><a href="/android/v3/locationdetailsdemolocationdetailsfragment/">Show Location Details</a></li>
+<li><a href="/android/v3/searchmapdemosearchfragment/">Create a Search Experience with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/searchmapdemosearchmapfragment/">Create a Search Experience with MapsIndoors - Part 2</a></li>
+<li><a href="/android/v3/showuserlocationdemopositionprovider/">Show the Blue Dot with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/showuserlocationshowuserlocationfragment/">Show the Blue Dot with MapsIndoors - Part 2</a></li></ul>
+      </div>
+      <div class="third">
+        <h2><a href="/web/v4">Web v4</a></h2>
+        
+        <ul><li><a href="/web/v4/upgrade-guide/">v4 Upgrade Guide</a></li>
+<li><a href="/web/v4/simple-map/">Create a simple map with MapsIndoors</a></li>
+<li><a href="/web/v4/display-rules-intro/">Introduction to Display Rules</a></li>
+<li><a href="/web/v4/using-events/">Event handling</a></li>
+<li><a href="/web/v4/search-and-filtering/">Search and filtering</a></li></ul>
+
+        <h2><a href="/web/v3">Web v3</a></h2>
+        
+        <ul><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="flex">
+      <div class="third">
+        <h2>Legacy versions</h2>
+        <h4><a href="/android/v2">Android v2</a></h4>
+        <h4><a href="/ios/v2">iOS v2</a></h4>
+        <h4><a href="/xamarin">Xamarin v3</a></h4>
+
+      </div>
+      <div class="third">
+        <h2><a href="/api">Integration API</a></h2>
+        <h2><a href="/cms">MapsIndoors CMS</a></h2>
+        <h2><a href="/product">Product Overview</a></h2>
+      </div>
+      <div class="third">
+        <h2><a href="/various">Various</a></h2>
+        
+        <ul><li><a href="/various/glossary/">Glossary</a></li>
+<li><a href="/various/areas/">Areas</a></li>
+<li><a href="/various/custom-properties/">Custom Properties</a></li>
+<li><a href="/various/dashboard/">CMS Dashboard</a></li>
+<li><a href="/various/external-id/">External ID</a></li>
+<li><a href="/various/google_analytics/">Google Analytics</a></li>
+<li><a href="/various/indoor-positioning/">Indoor Positioning with MapsIndoors</a></li>
+<li><a href="/various/ip-whitelisting/">Work with MapsIndoors SDK behind a firewall</a></li>
+<li><a href="/various/kiosk/">Kiosk</a></li>
+<li><a href="/various/location-sources/">Location Sources in MapsIndoors</a></li>
+<li><a href="/various/print-map/">Print Map</a></li>
+<li><a href="/various/sdk-features/">SDK Features</a></li></ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

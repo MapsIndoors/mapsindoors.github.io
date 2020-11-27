@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">');
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.write('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">');
+      }
+    </script>
+    <script type="module" src="/assets/components/dist/mi-components/mi-components.esm.js"></script>
+    <script nomodule src="/assets/components/dist/mi-components/mi-components.js"></script>
+    <title>Integration API - MapsIndoors Documentation</title>
+  </head>
+
+
+<body>
+  <header>
+  <div class="wrap">
+    <section class="flex">
+      <div class="left">
+        <a href="/">
+          <svg width="200" height="39" viewBox="0 0 200 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="mapspeople-logo">
+            <g clip-path="url(#clip0)">
+              <path d="M13.2756 10.5368C14.766 9.49696 16.8804 8.87305 18.4402 8.87305C23.3622 8.87305 25.4073 11.438 25.4073 15.5282V28.6304H20.5199V15.7361C20.5199 14.315 19.7227 13.6564 18.4402 13.6564C16.7764 13.6564 15.7712 14.1417 15.1473 14.419V28.6304H10.26V15.7361C10.26 14.315 9.46274 13.6564 8.18024 13.6564C6.72444 13.6564 5.68457 14.0724 4.88735 14.419V28.6304H0V9.49696H3.43154L3.70884 10.1555C5.06066 9.39298 6.82842 8.90771 8.14558 8.90771C10.8492 8.87305 12.2704 9.56629 13.2756 10.5368Z" fill="#006440"></path>
+              <path d="M40.6926 15.6321C40.6926 14.2803 39.9994 13.6564 38.2316 13.6564C36.3598 13.6564 33.7948 14.1417 31.7844 14.8696V10.0169C33.8988 9.04636 36.5331 8.87305 38.2316 8.87305C44.0202 8.87305 45.5106 11.6807 45.5106 15.8748V28.6304H42.1137L41.8364 28.0412C40.5193 28.7344 38.7515 29.2197 37.4344 29.2197C32.2004 29.2197 30.502 25.9268 30.502 22.3566C30.502 19.029 32.3044 16.1867 37.4344 15.8401L40.6926 15.6321ZM37.5383 20.3115C35.8399 20.4502 35.3893 21.4207 35.3893 22.3912C35.3893 23.2578 35.6319 24.471 37.5037 24.471C38.5435 24.471 39.9647 23.951 40.6926 23.5698V20.1036L37.5383 20.3115Z" fill="#006440"></path>
+              <path d="M51.1616 9.49696H54.5585L54.8011 10.1902C56.1183 9.39298 57.99 8.87305 59.4112 8.87305C65.893 8.87305 67.7301 12.5126 67.7301 19.0637C67.7301 25.6495 65.893 29.2543 59.4112 29.2543C58.3713 29.2543 56.8809 28.9424 55.945 28.5264V38.1971H51.127V9.49696H51.1616ZM55.945 23.7084C56.7422 24.055 58.0247 24.4363 59.3419 24.4363C62.2535 24.4363 62.8081 22.1486 62.8081 19.029C62.8081 15.9094 62.2188 13.6217 59.3419 13.6217C58.0247 13.6217 56.7422 14.003 55.945 14.3497V23.7084Z" fill="#006440"></path>
+              <path d="M79.8957 16.4645C85.3723 16.9844 86.6202 19.0295 86.6202 22.5997C86.6202 25.8233 84.7484 29.2548 78.9252 29.2548C77.1921 29.2548 74.4191 28.6656 72.894 28.0763V23.0503C74.6271 23.7089 76.9495 24.4368 78.9945 24.4368C81.2476 24.4368 81.9061 23.4662 81.9061 22.6344C81.9061 21.8718 81.4555 21.2825 79.4451 21.1092C74.0725 20.5893 72.7207 18.3016 72.7207 15.3207C72.7207 12.3397 74.5231 8.83887 79.9304 8.83887C81.6288 8.83887 83.6739 9.11616 85.823 10.0867V14.9047C83.7779 14.1768 81.8715 13.5876 79.9304 13.5876C77.8853 13.5876 77.4347 14.3501 77.4347 15.2167C77.4001 15.8753 77.816 16.2565 79.8957 16.4645Z" fill="#006440"></path>
+              <path d="M93.3797 27.2097V38.1629H92.2012V9.53206H92.7211L93.2757 11.0225C94.9741 9.91334 97.8511 9.35875 100.069 9.35875C106.517 9.35875 108.111 13.5875 108.111 19.0988C108.111 24.6101 106.517 28.8388 100.069 28.8388C97.8858 28.8042 95.1128 28.2842 93.3797 27.2097ZM93.3797 11.9931V26.1698C95.1128 27.2444 97.3312 27.7643 100.069 27.7643C105.858 27.7643 106.898 23.3622 106.898 19.0641C106.898 14.766 105.858 10.364 100.069 10.364C97.3658 10.364 95.1474 10.9185 93.3797 11.9931ZM127.834 26.8284V27.8683C126.309 28.4575 123.744 28.8388 121.664 28.8388C115.217 28.8388 113.622 24.7834 113.622 19.0988C113.622 13.4142 115.217 9.35875 121.664 9.35875C128.111 9.35875 128.804 13.4835 128.804 19.0988V19.6187H114.801C114.87 23.9168 116.083 27.799 121.629 27.799C124.541 27.7643 126.413 27.279 127.834 26.8284ZM127.66 18.5442C127.66 14.3847 127.244 10.364 121.664 10.364C116.118 10.364 114.905 14.2114 114.835 18.5442H127.66ZM141.976 9.35875C148.77 9.35875 149.983 13.4835 149.983 19.0988C149.983 24.714 148.77 28.8388 141.976 28.8388C135.182 28.8388 133.969 24.714 133.969 19.0988C133.934 13.4835 135.147 9.35875 141.976 9.35875ZM141.976 27.7643C148.076 27.7643 148.77 23.8821 148.77 19.0641C148.77 14.2461 148.076 10.364 141.976 10.364C135.875 10.364 135.147 14.2808 135.147 19.0641C135.147 23.8821 135.841 27.7643 141.976 27.7643ZM156.673 27.2097V38.1629H155.494V9.53206H156.014L156.569 11.0225C158.267 9.91334 161.144 9.35875 163.362 9.35875C169.809 9.35875 171.404 13.5875 171.404 19.0988C171.404 24.6101 169.809 28.8388 163.362 28.8388C161.179 28.8042 158.371 28.2842 156.673 27.2097ZM156.673 11.9931V26.1698C158.406 27.2444 160.624 27.7643 163.362 27.7643C169.151 27.7643 170.191 23.3969 170.191 19.0641C170.191 14.766 169.151 10.364 163.362 10.364C160.624 10.364 158.406 10.9185 156.673 11.9931ZM180.173 28.8042C178.128 28.8042 177.227 27.9029 177.227 26.0312V0H178.406V25.9619C178.406 27.4177 178.787 27.9029 180.208 27.9029V28.8042H180.173ZM198.891 26.8284V27.8683C197.366 28.4575 194.801 28.8388 192.721 28.8388C186.274 28.8388 184.68 24.7834 184.68 19.0988C184.68 13.4142 186.239 9.35875 192.721 9.35875C199.168 9.35875 199.861 13.4835 199.861 19.0988V19.6187H185.858C185.927 23.9168 187.141 27.799 192.686 27.799C195.598 27.7643 197.435 27.279 198.891 26.8284ZM198.683 18.5442C198.683 14.3847 198.267 10.364 192.686 10.364C187.106 10.364 185.927 14.2114 185.858 18.5442H198.683Z" fill="#006440"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="200" height="38.4749" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="right">
+        <a href="https://mapspeople.com/support">Support</a>
+        <a href="https://github.com/mapsindoors">GitHub</a>
+        <a href="https://blog.mapspeople.com/tag/product">Product Blog</a>
+        <a href="https://cms.mapsindoors.com/">CMS</a>
+      </div>
+    </section>
+  </div>
+</header>
+
+  <div class="content">
+    <div class="wrap">
+      <section class="container">
+        
+        <main>
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb"><span class="item"><a href="/">Home</a></span></ol>
+          </nav>
+          <h1>
+            <a href="/api/">Integration API</a>
+          </h1>
+          
+            <p class="time">Last updated: <time>11/27/2020</time>
+            </p>
+          
+          <h2>Introduction and getting started</h2>
+<p>From the MapsIndoors Integration API you can get, add, change and delete data related to your MapsIndoors Solution via a REST service.</p>
+<p>Send your requests to this endpoint: <a href="https://integration.mapsindoors.com">https://integration.mapsindoors.com</a></p>
+<blockquote>
+<p>Note: Only https is supported.</p>
+</blockquote>
+<p>You can access data through the Integration API using a range of endpoints. The endpoints are described in the Swagger interface definition: <a href="https://integration.mapsindoors.com/doc">https://integration.mapsindoors.com/doc</a></p>
+<p>In Swagger, each <code>GET</code> method is pre-loaded with all mandatory fields needed to get a live example of data. Click the  &quot;<em>Try it out</em>&quot; button in Swagger to see the example data.</p>
+<h3>Login and credentials</h3>
+<p>First, log in to the service to get an <code>access token</code> to access the data.</p>
+<p>This requires a POST request to our Auth API at the following endpoint: <a href="https://auth.mapsindoors.com/connect/token">https://auth.mapsindoors.com/connect/token</a></p>
+<p>The Auth API supports multiple ways to log in. The most common way is with your MapsIndoors username and password. If you need to sign in with other providers, please <a href="https://mapspeople.com/support">contact support</a>.
+No matter what login method you use, you will always need to use the following content-type header when talking to the Auth API:</p>
+<pre><code class="language-bash">Content-Type: application/x-www-form-urlencoded
+</code></pre>
+<h4>Log in with MapsIndoors username/password</h4>
+<p>To log in with your MapsIndoors login, send them with the <code>grant_type</code> set to <code>password</code>.</p>
+<p>Use the following key/value set:</p>
+<pre><code class="language-bash">grant_type: password
+client_id: client
+username: &lt;your username&gt;
+password: &lt;your password&gt;
+</code></pre>
+<p>Replacing <code>&lt;your username&gt;</code> and <code>&lt;your password&gt;</code> with your own credentials, and leaving <code>grant_type</code> and <code>client_id</code> as stated above.</p>
+<p>The body of the request must end up containing a query string like this:</p>
+<p><code>grant_type=password&amp;client_id=client&amp;username=&lt;your username&gt;&amp;password=&lt;your password&gt;</code></p>
+<h4>When you are authenticated</h4>
+<p>If you sent valid credentials to the Auth API, you will receive a response like this:</p>
+<pre><code class="language-json">{
+    &quot;access_token&quot;: &quot;eyJhbGciOiJ...vmERrovsg&quot;,
+    &quot;expires_in&quot;: 86400,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;scope&quot;: &quot;integration&quot;
+}
+</code></pre>
+<p>You will need the value from the key <code>access_token</code> for all your requests to the Integration API by adding the <code>Authorization</code> header like this:</p>
+<pre><code class="language-bash">authorization: Bearer eyJhbGciOiJ...vmERrovsg
+</code></pre>
+<blockquote>
+<p>Note: The access token is valid for 24 hours. After that you will need to reauthenticate, following the same steps as explained above.</p>
+</blockquote>
+<h2>Data description</h2>
+<h3>Dataset</h3>
+<p>The main starting point for your data is the dataset object. This object contains information about the entire data set such as languages and where to find more data.</p>
+<p>The demo dataset looks like this:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550c26a864617400a40f0000&quot;,
+  &quot;name&quot;: &quot;RTX&quot;,
+  &quot;availableLanguages&quot;: [
+    &quot;en&quot;,
+    &quot;da&quot;
+  ],
+  &quot;baseLanguage&quot;: &quot;en&quot;,
+  &quot;rootObjects&quot;: [
+    &quot;550c286964617400a4100000&quot;
+  ]
+}
+</code></pre>
+<p>It tells which languages are defined for this project, which language is the default one (English in this case) and it has a <code>rootObjects</code> reference list which refers to the geospatial data that makes up the bulk of a MapsIndoors Solution the root objects are Geodata objects.</p>
+<h3>Geodata</h3>
+<p>All geospatial data, Geodata, is arranged in a simple tree. Each element has a parent ID (except the root) so as an example, a point of interest (POI) can have a Room parent. The Room will typically be on a Floor in a Building on a Venue. Venues are always the root object (identified with parent ID is null), and is defined by &quot;<em>An overall geographical area which typically comprises the area of one or more buildings and their relevant surrounding areas such as lawns and parking lots</em>&quot;.</p>
+<p><img src="https://mapsindoors.github.io/assets/api/v1/geodata-structure.png" alt="Geodata Structure"></p>
+<p>You can create, update, delete all Geodata types: Venue, Building, Floor, Room, Area and POI.</p>
+<p>All Geodata BaseTypes have some common keys that is available for all, and then there is some specific ones for each type, listed in BaseTypeProperties.</p>
+<h4>Object definition</h4>
+<p><strong>A Geodata object contains the following:</strong></p>
+<ul>
+<li>
+<p><code>Id [string(24)]</code></p>
+<ul>
+<li>MapsIndoors generated ID. Should be <em>null</em> if you are creating an object.</li>
+</ul>
+</li>
+<li>
+<p><code>DatasetId [string]</code></p>
+<ul>
+<li>The dataset ID of your MapsIndoors Solution.</li>
+</ul>
+</li>
+<li>
+<p><code>ParentId [string(24)]</code></p>
+<ul>
+<li>The MapsIndoors ID that this Geodata object is a child of.</li>
+</ul>
+</li>
+<li>
+<p><code>BaseType [string]</code></p>
+<ul>
+<li>
+<p>The BaseType this Geodata covers.</p>
+<p><em>See more in the intro of the Geodata above.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>BaseTypeProperties [Dictionary]</code></p>
+<ul>
+<li>
+<p>Properties that directly changes the behaviour of the BaseType itself.</p>
+<p><em>See more details below.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>DisplayTypeId [string(24)]</code></p>
+<ul>
+<li>
+<p>ID of a Display Type to follow.</p>
+<p><em>Only relevant for POI/Room/Area.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>DisplaySetting [DisplayRule]</code></p>
+<ul>
+<li>
+<p>An overriding Display Rule to use, instead of the one from the Display Type.</p>
+<p>See &quot;DisplayRules&quot; under Display Type.</p>
+<p><em>Only relevant for POI/Room/Area.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Geometry [GeoJSON.Geometry]</code></p>
+<ul>
+<li>The geometry related to the Geodata according to the <a href="https://geojson.org/">GeoJSON</a> structure in the <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">WGS84</a> coordinate system.</li>
+</ul>
+</li>
+<li>
+<p><code>Anchor [GeoJSON.Point]</code></p>
+<ul>
+<li>Generally the anchor is the center of the Geometry itself.</li>
+</ul>
+</li>
+<li>
+<p><code>Aliases [Array&lt;string&gt;]</code></p>
+<ul>
+<li>A list of searchable aliases that should be associated with the Geodata.</li>
+</ul>
+</li>
+<li>
+<p><code>Categories [Array&lt;string&gt;]</code></p>
+<ul>
+<li>List of Only relevant for POI/Room/Area.</li>
+</ul>
+</li>
+<li>
+<p><code>Status [bitfield]</code></p>
+<ul>
+<li>
+<p>Bit 1: Active. Bit 2: Searchable.</p>
+<p><em>See more details in the following example.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Properties [Dictionary&lt;string, string&gt;]</code></p>
+<ul>
+<li>
+<p>Custom properties contains meta information related to the Geodata in a key-value structure.</p>
+<p><em>See more details in the following examples.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>TilesUrl [string]</code></p>
+<ul>
+<li>
+<p>The URL where the tiles are located. These should be identical across Venues in the same Dataset.</p>
+<p><em>Only relevant for Venue.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>TileStyles [TileStyle]</code></p>
+<ul>
+<li>How the tiles should Only relevant for Venue.</li>
+</ul>
+</li>
+</ul>
+<h4>BaseTypeProperties for Venue</h4>
+<ul>
+<li><code>Administrativeid [string]</code> - <span class="red">* required</span>
+<ul>
+<li>Unique ID for this Venue.</li>
+</ul>
+</li>
+<li><code>Defaultfloor [nullable int]</code>
+<ul>
+<li>The AdministrativeId from a Floor that should be the default selected for the Venue.</li>
+</ul>
+</li>
+<li><code>Imageurl [string]</code>
+<ul>
+<li>URL for the image that should be displayed in relation to the Venue.</li>
+</ul>
+</li>
+<li><code>Activestylefolder [string]</code>
+<ul>
+<li>The default Style that should be used in the Tiles.</li>
+</ul>
+</li>
+<li><code>Graphid [string(24)]</code>
+<ul>
+<li>The ID for the MapsIndoors Graph used to navigate in the building.</li>
+</ul>
+</li>
+</ul>
+<h4>BaseTypeProperties for Building</h4>
+<ul>
+<li><code>Administrativeid [string]</code> - <span class="red">* required</span>
+<ul>
+<li>Unique ID for this Building.</li>
+</ul>
+</li>
+<li><code>Defaultfloor [nullable int]</code>
+<ul>
+<li>The AdministrativeId from a floor that should be the default selected for this Building).</li>
+</ul>
+</li>
+<li><code>Imageurl [string]</code>
+<ul>
+<li>URL for the image that should be displayed in relation to the Building.</li>
+</ul>
+</li>
+</ul>
+<h4>BaseTypeProperties for Floor</h4>
+<ul>
+<li>
+<p><code>Name [string]</code> - <span class="red">* required</span></p>
+<ul>
+<li>
+<p>Floor identifier that will be used in the floor selector e.g. ‘0’, ‘42’, ‘B1’, etc.</p>
+<p>Keep it as short as possible. Recommendation is 1-3 characters.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Administrativeid [int]</code> - <span class="red">* required</span></p>
+<ul>
+<li>The index of the Floor inside of its parent Building.</li>
+</ul>
+</li>
+</ul>
+<h4>BaseTypeProperties for a Location (POI/Room/Area)</h4>
+<ul>
+<li><code>Administrativeid [string]</code> - <span class="red">* required</span>
+<ul>
+<li>Unique ID for this Location.</li>
+</ul>
+</li>
+<li><code>Class [string]</code>
+<ul>
+<li>The MapsIndoors color class that the Location should follow.</li>
+</ul>
+</li>
+<li><code>Imageurl [string]</code>
+<ul>
+<li>URL for the image that should be displayed in relation to the Location.</li>
+</ul>
+</li>
+<li><code>Activefrom [Nullable Datetime]</code>
+<ul>
+<li>A datetime of when it should be available from. Times are defined in UTC.</li>
+</ul>
+</li>
+<li><code>Activeto [Nullable Datetime]</code>
+<ul>
+<li>A datetime of when it should be available to. Times are defined in UTC.</li>
+</ul>
+</li>
+</ul>
+<p>Venue, Building, Floor, Room and Area have a polygon that describes where its position is on the map. POIs are noted with a single point on the map and is typically located inside a Room or on a Floor - important things like the coffee machine.</p>
+<p>To read, change or delete Geodata use the Geodata endpoints described here: <a href="https://integration.mapsindoors.com/doc/index.html#/Geodata">https://integration.mapsindoors.com/doc/index.html#/Geodata</a></p>
+<blockquote>
+<p>Note: When you get data, you only specify the <code>apiKey</code> hence you get the entire tree! The other Geodata endpoints works on individual Geodata objects.</p>
+</blockquote>
+<h2>Detailed data description</h2>
+<h3>Geodata</h3>
+<p>Each Geodata element has a number of properties. Let's look at an example - a coat hanger.</p>
+<h4>Example: POI</h4>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;13889288f79d4abfb7021ad7&quot;,
+  &quot;parentId&quot;: &quot;f43b931f09314f3f9dd796f9&quot;,
+  &quot;datasetId&quot;: &quot;550c26a864617400a40f0000&quot;,
+  &quot;baseType&quot;: &quot;poi&quot;,
+  &quot;baseTypeProperties&quot;: {
+    &quot;class&quot;: null,
+    &quot;imageurl&quot;: null,
+    &quot;activefrom&quot;: null,
+    &quot;activeto&quot;: null,
+    &quot;administrativeid&quot;: &quot;RTX&quot;
+  },
+  &quot;displayTypeId&quot;: &quot;d7558711f7c64534972cc65f&quot;,
+  &quot;geometry&quot;: {
+    &quot;coordinates&quot;: [
+      9.956830884329975,
+      57.085763732415764
+    ],
+    &quot;type&quot;: &quot;Point&quot;
+  },
+  &quot;aliases&quot;: [],
+  &quot;categories&quot;: [],
+  &quot;status&quot;: 3,
+  &quot;properties&quot;: {
+    &quot;name@en&quot;: &quot;Coat stand (RT)&quot;,
+    &quot;name@da&quot;: &quot;Jakkeholder (RT)&quot;,
+    &quot;description@en&quot;: &quot;Just a regular coat stand&quot;,
+    &quot;description@da&quot;: &quot;En almindelig jakkeholder&quot;
+  }
+}
+
+</code></pre>
+<ul>
+<li>
+<p><strong>Id</strong></p>
+<p>All elements have a unique 24 character string.</p>
+<p>If you are creating, this should be <code>null</code>, since it will be generated upon saving the object.</p>
+</li>
+<li>
+<p><strong>ParentId</strong></p>
+<p>For elements (other than the root) there is a parentId which links to the element it’s connected to.</p>
+<p>This will be a 24 character string, just as <em>Id</em> is.</p>
+</li>
+<li>
+<p><strong>BaseType</strong></p>
+<p>Tells what kind of data it is - it can be poi, room, area, floor, building, or venue.</p>
+</li>
+<li>
+<p><strong>BaseTypeProperties</strong></p>
+<p>Defines a dictionary setup with properties that is bound by its BaseType.</p>
+<p>It is not possible to add any other keys to BaseTypeProperties, except the predefined ones.</p>
+</li>
+<li>
+<p><strong>DisplayTypeId</strong></p>
+<p>Is a reference to the display type as described below. All rooms and poi geodata requires this to be set. As this is an ID, the reference is a 24 character string format as described above.</p>
+</li>
+<li>
+<p><strong>Geometry</strong></p>
+<p>Contains the actual geodata - where it is on the map. It’s based on <a href="http://geojson.org">GeoJSON</a> - in the example above the geometry is a point defining the POIs position on the map.</p>
+</li>
+<li>
+<p><strong>Aliases</strong></p>
+<p>Is an optional list of aliases for this data written as a list of non-translated text. This can be used e.g. if a building or room has a common nickname users could use when searching for it.</p>
+</li>
+<li>
+<p><strong>Categories</strong></p>
+<p>Is a reference to the category data as described below. Geodata is not required to reference any categories - like in this example. As this is an ID, the reference is a 24 character string as described above.</p>
+</li>
+<li>
+<p><strong>Status</strong></p>
+<p>Is a <a href="https://en.wikipedia.org/wiki/Bit_field">bitfield</a>.</p>
+<ul>
+<li>
+<p>bit1: active. If an element is not active, it will not be given to the apps.</p>
+</li>
+<li>
+<p>bit2: searchable. If an element is not searchable it might be shown on the map, but not show up in searches.</p>
+<p>As there are two bits, the final values can be:</p>
+<p>0: Not active, Not searchable
+1: active, Not searchable
+2: Not active, searchable (not a very useful combo)
+3: active, searchable</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Properties</strong></p>
+<p>Contains other data about the Geodata object such as names, description or even custom data like gate numbers, vendor id, exhibition id or other data needed.</p>
+<p>Name is mandatory - at least for the base language set for the dataset.</p>
+<p>The key format is: <keyname>@<language></p>
+<p>E.g. name in english will be ‘name@en’ - in the example with a value of &quot;Coat stand (RT)&quot;</p>
+<p>As this is a dictionary setup, the keyname needs to be unique and only contain the ascii chars [a-z] and [0-9]. Use of spaces and unicode chars here is discouraged as it makes it harder to use from the application code side. The char @ is not supported in the keyname as it’s used as a seperator. As an example, if you want to store opening hours here you could use the key openinghours@en as a keyname.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: BaseType ‘Floor’ doesn’t support properties.</p>
+</blockquote>
+<h4>Example: Area</h4>
+<p>Now let’s have a look at another Geodata with the BaseType <em>Area</em>.</p>
+<p>An Area is a BaseType that is a little different compared to e.g. POI and Room:</p>
+<p>It can be a part of a Room, Floor or Venue, but it can’t be a parent to any other Geodata objects. An Area can (unlike a Room) expand across multiple Rooms, or even Buildings.</p>
+<p>It will look a lot like the POI example, with a few differences:</p>
+<pre><code class="language-json">{
+&quot;id&quot;: &quot;7b2fe3da61b34cd9991ba510&quot;,
+&quot;parentId&quot;: &quot;f43b931f09314f3f9dd796f9&quot;,
+&quot;datasetId&quot;: &quot;550c26a864617400a40f0000&quot;,
+&quot;baseType&quot;: &quot;area&quot;,
+&quot;displayTypeId&quot;: &quot;41b1a5274fe8454ba2b6e6ff&quot;,
+&quot;geometry&quot;: {
+  &quot;coordinates&quot;: [
+    [
+      [
+        9.95615091100001,
+        57.085511788
+      ],
+      [
+        9.95631731999998,
+        57.085424259
+      ],
+      [
+        9.95635468799998,
+        57.085445236
+      ],
+      [
+        9.95618828099998,
+        57.085532766
+      ],
+      [
+        9.95615091100001,
+        57.085511788
+      ]
+    ]
+  ],
+  &quot;bbox&quot;: [
+    9.95615091100001,
+    57.085424259,
+    9.95635468799998,
+    57.085532766
+  ],
+  &quot;type&quot;: &quot;Polygon&quot;
+},
+&quot;anchor&quot;: {
+  &quot;coordinates&quot;: [
+    9.9562527993,
+    57.0854785126
+  ],
+  &quot;type&quot;: &quot;Point&quot;
+},
+&quot;aliases&quot;: [],
+&quot;categories&quot;: [
+],
+&quot;status&quot;: 3,
+&quot;baseTypeProperties&quot;: {
+  &quot;class&quot;: &quot;area&quot;,
+  &quot;imageurl&quot;: &quot;&quot;,
+  &quot;activefrom&quot;: null,
+  &quot;activeto&quot;: null,
+  &quot;administrativeid&quot;: &quot;DCC843A7-C762-6D95-94AE-FDBFCEE189EC&quot;
+},
+&quot;properties&quot;: {
+  &quot;name@en&quot;: &quot;Changing area&quot;,
+  &quot;description@en&quot;: &quot;&quot;,
+  &quot;name@da&quot;: &quot;Omklædnings område&quot;,
+  &quot;description@da&quot;: &quot;&quot;
+}
+}
+</code></pre>
+<ul>
+<li>
+<p><strong>ParentId</strong></p>
+<p>The area’s ParentId could be either a Venue, a Floor, or a Room. In this case, it is in the same parent as the Coat Hanger POI.</p>
+</li>
+<li>
+<p><strong>Geometry</strong></p>
+<p>Like before, the structure is based on <a href="http://geojson.org">GeoJSON</a> and is in this case, a polygon, that encapsulate were the Area is placed.
+There is also a bounding box field called <code>bbox</code> as a part of the geometry. This is should define the box around the defined geometry. This is both for optimization purposes, and e.g. to easy navigate a camera to show the geometry when needed to.</p>
+</li>
+<li>
+<p><strong>Anchor</strong></p>
+<p>The anchor here should normally define the center of the polygon. This can be used for a variety of features, depending on the use case.</p>
+</li>
+</ul>
+<h3>DisplayTypes</h3>
+<p>Common setup for Geodata of different kinds (meeting room, hallway, ...)</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;bb5410b32a5240d182ba50bb&quot;,
+  &quot;name&quot;: &quot;BreakOutArea&quot;,
+  &quot;aliases&quot;: [ &quot;changing&quot;, &quot;changing zone&quot; ],
+  &quot;displayRules&quot;: [
+    {
+      &quot;name&quot;: &quot;default&quot;,
+      &quot;zoomFrom&quot;: 19,
+      &quot;zoomTo&quot;: 21,
+      &quot;iconUrl&quot;: &quot;https://app.mapsindoors.com/mapsindoors/gfx/bella/80/BreakOutArea.png&quot;,
+      &quot;labelZoomFrom&quot;: 19,
+      &quot;labelZoomTo&quot;: 20,
+      &quot;visible&quot;: true,
+      &quot;iconVisible&quot;: true,
+      &quot;labelVisible&quot;: true
+    }
+  ],
+  &quot;propertyTemplates&quot;: [
+    {
+      &quot;text&quot;: &quot;phone&quot;,
+      &quot;type&quot;: &quot;text&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+      &quot;name@en&quot;: &quot;Changing area&quot;,
+      &quot;description@en&quot;: &quot;&quot;,
+      &quot;name@da&quot;: &quot;Omklædnings område&quot;,
+      &quot;description@da&quot;: &quot;&quot;
+   }
+}
+</code></pre>
+<ul>
+<li>
+<p><strong>Id</strong></p>
+<p>All elements have a unique 24 character string. This is used when referencing - e.g. when referencing from individual geodata</p>
+</li>
+<li>
+<p><strong>Name</strong></p>
+<p>The name of a display type is a secondary ID. This can be used as an alternative to the main ID. Note that this is NOT a 24 character string.</p>
+</li>
+<li>
+<p><strong>Aliases</strong></p>
+<p>Aliases are a list of language neutral terms that can be used when searching for Geodata that references this DisplayType</p>
+</li>
+<li>
+<p><strong>DisplayRules</strong></p>
+<p>Each type has a set of display rules that tells if and how geodata should be presented. E.g. which icon to use for meeting rooms, when it should be shown based on zoom level or if it should have a label. There are two parts to a rule: An <strong>evaluation</strong> part (zoom from/to) and a <strong>style</strong> part - the rest of the displayRule object.</p>
+<p>Zoom from and to is inclusive. In this example an icon will be shown from zoom level 19 to 21. A quick word on zoom levels: these are described in <a href="https://en.wikipedia.org/wiki/Web_Mercator_projection">web mercator</a> which is the system we use to show maps. In short zoom level 1 shows a map of the earth in its entirety and a higher zoom level lets you get closer. The highest supported zoom level is generally 21, but some Solutions support up to zoom level 22.</p>
+<p>You will notice that there are 3 ‘visibility’ keys (visible, iconVisible, labelVisible). The first one, ‘visible’, is the main switch that will show and hide the whole element. The two others, ‘iconVisible’ and ‘labelVisible’, is changing the individual elements it is attached to. This way, you can toggle the ‘visible’ without having to remember the visible state for both the icon and label.</p>
+</li>
+<li>
+<p><strong>PropertyTemplates</strong></p>
+<p>The property templates is an option list of which extra properties new Geodata of the given types should have. In this case all POIs of type &quot;breakout areas&quot; will have a field in the CMS to enter a phone number for the new POI. This will then be stored as a property on that Geodata.</p>
+</li>
+<li>
+<p><strong>Properties</strong></p>
+<p>Contains language specific data about the DisplayType object such as names, description etc. Each property has a key that follows this format:</p>
+<p><code>&lt;keyname&gt;@&lt;language&gt;</code></p>
+<p>The name property must be specified for every language defined in the dataset.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: The display type data is split in the CMS; currently it can be found in the fans &quot;Location Types&quot; and &quot;Type Visibility&quot;.</p>
+</blockquote>
+<h3>Categories</h3>
+<p>Categories are used to group Geodata together. As an example, rooms, areas or POIs in some department - e.g. &quot;development&quot; or &quot;marketing&quot; can be set in each of their group. Using categories is not mandatory and thus each Geodata can link to &quot;none to many&quot; categories.</p>
+<p>This grouping is then used as a relevancy criteria when searching.</p>
+<p>As a simple example: All rooms and areas across any building/venue related to entrances can be grouped using this example:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;5823246d07215b23a02e3cdd&quot;,
+  &quot;key&quot;: &quot;entrance&quot;,
+  &quot;name&quot;: {
+    &quot;en&quot;: &quot;Entrance&quot;,
+    &quot;da&quot;: &quot;Indgang&quot;
+  },
+  &quot;properties&quot;: {
+    &quot;description@en&quot;: &quot;The entrance closest to the parking lot&quot;,
+    &quot;description@da&quot;: &quot;Indgangen tættest på parkeringspladsen&quot;
+  }
+}
+</code></pre>
+<ul>
+<li>
+<p><strong>Id</strong></p>
+<p>All elements has a unique 24 character string. This is used when referencing - e.g. when referencing from individual Geodata</p>
+</li>
+<li>
+<p><strong>Key</strong></p>
+<p>The key of a category is a secondary ID. This can be used as an alternative to the main ID. Note that this is NOT a 24 character string.</p>
+</li>
+<li>
+<p><strong>Name</strong></p>
+<p>A translatable name for the category.</p>
+</li>
+<li>
+<p><strong>Properties</strong></p>
+<p>Contains language specific data about the Category object such as numbers, description  etc. Each property has a key that follows this format:</p>
+<p><code>&lt;keyname&gt;@&lt;language&gt;</code></p>
+<p>The name property must be specified for every language defined in the dataset.</p>
+</li>
+</ul>
+<h2>Interface descriptions</h2>
+<h3>Reverse geocoding</h3>
+<pre><code class="language-bash">HTTP Get
+Path: /{apiKey}/api/geocode
+Returns: A list of Geodata objects
+</code></pre>
+<p>Decription:
+Given a latitude/longitude point on the map and a floor index, this endpoint will return a list of all geodata that intersects with this point.</p>
+<p>Note:</p>
+<ul>
+<li>Venue and Building geodata will disregard the floor index and will be given based on the latitude/logitude alone.</li>
+<li>Floor and Room geodata will respect the floor index and will return if the latitude/logitude intersects AND the given floorindex matches</li>
+<li>If no matches where found, an empty list will be returned</li>
+<li>Floor indexes can be viewed in the CMS under the Building's detail page.</li>
+<li>For a geodata object of type <code>&quot;floor&quot;</code> its <code>baseTypeProperties.administrativeid</code> property contains the floor index.</li>
+</ul>
+<p>Mandatory parameters:</p>
+<ul>
+<li><strong>lat</strong> Latitude of the point to examine. Valid range: +/- 90</li>
+<li><strong>lng</strong> Longitude of the point to examine. Valid range: +/- 180</li>
+<li><strong>floor</strong> Floor index to match for floor and room geodata</li>
+</ul>
+<p>Example:</p>
+<p>Input values:</p>
+<ul>
+<li><strong>lat</strong> 57.0579386</li>
+<li><strong>lng</strong> 9.9502304</li>
+<li><strong>floor</strong> 10</li>
+</ul>
+<p>Output:
+A list of 4 geodata objects: a Venue, a Building, a Floor and a Room:</p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;586ca9f1bc1f5702406442b6&quot;,
+    &quot;datasetId&quot;: &quot;57e4e4992e74800ef8b69718&quot;,
+    &quot;baseType&quot;: &quot;venue&quot;,
+    &quot;geometry&quot;: ...,
+    &quot;anchor&quot;: {
+      &quot;coordinates&quot;: [
+        9.95033207518389,
+        57.0589850525
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    },
+    &quot;aliases&quot;: [],
+    &quot;status&quot;: 3,
+    &quot;baseTypeProperties&quot;: {
+      &quot;defaultfloor&quot;: &quot;0&quot;,
+      &quot;administrativeid&quot;: &quot;Stigsborgvej&quot;,
+      &quot;graphid&quot;: &quot;STIGSBORGVEJ_Graph&quot;
+    },
+    &quot;properties&quot;: {
+      &quot;name@en&quot;: &quot;Aalborg Office&quot;,
+      &quot;name@da&quot;: &quot;Aalborg Kontor&quot;
+    },
+    &quot;tileStyles&quot;: [
+      {
+        &quot;displayName&quot;: &quot;default&quot;,
+        &quot;style&quot;: &quot;default&quot;
+      }
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;586caf3dbc1f5702406442b9&quot;,
+    &quot;parentId&quot;: &quot;586ca9f1bc1f5702406442b6&quot;,
+    &quot;datasetId&quot;: &quot;57e4e4992e74800ef8b69718&quot;,
+    &quot;baseType&quot;: &quot;building&quot;,
+    &quot;geometry&quot;: ...,
+    &quot;anchor&quot;: {
+      &quot;coordinates&quot;: [
+        9.95071928922423,
+        57.0590494749439
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    },
+    &quot;status&quot;: 3,
+    &quot;baseTypeProperties&quot;: {
+      &quot;administrativeid&quot;: &quot;Stigsborgvej&quot;
+    },
+    &quot;properties&quot;: {
+      &quot;name@en&quot;: &quot;Stigsborgvej&quot;,
+      &quot;name@da&quot;: &quot;Stigsborgvej&quot;
+    }
+  },
+  {
+    &quot;id&quot;: &quot;fadb5dbf31b442d1a5d6bb08&quot;,
+    &quot;parentId&quot;: &quot;586caf3dbc1f5702406442b9&quot;,
+    &quot;datasetId&quot;: &quot;57e4e4992e74800ef8b69718&quot;,
+    &quot;baseType&quot;: &quot;floor&quot;,
+    &quot;geometry&quot;: ...,
+    &quot;status&quot;: 3,
+    &quot;baseTypeProperties&quot;: {
+      &quot;name&quot;: &quot;1&quot;,
+      &quot;administrativeid&quot;: &quot;10&quot;
+    },
+    &quot;properties&quot;: {}
+  },
+  {
+    &quot;id&quot;: &quot;bf4aac447b1148e198f48d7d&quot;,
+    &quot;parentId&quot;: &quot;fadb5dbf31b442d1a5d6bb08&quot;,
+    &quot;datasetId&quot;: &quot;57e4e4992e74800ef8b69718&quot;,
+    &quot;externalId&quot;: &quot;1.05.01&quot;,
+    &quot;baseType&quot;: &quot;room&quot;,
+    &quot;displayTypeId&quot;: &quot;Storage&quot;,
+    &quot;displaySetting&quot;: {
+      &quot;name&quot;: &quot;default&quot;
+    },
+    &quot;geometry&quot;: ...,
+    &quot;anchor&quot;: {
+      &quot;coordinates&quot;: [
+        9.9502304,
+        57.0579386
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    },
+    &quot;aliases&quot;: [],
+    &quot;categories&quot;: [],
+    &quot;status&quot;: 3,
+    &quot;baseTypeProperties&quot;: {
+      &quot;administrativeid&quot;: &quot;2120ABC7-A574-4950-A33B-E5F836EA91CF&quot;,
+      &quot;class&quot;: &quot;Lager&quot;
+    },
+    &quot;properties&quot;: {
+      &quot;name@en&quot;: &quot;IT storage&quot;,
+      &quot;name@da&quot;: &quot;IT lager&quot;
+    }
+  }
+]
+</code></pre>
+<h2>Route Access</h2>
+<h3>Route elements</h3>
+<p>A number of things can affect which routes the end users are given. Doors can be locked or there can we wait times along the way. This meta-data is contained in &quot;route elements&quot;. A route element often represents a physical element in the real world that affects the routes such as doors and stairs.</p>
+<p>The route elements defined can be seen in the CMS in Map -&gt; Route Access</p>
+<p><img src="https://mapsindoors.github.io/assets/api/v1/cms-routeaccess.png" alt="Geodata Structure"></p>
+<p>Using the endpoint at /{apiKey}/api/routing/routeelements you can find and change the route elements in your solution.</p>
+<p>At the moment 3 things can be modified:</p>
+<ul>
+<li>WaitTime (in seconds)</li>
+<li>OnewayDirection (Optional)</li>
+<li>Restrictions (optional)</li>
+</ul>
+<h4>WaitTime</h4>
+<p>Wait time is set in seconds and affects how long it takes to walk past this point.
+This is given as a natural number and thus may not be negative (but may be 0 if no extra wait time should occur at this point).</p>
+<h4>OnewayDirection</h4>
+<p>Oneway direction is an <a href="https://en.wikipedia.org/wiki/Absolute_bearing">absolute_bearing</a> and can be set to any number between 0 and 360 (degrees).
+Oneway is not mandatory, but can be used in situations where users can only walk in one direction. IF set - end users may only walk in the direction stated within the area (+/- 90 degrees)</p>
+<h4>Restrictions</h4>
+<p>With this setting you can restrict if users are allowed to go though this point.
+Restriction is not mandatory, but IF used it can used in two ways:</p>
+<ol>
+<li>It can be set to &quot;locked&quot; which implies that it's not possible to go though this point for anyone</li>
+<li>It can be set to one or more App User Roles (refered by ID). App User Roles can be defined via the CMS in App Settings -&gt; App Configuration:</li>
+</ol>
+<p><img src="https://mapsindoors.github.io/assets/api/v1/cms-appuserroles.png" alt="Geodata Structure"></p>
+<p>Notice that you can get a list of available user roles using this endpoint from the intregrationAPI: /{apiKey}/api/appUserRoles</p>
+<p>An example of a route element from the  demo dataset looks like this:</p>
+<pre><code class="language-json">  {
+    &quot;id&quot;: &quot;79edd6bb64724381bbf43923&quot;,
+    &quot;datasetId&quot;: &quot;550c26a864617400a40f0000&quot;,
+    &quot;geometry&quot;: {
+      &quot;coordinates&quot;: [
+        9.9577215,
+        57.0858134
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    },
+    &quot;restrictions&quot;: [
+      &quot;locked&quot;
+    ],
+    &quot;waitTime&quot;: 0
+  }
+</code></pre>
+
+        </main>
+      </section>
+    </div>
+  </div>
+  <footer>
+  <div class="wrap">
+    <div class="flex">
+      <div class="third">
+        <h2><a href="/ios/v3">iOS v3</a></h2>
+        
+        <ul><li><a href="/ios/v3/getting-started/">Getting Started</a></li>
+<li><a href="/ios/v3/directions/">Directions</a><ul><li><a href="/ios/v3/directions/directions-wayfinding-instructions/">Get Directions and Show Wayfinding Instructions</a></li>
+<li><a href="/ios/v3/directions/display-route-on-map/">Display Route on map</a></li>
+<li><a href="/ios/v3/directions/directions-result-map/">Get Directions and Show the Result on a Map</a></li>
+<li><a href="/ios/v3/directions/working-with-directions-settings/">Working with Directions Settings</a></li>
+<li><a href="/ios/v3/directions/working-with-events/">Working with Events</a></li>
+<li><a href="/ios/v3/directions/subscribe-to-floor-changes/">Subscribe to floor changes in the rendering</a></li></ul></li>
+<li><a href="/ios/v3/locations/">Locations</a><ul><li><a href="/ios/v3/locations/working-grouping/">Working with Location Grouping (Clustering)</a></li>
+<li><a href="/ios/v3/locations/creating-own-location-sources/">Creating your own Location Sources</a></li>
+<li><a href="/ios/v3/locations/get-details-for-selected-location/">Show details for selected Location</a></li></ul></li>
+<li><a href="/ios/v3/live-data/">Live Data</a><ul><li><a href="/ios/v3/live-data/live-data-tutorial/">Working with Live Updates / Real Time Data in MapsIndoors for iOS</a></li></ul></li>
+<li><a href="/ios/v3/map-styling/">Map Styling</a><ul><li><a href="/ios/v3/map-styling/change-display-setting/">Working with Display Settings</a></li></ul></li>
+<li><a href="/ios/v3/mapsindoors/">MapsIndoors</a><ul><li><a href="/ios/v3/mapsindoors/handling-marker-selections/">Handling marker selections and other user events</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-marker-from-location/">Getting a marker from a location and vice versa</a></li>
+<li><a href="/ios/v3/mapsindoors/getting-polygon-from-location/">Getting a polygon from a location</a></li>
+<li><a href="/ios/v3/mapsindoors/blue-dot/">Show the user's location aka. Blue Dot</a></li>
+<li><a href="/ios/v3/mapsindoors/create-custom-ui/">Create custom UI</a></li></ul></li>
+<li><a href="/ios/v3/search/">Create a search experience with MapsIndoors</a><ul><li><a href="/ios/v3/search/filter-locations-on-map-by-search-query/">Filter Locations on map by search query</a></li></ul></li>
+<li><a href="/ios/v3/offline/">Caching and offline content</a></li></ul>
+
+      </div>
+      <div class="third">
+
+        <h2><a href="/android/v3">Android v3</a></h2>
+        
+        <ul><li><a href="/android/v3/getting-polygon-from-location/">Getting a Polygon from a Location</a></li>
+<li><a href="/android/v3/search-locations-display-map/">Searching for Locations and Displaying the Results on a Map</a></li>
+<li><a href="/android/v3/live-data/">Live Data</a></li>
+<li><a href="/android/v3/locationdatasourcespeoplelocationdatasource/">Creating your own Location Data Source - Part 1</a></li>
+<li><a href="/android/v3/locationdatasourcesbatterieslocationdatasource/">Creating your own Location Data Source - Part 2</a></li>
+<li><a href="/android/v3/locationdatasourceslocationdatasourcesfragment/">Creating your own Location Data Source - Part 3</a></li>
+<li><a href="/android/v3/locationclusteringlocationclusteringfragment/">Work with location grouping / clustering</a></li>
+<li><a href="/android/v3/locationdetailsdemolocationdetailsfragment/">Show Location Details</a></li>
+<li><a href="/android/v3/searchmapdemosearchfragment/">Create a Search Experience with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/searchmapdemosearchmapfragment/">Create a Search Experience with MapsIndoors - Part 2</a></li>
+<li><a href="/android/v3/showuserlocationdemopositionprovider/">Show the Blue Dot with MapsIndoors - Part 1</a></li>
+<li><a href="/android/v3/showuserlocationshowuserlocationfragment/">Show the Blue Dot with MapsIndoors - Part 2</a></li></ul>
+      </div>
+      <div class="third">
+        <h2><a href="/web/v4">Web v4</a></h2>
+        
+        <ul><li><a href="/web/v4/upgrade-guide/">v4 Upgrade Guide</a></li>
+<li><a href="/web/v4/simple-map/">Create a simple map with MapsIndoors</a></li>
+<li><a href="/web/v4/display-rules-intro/">Introduction to Display Rules</a></li>
+<li><a href="/web/v4/using-events/">Event handling</a></li>
+<li><a href="/web/v4/search-and-filtering/">Search and filtering</a></li></ul>
+
+        <h2><a href="/web/v3">Web v3</a></h2>
+        
+        <ul><li><a href="/web/v3/dynamic-updates/">Update DisplayRules dynamically</a></li>
+<li><a href="/web/v3/search-and-filtering/">Search and filtering</a></li>
+<li><a href="/web/v3/show-users-position/">Showing the user's location aka. Blue Dot</a></li>
+<li><a href="/web/v3/using_events/">Event handling</a></li>
+<li><a href="/web/v3/how-to-web-sdk-v3/">How to use the MapsIndoors Web SDK v3</a></li>
+<li><a href="/web/v3/simple_map/">How to create a simple map with MapsIndoors</a></li></ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="flex">
+      <div class="third">
+        <h2>Legacy versions</h2>
+        <h4><a href="/android/v2">Android v2</a></h4>
+        <h4><a href="/ios/v2">iOS v2</a></h4>
+        <h4><a href="/xamarin">Xamarin v3</a></h4>
+
+      </div>
+      <div class="third">
+        <h2><a href="/api">Integration API</a></h2>
+        <h2><a href="/cms">MapsIndoors CMS</a></h2>
+        <h2><a href="/product">Product Overview</a></h2>
+      </div>
+      <div class="third">
+        <h2><a href="/various">Various</a></h2>
+        
+        <ul><li><a href="/various/glossary/">Glossary</a></li>
+<li><a href="/various/areas/">Areas</a></li>
+<li><a href="/various/custom-properties/">Custom Properties</a></li>
+<li><a href="/various/dashboard/">CMS Dashboard</a></li>
+<li><a href="/various/external-id/">External ID</a></li>
+<li><a href="/various/google_analytics/">Google Analytics</a></li>
+<li><a href="/various/indoor-positioning/">Indoor Positioning with MapsIndoors</a></li>
+<li><a href="/various/ip-whitelisting/">Work with MapsIndoors SDK behind a firewall</a></li>
+<li><a href="/various/kiosk/">Kiosk</a></li>
+<li><a href="/various/location-sources/">Location Sources in MapsIndoors</a></li>
+<li><a href="/various/print-map/">Print Map</a></li>
+<li><a href="/various/sdk-features/">SDK Features</a></li></ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>
