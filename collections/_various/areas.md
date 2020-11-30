@@ -35,44 +35,40 @@ All Area geometry data is currently sent to the applications from the SDKs, so i
 
 The corresponding Display Rule information is sent to the app. By default the standard applications will render the Area only when the Area is clicked on. If you would like to render the Area on the map permanently, it can be set via an SDK display rule method.
 
-For custom apps, the native app SDKs can render the areas via Display Rules.
+For custom apps, use the SDK to render the Areas via Display Rules:
 
-[iOS display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_location_display_rule.html)
-<br/><br/>
-[android display rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/LocationDisplayRule.html)
+- [iOS Display Rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/ios/v3/interface_m_p_location_display_rule.html)
+- [Android Display Rule SDK documentation](https://app.mapsindoors.com/mapsindoors/reference/android/v3/com/mapsindoors/mapssdk/LocationDisplayRule.html)
 
 ### Creating Areas with the Integration API
 
-While these Areas can be created in the CMS, creating many of the same size and color can be a manual process.  For this reason, the integration API is ideal for this use-case.
+While these Areas can be created in the CMS, creating many of the same size and color can be a manual process. For this reason, the Integration API is ideal for this use-case.
 
 #### Request Parameters
 
-Endpoint
+**Endpoint**
 
-Requests to the integration API for creating, updating and retrieving geodata objects (POIs, which includes locations, rooms, and areas) should be sent to:
+Requests to the Integration API for creating, updating and retrieving geodata objects (Locations, which includes POIs, Rooms, and Areas) should be sent to: `https://integration.mapsindoors.com/{YOUR_API_KEY}/api/geodata`
 
-https://integration.mapsindoors.com/{YOUR_API_KEY}/api/geodata
+- `Header: 'Content-Type': 'application/json' (GET, PUT, POST)`
+- `Header: 'Authorization': 'bearer_token' (GET, PUT, POST)`
 
-Header: 'Content-Type': 'application/json' (GET, PUT, POST)
+#### JSON Payload Schema (PUT, POST)
 
-Header: 'Authorization': 'bearer_token' (GET, PUT, POST)
-
-JSON Payload Schema (PUT, POST)
-
-* parentId: If area is outside, use venue ID.  If area is indoors, use the floor id (of the desired building).
-* datasetId: solutionId
-* baseType: area (other unrelated values are venue building, room, poi)
-* displayTypeId: locationType internal ID
-* displaySetting: this is a dictionary which contains the things that can be modified from the displayRule (SDK)
-* name: used for the label
-* polygon has the following subfields: visible, strokeWidth, strokeColor, strokeOpacity, fillColor, fillOpacity.
-* geometry: [standard GeoJson](https://tools.ietf.org/html/rfc7946#section-3.1)
-* anchor: anchor point with its subfield type = point
-* aliases: additional search functionality will be based on this name.
-* categories: will be written as the internal id of the category, not the name
-* status: availability in search results.  1=no, 3=yes.
-* baseTypeProperties: dictionary not required for POST
-* properties: name/description/capacity (metadata that can be found/edited the CMS as well)
+- `parentId`: If Area is outside, use Venue ID. If Area is indoors, use the Floor ID (of the desired Building)
+- `datasetId`: SolutionId
+- `baseType`: Area (other unrelated values are Venue, Building, Room, POI)
+- `displayTypeId`: `locationType` internal ID
+- `displaySetting`: This is a dictionary which contains the things that can be modified from the `displayRule` with the SDK
+- `name`: Used for the Label on the map
+- `polygon`: Has the following subfields: `visible`, `strokeWidth`, `strokeColor`, `strokeOpacity`, `fillColor`, `fillOpacity`.
+- `geometry`: [standard GeoJson](https://tools.ietf.org/html/rfc7946#section-3.1)
+- `anchor`: Anchor point with a _subfield type_ as `point`
+- `aliases`: Aliases are used to enrich the data when searching
+- `categories`: Will be written as the `internal id` of the Category (as opposed to the Name)
+- `status`: Availability in search results; 1=no, 3=yes
+- `baseTypeProperties`: dictionary not required for `POST`
+- `properties`: `name`/`description`/`capacity` (metadata that can be edited via the CMS as well)
 
 #### Post Request Example
 
