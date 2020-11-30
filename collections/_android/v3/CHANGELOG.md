@@ -21,7 +21,7 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 
 ### Added
 
-- Support for rendering polygons through DisplayRules
+- Support for rendering polygons (i.e. Areas) through DisplayRules
 
 ### Fixed
 
