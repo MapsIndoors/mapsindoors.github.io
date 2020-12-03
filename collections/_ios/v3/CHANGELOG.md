@@ -18,9 +18,17 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ## [3.16.0] Release date TBD
 
+### Changed
+
+-  `MPLocationsProvider` has been deprecated, please use `MPLocationService` instead.
+
 ### Added
 
 - Support for receiving position provider configuration data with the solution data, see `MPSolution.positionProviderConfigs`.
+
+### Fixed
+
+- Fixed a crash related to booking and user role functionality.
 
 ## [3.15.0] 2020-11-11
 
