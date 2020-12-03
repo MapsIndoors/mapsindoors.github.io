@@ -20,7 +20,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Changed
 
--  `MPLocationsProvider` has been deprecated, please use `MPLocationService` instead.
+- `MPLocationsProvider` has been deprecated, please use `MPLocationService` instead.
 
 ### Added
 
