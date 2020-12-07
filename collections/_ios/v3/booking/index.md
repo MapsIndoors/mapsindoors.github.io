@@ -41,7 +41,7 @@ bookingService.getBookableLocations(using: bookableQuery, completion: { (locatio
 })
 ```
 
-The above example creates a query for locations that are bookable for a timespan between now and 1 hour ahead.
+The above example creates a query for Locations that are bookable for a timespan between now and 1 hour ahead.
 
 It is also possible to check a location statically using `MPLocation.isBookable`, but please note that this information is not a dynamic property reflecting the current bookable state from the Booking Service. If `MPLocation.isBookable` is true it means that the Location has a potentially bookable resource known by the integrated booking provider, but still it might be booked for a specific time.
 
@@ -67,7 +67,7 @@ bookingService.getBookingsUsing(bookingsQuery) { (bookings, error) in
 }
 ```
 
-The above example creates a query for bookings that exists for a location with timespan between 1 hour ago and 24 hours ahead.
+The above example creates a query for bookings that exists for a Location with timespan between 1 hour ago and 24 hours ahead.
 
 ### Performing a Booking of a Location
 

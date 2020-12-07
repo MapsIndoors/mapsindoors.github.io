@@ -10,7 +10,7 @@ permalink: /ios/v3/booking-tutorial/
 
 In this tutorial we will create a Booking experience using the Booking Service in MapsIndoors. You will learn how to list bookable Locations, list Bookings for a Location and perform new Bookings using the Booking Service, `MPBookingService`.
 
-Please note that a MapsIndoors dataset can only have bookable resources if an integration with a booking provider exists. Current examples of booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers and more can be added and integrated to your MapsIndoors project by request. It is a prerequisite for this tutorial that the API key used refers to a dataset containing bookable Locations.
+Please note that a MapsIndoors dataset can only have bookable resources if an integration with a booking provider exists. Current examples of booking providers are _Google Calendar_ and _Microsoft Office 365_. These providers, and more, can be added and integrated to your MapsIndoors project by request. It is a prerequisite for this tutorial that the API key used refers to a dataset containing bookable Locations.
 
 ## Listing Bookable Locations
 
@@ -75,7 +75,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 }
 ```
 
-In `tableView(:didSelectRowAt indexPath:)`, get the relevant `MPLocation` for the `indexPath`. Initialise a `BookingsController` which we will implement next. Assign the selected location to a `bookableLocation` property on `BookingsController` and push the controller to the navigation stack.
+In `tableView(:didSelectRowAt indexPath:)`, get the relevant `MPLocation` for the `indexPath`. Initialise a `BookingsController` which we will implement next. Assign the selected Location to a `bookableLocation` property on `BookingsController` and push the controller to the navigation stack.
 
 ```swift
 override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

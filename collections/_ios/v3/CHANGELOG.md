@@ -20,7 +20,7 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Added
 
-- Support for Booking of Locations through a MapsIndoors Google Calendar Booking Provider, see [guide about booking](https://mapsindoors.github.io/ios/v3/booking/).
+- Support for Booking of Locations through a MapsIndoors Google Calendar Booking Provider, see [guide about Booking](https://mapsindoors.github.io/ios/v3/booking/).
 
 ## [3.14.0] 2020-11-11
 
